@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
@@ -9,12 +9,17 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const allPosts = this.props.data.allMarkdownRemark.edges
+    const prevNext = allPosts.filter(edge => {
+      return edge.node.fields.slug === this.props.pathContext.slug;
+    })[0]
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          img={`${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.thumbnail.childImageSharp.fluid.src}`}
         />
         <article
           className={`post-content ${post.frontmatter.thumbnail || `no-image`}`}
@@ -42,7 +47,25 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
+          <hr style={{borderTop: '1px solid #cfcfcf'}} />
+
           <footer className="post-content-footer">
+            <ul className="actions fit" style={{paddingRight: 0}}>
+              <li>
+                {prevNext.next && (
+                  <Link rel="previous" to={prevNext.next.fields.slug} className="button fit">{`Fast-forward to ${prevNext.next.frontmatter.date}`}</Link>
+                ) || (
+                  <a className="button fit disabled">There will probably be more...</a>
+                )}
+              </li>
+              <li>
+                {prevNext.previous && (
+                  <Link rel="next" to={prevNext.previous.fields.slug} className="button fit">{`Rewind to ${prevNext.previous.frontmatter.date}`}</Link>
+                ) || (
+                  <a className="button fit disabled">There was probably more...</a>
+                )}
+              </li>
+            </ul>
             {/* There are two options for how we display the byline/author-info.
         If the post has more than one author, we load a specific template
         from includes/byline-multiple.hbs, otherwise, we just use the
@@ -62,6 +85,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -77,6 +101,37 @@ export const pageQuery = graphql`
             fluid(maxWidth: 1360) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
+      edges {
+        node {
+          frontmatter {
+            date
+            title
+          }
+          fields {
+            slug
+          }
+        }
+        previous {
+          frontmatter {
+            date(formatString: "MMMM YYYY")
+            title
+          }
+          fields {
+            slug
+          }
+        }
+        next {
+          frontmatter {
+            date(formatString: "MMMM YYYY")
+            title
+          }
+          fields {
+            slug
           }
         }
       }

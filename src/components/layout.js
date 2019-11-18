@@ -24,17 +24,17 @@ const Layout = props => {
               </div>
             </div>
           </a>
-          <nav id="swup" class="site-head-left">
+          <nav id="swup" className="site-head-left">
             <ul className="nav" role="menu">
               <li className="nav-home nav-current" role="menuitem">
                 <Link to={`/`}>Home</Link>
               </li>
               <li className="nav-about" role="menuitem">
-                <Link to={`/about`}>About</Link>
+                <Link to={`/is`}>About</Link>
               </li>
-              <li className="nav-elements" role="menuitem">
+              {/*<li className="nav-elements" role="menuitem">
                 <Link to={`/elements`}>Elements</Link>
-              </li>
+              </li>*/}
             </ul>
           </nav>
           <div className="site-head-center">
@@ -45,20 +45,20 @@ const Layout = props => {
           <div className="site-head-right">
             <div className="social-links">
               <a
-                href="https://www.facebook.com"
-                title="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://twitter.com"
+                href="https://twitter.com/iamEAP"
                 title="Twitter"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Twitter
+              </a>
+              <a
+                href="https://www.github.com/iamEAP"
+                title="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
               </a>
               <Link
                 to={`/rss.xml`}

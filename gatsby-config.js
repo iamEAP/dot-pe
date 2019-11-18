@@ -2,6 +2,7 @@ const urljoin = require("url-join")
 const siteConfig = require("./siteConfig")
 
 module.exports = {
+  pathPrefix: siteConfig.prefix,
   siteMetadata: {
     title: siteConfig.name,
     author: siteConfig.author,
@@ -79,7 +80,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-13028513-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -92,7 +93,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/android-chrome-512x512.png`,
       },
     },
     `gatsby-plugin-netlify`,

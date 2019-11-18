@@ -5,13 +5,17 @@
     display: flex;
     cursor: default;
     list-style: none;
-    margin: calc(var(--margin) * -0.5);
+    margin: 0;
     padding-left: 0;
 }
 
 .actions li {
     padding: 0 0 0 calc(var(--margin) * 0.5);
     vertical-align: middle;
+}
+
+.actions li:first-child {
+    padding-left:0;
 }
 
 .actions.special {
@@ -40,6 +44,7 @@
 
 .actions.fit {
     width: calc(100% + calc(var(--margin) * 0.5));
+    padding-right: 0;
 }
 
 .actions.fit li {
