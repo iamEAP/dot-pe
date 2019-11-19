@@ -8,6 +8,7 @@ module.exports = {
     author: siteConfig.author,
     description: siteConfig.description,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    baseUrl: siteConfig.url,
     social: {
       twitter: siteConfig.twitter,
     },
@@ -54,7 +55,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 75,
+      },
+    },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
