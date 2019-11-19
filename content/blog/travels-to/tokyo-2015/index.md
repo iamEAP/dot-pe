@@ -1,7 +1,7 @@
 ---
 title: Tokyo, 2015
 date: "2015-06-13T17:10:04-07:00"
-description: 
+description: 仕方がない
 thumbnail: ./kami-ike.jpg
 ---
 
