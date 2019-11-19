@@ -32,7 +32,7 @@ Polaroid in Reverse explores some of these themes through not only the music and
 
 > Eric Peterson's final record in his brief but influential career as a Denver musician was lathe-cut rather than pressed in the traditional manner. As a consequence, the record is more delicate and will bear the marks of repeated listens; the songs will become fuzzier and eventually disappear entirely into white noise. And in that way, the record embodies its message: Polaroid in Reverse offers a contemplation on the world's ceaseless entropy.
 >
-> ~ Westword's Best Use of the LP Format 2011
+> ~ [Westword Best Use of the LP Format 2011](https://www.westword.com/best-of/2011/arts-and-entertainment/best-use-of-the-lp-format-5158203)
 
 <ul class="actions fit">
   <li>
