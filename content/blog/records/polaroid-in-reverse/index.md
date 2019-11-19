@@ -1,6 +1,6 @@
 ---
 title: Polaroid in Reverse
-date: "2015-05-25T17:10:26-07:00"
+date: "2010-07-20T17:10:26-07:00"
 description: Is there value in documentation or is memory's degradation insurmountable?
 thumbnail: ./volunteer-park.jpg
 ---
