@@ -54,13 +54,16 @@
 
 .actions.fit li > * {
     width: 100%;
+    white-space: normal;
+    overflow: hidden;
 }
 
 .actions.fit.stacked {
     width: 100%;
 }
 
-@media (max-width: var(--xsmall)) {
+@media (max-width: 700px) {
+
     .actions:not(.fixed) {
         flex-direction: column;
         margin-left: 0;
@@ -80,6 +83,11 @@
 
     .actions:not(.fixed) li:first-child {
         padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .actions:not(.fixed) li:not(:first-child) {
+        margin-top: 0;
     }
 
     .actions:not(.fixed) li input[type="submit"],
