@@ -60,14 +60,14 @@ const Layout = props => {
               >
                 Github
               </a>
-              <Link
+              {/*<Link
                 to={`/rss.xml`}
                 title="RSS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 RSS
-              </Link>
+              </Link>*/}
             </div>
           </div>
         </div>
