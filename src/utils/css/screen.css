@@ -579,13 +579,13 @@ body {
     margin: 0 auto !important;
 }
 
-.post-content-body blockquote, blockquote {
+.post-content-body blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
     border-left: #3eb0ef 3px solid;
 }
 
-.post-content-body blockquote p, blockquote p {
+.post-content-body blockquote p {
     margin: 0 0 1em 0;
     color: inherit;
     font-size: inherit;
@@ -593,7 +593,7 @@ body {
     font-style: italic;
 }
 
-.post-content-body blockquote p:last-child, blockquote p:last-child {
+.post-content-body blockquote p:last-child {
     margin-bottom: 0;
 }
 
@@ -700,4 +700,41 @@ body {
 .page-template .post-content-body h2,
 .page-template .post-content-body h3 {
     text-align: center;
+}
+
+/* Attempt to make iframes not stupid on mobile.
+/* ---------------------------------------------------------- */
+@media (max-width: 321px) {
+    iframe[src*="vimeo.com"] {
+        height: 168px !important;
+    }
+}
+@media (min-width: 322px) and (max-width: 376px) {
+    iframe[src*="vimeo.com"] {
+        height: 185px !important;
+    }
+}
+
+@media (min-width:377px) and (max-width: 415px) {
+    iframe[src*="vimeo.com"] {
+        height: 202px !important;
+    }
+}
+
+@media (min-width:416px) and (max-width: 524px) {
+    iframe[src*="vimeo.com"] {
+        height: 253px !important;
+    }
+}
+
+@media (min-width:525px) and (max-width: 698px) {
+    iframe[src*="vimeo.com"] {
+        height: 342px !important;
+    }
+}
+
+@media (min-width:699px) and (max-width: 850px) {
+    iframe[src*="vimeo.com"] {
+        height: 399px !important;
+    }
 }
