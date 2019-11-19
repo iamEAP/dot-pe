@@ -1,6 +1,8 @@
 ---
 title: Excuses
 date: "2016-05-22T14:40:49-07:00"
+description: Our edges are beaten driftwood, whittled down.
+hideImage: true
 thumbnail: ./excuses-live.jpg
 ---
 
