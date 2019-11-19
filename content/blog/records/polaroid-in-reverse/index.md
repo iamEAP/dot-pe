@@ -5,7 +5,7 @@ description: Is there value in documentation or is memory's degradation insurmou
 thumbnail: ./volunteer-park.jpg
 ---
 
-<iframe width="100%" height="210" src="//bandcamp.com/EmbeddedPlayer/album=23354821/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless=""></iframe>
+<iframe width="100%" height="210" src="//bandcamp.com/EmbeddedPlayer/album=23354821/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" frameborder="0"></iframe>
 
 ---
 

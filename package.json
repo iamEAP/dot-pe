@@ -63,7 +63,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "deploy": "rm -rf ./public && gatsby build --prefix-paths && gh-pages -d public -b master",
+    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -b master",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
