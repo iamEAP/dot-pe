@@ -9,7 +9,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /commons-bcb2098eebc6c9f7ef8e.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-templates-blog-post-js-a93953848940704693c9.js
+/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-404-js-d887f3724fd354d644c0.js
   Cache-Control: public, max-age=31536000, immutable
@@ -19,171 +19,181 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-engineers-a-tableau-web-data-connector-generator-js-d9bbd8de30261b1a01c0.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-index-js-e4febf73614f8154af69.js
+/component---src-pages-engineers-better-wdc-performance-with-promises-js-e7f930d9763456198237.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-is-js-84e5c2452a6fa05d4a56.js
+/component---src-pages-index-js-a7efb7cd788be3e8d987.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-36c685d7dae42ea9be94.js
+/component---src-pages-is-js-e69d406bc4680b6fe8b3.js
   Cache-Control: public, max-age=31536000, immutable
-/app-0894fd12fe81900b2e56.js
+/webpack-runtime-4e1e876663684ebb4f52.js
+  Cache-Control: public, max-age=31536000, immutable
+/app-ac4f3623247bb175df87.js
   Cache-Control: public, max-age=31536000, immutable
 /static/*
   Cache-Control: public, max-age=31536000, immutable
 /sw.js
   Cache-Control: no-cache
 /terson/offline-plugin-app-shell-fallback/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/component---node-modules-gatsby-plugin-offline-app-shell-js-568c113b24a9e8ed8db8.js>; rel=preload; as=script
 /terson/records/uneasy/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/get-you-alone/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/travels-to/new-zealand-2018/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/travels-to/the-west-coast-2017/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/excuses/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/corcovado/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/curse-us-all/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/oh-annie/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/travels-to/tokyo-2015/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/kvdu-live/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/your-ghost/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/new-wives-tale/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/polaroid-in-reverse/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/tangled-we-weave/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/not-here-not-home/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/records/asleep-at-the-wheel/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-a93953848940704693c9.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-cf3181c91b1abbe353ce.js>; rel=preload; as=script
 /terson/404/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
   Link: </terson/component---src-pages-404-js-d887f3724fd354d644c0.js>; rel=preload; as=script
 /terson/engineers/a-tableau-web-data-connector-generator/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
   Link: </terson/component---src-pages-engineers-a-tableau-web-data-connector-generator-js-d9bbd8de30261b1a01c0.js>; rel=preload; as=script
+/terson/engineers/better-wdc-performance-with-promises/
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
+  Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
+  Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
+  Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
+  Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
+  Link: </terson/component---src-pages-engineers-better-wdc-performance-with-promises-js-e7f930d9763456198237.js>; rel=preload; as=script
 /terson/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-pages-index-js-e4febf73614f8154af69.js>; rel=preload; as=script
+  Link: </terson/component---src-pages-index-js-a7efb7cd788be3e8d987.js>; rel=preload; as=script
 /terson/is/
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/component---src-pages-is-js-84e5c2452a6fa05d4a56.js>; rel=preload; as=script
+  Link: </terson/component---src-pages-is-js-e69d406bc4680b6fe8b3.js>; rel=preload; as=script
 /terson/404.html
-  Link: </terson/webpack-runtime-36c685d7dae42ea9be94.js>; rel=preload; as=script
+  Link: </terson/webpack-runtime-4e1e876663684ebb4f52.js>; rel=preload; as=script
   Link: </terson/styles-84d425cacf9b3d0d08fd.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
-  Link: </terson/app-0894fd12fe81900b2e56.js>; rel=preload; as=script
+  Link: </terson/app-ac4f3623247bb175df87.js>; rel=preload; as=script
   Link: </terson/commons-bcb2098eebc6c9f7ef8e.js>; rel=preload; as=script
   Link: </terson/component---src-pages-404-js-d887f3724fd354d644c0.js>; rel=preload; as=script
