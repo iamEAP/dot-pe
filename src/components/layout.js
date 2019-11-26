@@ -95,6 +95,7 @@ const Layout = props => {
           href="https://gatsbyjs.org"
           target="_blank"
           rel="noopener noreferrer"
+          style={{color: 'rgb(171, 171, 171)'}}
         >
           Gatsby
         </a>
