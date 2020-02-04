@@ -34,15 +34,5 @@ Polaroid in Reverse explores some of these themes through not only the music and
 >
 > ~ [Westword Best Use of the LP Format 2011](https://www.westword.com/best-of/2011/arts-and-entertainment/best-use-of-the-lp-format-5158203)
 
-<ul class="actions fit">
-  <li>
-    <a href="http://music.rogerroll.net/album/polaroid-in-reverse" target="_blank" class="button primary fit">
-      Free Download
-    </a>
-  </li>
-  <li>
-    <a href="http://music.rogerroll.net/merch" target="_blank" class="button fit">
-      Purchase the 7"
-    </a>
-  </li>
-</ul>
+
+<a href="https://gum.co/jTkiw/5mte3lf?wanted=true" target="_blank" class="gumroad-button button fit" data-gumroad-single-product="true">Download for Free</a>
