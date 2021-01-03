@@ -26,30 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-45daa8ef433b163ed661.js"
+    "url": "webpack-runtime-fff1c7ddb40255afafad.js"
   },
   {
-    "url": "styles.7b11e8591aaa5e1539e7.css"
+    "url": "styles.53db86a4fc2e42ca1be9.css"
   },
   {
-    "url": "styles-84d425cacf9b3d0d08fd.js"
+    "url": "styles-e9d24b1846c7d6eb9685.js"
   },
   {
-    "url": "commons-74d2aa7da127ed9fef5b.js"
+    "url": "framework-cd3e1e804d552fa282ef.js"
   },
   {
-    "url": "app-8b16e47dbbfa26fdfd46.js"
+    "url": "app-0613d834047042b99748.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-f8c20c8491cbd22ce357.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-1019110dddd354e6e07c.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "81cc5f6db533cd13f6bf4dd0dab7c40d"
+    "revision": "e69d11dccaf408d44a8537e576367427"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "d274adf0f008ef152ce70a312b04b730"
+    "revision": "c7047792c6f91b88e0d9abc0cd819e92"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "5353a48780dfb91231b11c3643d6b29d"
+  },
+  {
+    "url": "polyfill-25b73876df0a2c080a82.js"
   },
   {
     "url": "manifest.json",
@@ -57,7 +64,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "2a87880e79ec25417546efcaa534ffb4"
+    "revision": "e1e09c6493b76528c27d5210813e88fe"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -81,7 +88,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/terson/app-8b16e47dbbfa26fdfd46.js`))) {
+  if (!resources || !(await caches.match(`/terson/app-0613d834047042b99748.js`))) {
     return await fetch(event.request)
   }
 
