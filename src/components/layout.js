@@ -8,9 +8,8 @@ const Layout = props => {
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
       <header className="site-head">
         <div className="site-head-container">
-          <a
+          <button
             className="nav-burger"
-            href={`#`}
             onClick={() => setToggleNav(!toggleNav)}
           >
             <div
@@ -23,7 +22,7 @@ const Layout = props => {
                 <div className="hamburger-inner" />
               </div>
             </div>
-          </a>
+          </button>
           <nav id="swup" className="site-head-left">
             <ul className="nav" role="menu">
               <li className="nav-home nav-current" role="menuitem">
@@ -76,14 +75,26 @@ const Layout = props => {
         <div id="swup" className="transition-fade">
           {children}
         </div>
-        <form action="https://gumroad.com/follow_from_embed_form" className="post-content" method="post" target="_blank" style={{paddingBottom: 0}}>
+        <form
+          action="https://gumroad.com/follow_from_embed_form"
+          className="post-content"
+          method="post"
+          target="_blank"
+          style={{ paddingBottom: 0 }}
+        >
           <input name="seller_id" type="hidden" value="2626546698508" />
           <div className="row gtr-uniform">
             <div class="col-10 col-12-xsmall">
-              <input name="email" placeholder="Your email address" type="email" />
+              <input
+                name="email"
+                placeholder="Your email address"
+                type="email"
+              />
             </div>
             <div className="col-2 col-12-xsmall">
-              <button type="submit" className="button primary fit">Follow</button>
+              <button type="submit" className="button primary fit">
+                Follow
+              </button>
             </div>
           </div>
         </form>
@@ -95,7 +106,7 @@ const Layout = props => {
           href="https://gatsbyjs.org"
           target="_blank"
           rel="noopener noreferrer"
-          style={{color: 'rgb(171, 171, 171)'}}
+          style={{ color: "rgb(171, 171, 171)" }}
         >
           Gatsby
         </a>

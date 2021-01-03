@@ -20,13 +20,21 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
     <Layout title={siteTitle}>
       <SEO
         title="Yo, Tableau Web Data Connector!"
-        keywords={[`Tableau`, `WDC`, `Web Data Connector`, `Generator`, `Yeoman`]}
+        keywords={[
+          `Tableau`,
+          `WDC`,
+          `Web Data Connector`,
+          `Generator`,
+          `Yeoman`,
+        ]}
         img={`${data.yoTableauDataConnector.childImageSharp.fluid.src}`}
       />
 
       <article className="post-content page-template no-image">
         <header className="post-content-header">
-          <h1 className="post-content-title">Yo, Tableau Web Data Connector!</h1>
+          <h1 className="post-content-title">
+            Yo, Tableau Web Data Connector!
+          </h1>
         </header>
         <div className="post-content-body">
           <div className="kg-card kg-image-card kg-width-full">
@@ -36,22 +44,43 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
             />
           </div>
           <p>
-            Whether your data's stored in flat files, relational databases,
-            big data clusters, or the cloud, Tableau supports an ever-growing
+            Whether your data's stored in flat files, relational databases, big
+            data clusters, or the cloud, Tableau supports an ever-growing
             ensemble of native connectors that allow you to connect painlessly
             and focus on the real task at hand: asking and answering questions
             with your data.
           </p>
           <p>
             In prior versions, Tableau enabled developers to provide access to
-            non-native data through <a href="http://kb.tableau.com/articles/knowledgebase/tableau-and-odbc" target="_blank">ODBC
-            drivers</a> and a <a href="http://onlinehelp.tableau.com/current/pro/online/en-us/help.html#extracting_TDE_API.html" target="_blank">data
-            engine API</a>, but with the release of v9.1 and the <a href="https://www.tableau.com/web-data-connector" target="_blank">introduction
-            of Web Data Connectors</a> (WDCs), Tableau has dramatically reduced
-            the barrier to entry for developers to create custom connections to
-            new data sources. Anyone with a little HTML and JavaScript know-how
-            can open up a world of data to Tableau, and connectors are being
-            written and shared by the community all the time.
+            non-native data through{" "}
+            <a
+              href="http://kb.tableau.com/articles/knowledgebase/tableau-and-odbc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ODBC drivers
+            </a>{" "}
+            and a{" "}
+            <a
+              href="http://onlinehelp.tableau.com/current/pro/online/en-us/help.html#extracting_TDE_API.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              data engine API
+            </a>
+            , but with the release of v9.1 and the{" "}
+            <a
+              href="https://www.tableau.com/web-data-connector"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              introduction of Web Data Connectors
+            </a>{" "}
+            (WDCs), Tableau has dramatically reduced the barrier to entry for
+            developers to create custom connections to new data sources. Anyone
+            with a little HTML and JavaScript know-how can open up a world of
+            data to Tableau, and connectors are being written and shared by the
+            community all the time.
           </p>
           <hr />
           <Img
@@ -83,9 +112,16 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
               files.
             </li>
             <li>
-              Support for incremental and full <a href="http://onlinehelp.tableau.com/current/pro/online/mac/en-us/help.html#extracting_refresh.html" target="_blank">refreshes
-              via Tableau Online and Server</a> means the onus of automation is
-              on Tableau. One less thing to worry about building.
+              Support for incremental and full{" "}
+              <a
+                href="http://onlinehelp.tableau.com/current/pro/online/mac/en-us/help.html#extracting_refresh.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                refreshes via Tableau Online and Server
+              </a>{" "}
+              means the onus of automation is on Tableau. One less thing to
+              worry about building.
             </li>
             <li>
               A unified platform means any work we do can be open sourced,
@@ -95,20 +131,33 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
           </ul>
           <p>
             Because so much data from so many sources is so close at hand so
-            suddenly, the opportunity is almost overwhelming. Rather than
-            making a mad sprint to build out connectors for all of our data
-            needs as quickly as possible, I decided to take a step back and try
-            and build a system to make developing high quality connectors very
-            simple and very repeatable.
+            suddenly, the opportunity is almost overwhelming. Rather than making
+            a mad sprint to build out connectors for all of our data needs as
+            quickly as possible, I decided to take a step back and try and build
+            a system to make developing high quality connectors very simple and
+            very repeatable.
           </p>
           <h3>Introducing the Web Data Connector Generator</h3>
           <p>
-            <a href="https://www.npmjs.com/package/generator-web-data-connector" target="_blank">The
-            Web Data Connector Generator</a> aims to reduce the time it takes
-            to write a connector from hours to minutes. Built on <a href="http://yeoman.io/" target="_blank">yeoman</a>,
-            the self-proclaimed "scaffolding tool for modern web apps," usage
-            is as simple as firing a command on the terminal
-            (<code>yo web-data-connector</code>) and answering a few questions.
+            <a
+              href="https://www.npmjs.com/package/generator-web-data-connector"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Web Data Connector Generator
+            </a>{" "}
+            aims to reduce the time it takes to write a connector from hours to
+            minutes. Built on{" "}
+            <a
+              href="http://yeoman.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              yeoman
+            </a>
+            , the self-proclaimed "scaffolding tool for modern web apps," usage
+            is as simple as firing a command on the terminal (
+            <code>yo web-data-connector</code>) and answering a few questions.
           </p>
           <p>
             Before you get started, you'll want to think about the underlying
@@ -125,45 +174,59 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
               those options (e.g. a pick list, a text field, a checkbox, etc)?
             </li>
             <li>
-              Does the API support <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">cross-origin
-              calls</a> from a browser/client, or do you need to bypass CORS
-              restrictions using a server-side proxy?
+              Does the API support{" "}
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                cross-origin calls
+              </a>{" "}
+              from a browser/client, or do you need to bypass CORS restrictions
+              using a server-side proxy?
             </li>
             <li>
-              Where do you plan to host your connector? Do you want to deploy
-              to a cloud provider, or do you have your own strategy?
+              Where do you plan to host your connector? Do you want to deploy to
+              a cloud provider, or do you have your own strategy?
             </li>
           </ul>
           <p>
             Based on your answers, the Generator stubs out a directory
-            structure, adds heavily annotated application source files, fills
-            in a few details, and downloads several utility libraries needed to
+            structure, adds heavily annotated application source files, fills in
+            a few details, and downloads several utility libraries needed to
             help you get started quickly.
           </p>
           <hr />
-          <img src="/sites/default/files/field/image/yo-web-data-connector.gif" className="kg-image" />
+          <img
+            src="/sites/default/files/field/image/yo-web-data-connector.gif"
+            alt="Demonstration of generator CLI."
+            className="kg-image"
+          />
           <hr />
           <h3>A first class web-application development workflow</h3>
           <p>
-            Once everything's initialized, development couldn't be simpler!
-            Just run grunt on your terminal and start hacking away in your
-            favorite code editor.
+            Once everything's initialized, development couldn't be simpler! Just
+            run grunt on your terminal and start hacking away in your favorite
+            code editor.
           </p>
           <p>
-            For the uninitiated, <a href="http://gruntjs.com/" target="_blank">grunt</a> is
-            a JavaScript task runner that automates tedious tasks and can be
+            For the uninitiated,{" "}
+            <a
+              href="http://gruntjs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              grunt
+            </a>{" "}
+            is a JavaScript task runner that automates tedious tasks and can be
             used to unify development or deployment processes across projects or
             teams. Based on your answers, the Generator defines and configures
             the set of tasks to be run when you run <code>grunt</code> in your
             Gruntfile.js.
           </p>
-          <p>
-            Out of the box, it performs the following:
-          </p>
+          <p>Out of the box, it performs the following:</p>
           <ul>
-            <li>
-              Validates your JavaScript syntax and style,
-            </li>
+            <li>Validates your JavaScript syntax and style,</li>
             <li>
               Compiles and minifies all JavaScript source code into a single
               file for high performance,
@@ -179,21 +242,34 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
           </ul>
           <p>
             As you're making changes, you can see and test your work in the SDK
-            simulator, a browser, or Tableau itself at <code>http://localhost:9001</code>. Once
-            you're done making changes, you can kill the grunt process by
-            typing <code>ctrl+c</code> in your terminal.
+            simulator, a browser, or Tableau itself at{" "}
+            <code>http://localhost:9001</code>. Once you're done making changes,
+            you can kill the grunt process by typing <code>ctrl+c</code> in your
+            terminal.
           </p>
           <hr />
-            <img src="/sites/default/files/field/image/grunt-web-data-connector-dual-screen-open.gif" className="kg-image" />
+          <img
+            src="/sites/default/files/field/image/grunt-web-data-connector-dual-screen-open.gif"
+            alt="Demonstration of building and opening the generated connector."
+            className="kg-image"
+          />
           <hr />
           <p>
-            If you're a practitioner of test-driven development, you're in
-            luck! The Generator stubs out a number of basic unit tests. To run
-            them, run <code>npm test</code> in your connector's root directory.
-            You can add and edit tests in the <code>test</code> directory. And
-            for those who've gone all-in on continuous integration and
-            continuous deployment, a <code>.travis.yml</code> skeleton is also
-            included at the root, for use with <a href="https://www.travis-ci.org/" target="_blank">Travis CI</a>.
+            If you're a practitioner of test-driven development, you're in luck!
+            The Generator stubs out a number of basic unit tests. To run them,
+            run <code>npm test</code> in your connector's root directory. You
+            can add and edit tests in the <code>test</code> directory. And for
+            those who've gone all-in on continuous integration and continuous
+            deployment, a <code>.travis.yml</code> skeleton is also included at
+            the root, for use with{" "}
+            <a
+              href="https://www.travis-ci.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Travis CI
+            </a>
+            .
           </p>
           <h3>Simplifying the WDC SDK</h3>
           <p>
@@ -209,15 +285,12 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
             data into the format expected by Tableau.
           </p>
           <p>
-            The wrapper takes care of the rest of the nitty gritty details, including:
+            The wrapper takes care of the rest of the nitty gritty details,
+            including:
           </p>
           <ul>
-            <li>
-              Naming and registering your connector with Tableau,
-            </li>
-            <li>
-              Stepping through WDC workflow steps on your behalf,
-            </li>
+            <li>Naming and registering your connector with Tableau,</li>
+            <li>Stepping through WDC workflow steps on your behalf,</li>
             <li>
               Boilerplate initialization during the user interaction phase,
             </li>
@@ -231,18 +304,46 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
           </ul>
           <h3>Examples in the wild</h3>
           <p>
-            While developing the generator, we've spun up and published
-            several connectors based on it, including a <a href="https://github.com/tableau-mkt/github-data-connector" target="_blank">GitHub
-            web data connector</a> (a copy of which is <a href="https://github-web-data-connector.herokuapp.com/" target="_blank">deployed
-            to Heroku</a>) and a <a href="https://github.com/tableau-mkt/drupal-dot-org-data-connector" target="_blank">drupal.org
-            data connector</a> (hosted on <a href="https://tableau-mkt.github.io/drupal-dot-org-data-connector/" target="_blank">GitHub
-            Pages</a>).
+            While developing the generator, we've spun up and published several
+            connectors based on it, including a{" "}
+            <a
+              href="https://github.com/tableau-mkt/github-data-connector"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub web data connector
+            </a>{" "}
+            (a copy of which is{" "}
+            <a
+              href="https://github-web-data-connector.herokuapp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              deployed to Heroku
+            </a>
+            ) and a{" "}
+            <a
+              href="https://github.com/tableau-mkt/drupal-dot-org-data-connector"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              drupal.org data connector
+            </a>{" "}
+            (hosted on{" "}
+            <a
+              href="https://tableau-mkt.github.io/drupal-dot-org-data-connector/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Pages
+            </a>
+            ).
           </p>
           <p>
-            I hope this generator saves you time in sketching out connectors
-            for all of your web data needs, and I'm very excited to see all of
-            the connectors this scaffolding tool enables! Send me a link to
-            yours and I'll add it here and to the Generator docs.
+            I hope this generator saves you time in sketching out connectors for
+            all of your web data needs, and I'm very excited to see all of the
+            connectors this scaffolding tool enables! Send me a link to yours
+            and I'll add it here and to the Generator docs.
           </p>
           <p>
             The source code for the Generator itself is also open and available
@@ -251,12 +352,22 @@ const LegacyWdcGeneratorPage = ({ data }, location) => {
           </p>
           <ul class="actions fit">
             <li>
-              <a href="https://www.npmjs.com/package/generator-web-data-connector#getting-started" target="_blank" class="button primary fit">
+              <a
+                href="https://www.npmjs.com/package/generator-web-data-connector#getting-started"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button primary fit"
+              >
                 Install the WDC Generator
               </a>
             </li>
             <li>
-              <a href="https://github.com/tableau-mkt/generator-web-data-connector" target="_blank" class="button fit">
+              <a
+                href="https://github.com/tableau-mkt/generator-web-data-connector"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button fit"
+              >
                 Contribute on GitHub
               </a>
             </li>
@@ -299,7 +410,11 @@ export default props => (
   <StaticQuery
     query={indexQuery}
     render={data => (
-      <LegacyWdcGeneratorPage location={props.location} data={data} {...props} />
+      <LegacyWdcGeneratorPage
+        location={props.location}
+        data={data}
+        {...props}
+      />
     )}
   />
 )

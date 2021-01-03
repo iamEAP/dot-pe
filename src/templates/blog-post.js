@@ -11,7 +11,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const allPosts = this.props.data.allMarkdownRemark.edges
     const prevNext = allPosts.filter(edge => {
-      return edge.node.fields.slug === this.props.pathContext.slug;
+      return edge.node.fields.slug === this.props.pathContext.slug
     })[0]
 
     return (
@@ -47,22 +47,34 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <hr style={{borderTop: '1px solid #cfcfcf'}} />
+          <hr style={{ borderTop: "1px solid #cfcfcf" }} />
 
           <footer className="post-content-footer">
-            <ul className="actions fit" style={{paddingRight: 0}}>
+            <ul className="actions fit" style={{ paddingRight: 0 }}>
               <li>
-                {prevNext.next && (
-                  <Link rel="previous" to={prevNext.next.fields.slug} className="button fit">{`Fast-forward to ${prevNext.next.frontmatter.date}`}</Link>
-                ) || (
-                  <a className="button fit disabled">There will probably be more...</a>
+                {(prevNext.next && (
+                  <Link
+                    rel="previous"
+                    to={prevNext.next.fields.slug}
+                    className="button fit"
+                  >{`Fast-forward to ${prevNext.next.frontmatter.date}`}</Link>
+                )) || (
+                  <button disabled className="fit">
+                    There will probably be more...
+                  </button>
                 )}
               </li>
               <li>
-                {prevNext.previous && (
-                  <Link rel="next" to={prevNext.previous.fields.slug} className="button fit">{`Rewind to ${prevNext.previous.frontmatter.date}`}</Link>
-                ) || (
-                  <a className="button fit disabled">There was probably more...</a>
+                {(prevNext.previous && (
+                  <Link
+                    rel="next"
+                    to={prevNext.previous.fields.slug}
+                    className="button fit"
+                  >{`Rewind to ${prevNext.previous.frontmatter.date}`}</Link>
+                )) || (
+                  <button disabled className="fit">
+                    There was probably more...
+                  </button>
                 )}
               </li>
             </ul>
@@ -106,7 +118,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
       edges {
         node {
           frontmatter {
