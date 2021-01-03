@@ -45,6 +45,16 @@
   Link: </terson/component---node-modules-gatsby-plugin-offline-app-shell-js-1019110dddd354e6e07c.js>; rel=preload; as=script
   Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </terson/page-data/offline-plugin-app-shell-fallback/page-data.json>; rel=preload; as=fetch; crossorigin
+/terson/moves-to/sweden-2020/
+  Link: </terson/webpack-runtime-fff1c7ddb40255afafad.js>; rel=preload; as=script
+  Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </terson/framework-cd3e1e804d552fa282ef.js>; rel=preload; as=script
+  Link: </terson/app-0613d834047042b99748.js>; rel=preload; as=script
+  Link: </terson/7269fe13d2b632a882bbad4b9655aff69e94ae41-d48ac6df3fed98dbfd59.js>; rel=preload; as=script
+  Link: </terson/458ff810b883483547fa7c7af5e79fb35887ae57-1eeec8863f0242150bea.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-b13efbc4ab71ebd55b21.js>; rel=preload; as=script
+  Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </terson/page-data/moves-to/sweden-2020/page-data.json>; rel=preload; as=fetch; crossorigin
 /terson/records/uneasy/
   Link: </terson/webpack-runtime-fff1c7ddb40255afafad.js>; rel=preload; as=script
   Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
