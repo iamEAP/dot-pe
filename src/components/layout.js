@@ -24,10 +24,13 @@ const Layout = props => {
             </div>
           </button>
           <nav id="swup" className="site-head-left">
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
             <ul className="nav" role="menu">
+              {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
               <li className="nav-home nav-current" role="menuitem">
                 <Link to={`/`}>Home</Link>
               </li>
+              {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
               <li className="nav-about" role="menuitem">
                 <Link to={`/is`}>About</Link>
               </li>

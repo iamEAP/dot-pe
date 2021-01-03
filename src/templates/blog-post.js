@@ -11,7 +11,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const allPosts = this.props.data.allMarkdownRemark.edges
     const prevNext = allPosts.filter(edge => {
-      return edge.node.fields.slug === this.props.pathContext.slug
+      return edge.node.fields.slug === this.props.pageContext.slug
     })[0]
 
     return (
