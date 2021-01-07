@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../layouts/en"
+import Layout from "../layouts/sv"
 import SEO from "../components/seo"
 
 import "../utils/normalize.css"
@@ -14,14 +14,14 @@ const AboutPage = ({ data, location }) => {
   return (
     <Layout title={title} location={location} isTranslated={true}>
       <SEO
-        title="About"
-        keywords={[`Eric Peterson`, `Engineer`, `Musician`, `Saudade`]}
-        lang="en-US"
+        title="Om"
+        keywords={[`Eric Peterson`, `Ingenjör`, `Musiker`, `Saudade`]}
+        lang="sv-SE"
         link={[
           {
             rel: "alternate",
-            href: `${siteUrl}/sv/is`,
-            hreflang: "sv",
+            href: `${siteUrl}/is`,
+            hreflang: "en",
           },
         ]}
       />
@@ -29,20 +29,20 @@ const AboutPage = ({ data, location }) => {
       <article className="post-content page-template no-image">
         <div className="post-content-body">
           <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
-            Eric Peterson creates software and music, usually on computers.
-            Sometimes in real life.
+            Eric Peterson skapar programvara och musik. Vanligtvis på datorer.
+            Ibland i verkliga livet.
           </h2>
           <figure className="kg-card kg-image-card kg-width-full">
             <Img
               fluid={data.eapAtTractor.childImageSharp.fluid}
               className="kg-image"
             />
-            <figcaption>Photo by Tony Mihovilovich</figcaption>
+            <figcaption>Fotografi av Tony Mihovilovich</figcaption>
           </figure>
-          <h3 id="music">Music</h3>
+          <h3 id="music">Musik</h3>
           <ul>
             <li>
-              <strong>Currently</strong>: guitar, keys, & vocals with{" "}
+              <strong>För närvarande</strong>: gitarr, piano, & vokaler med{" "}
               <a
                 href="https://www.goldenidols.net"
                 target="_blank"
@@ -50,10 +50,10 @@ const AboutPage = ({ data, location }) => {
               >
                 Golden Idols
               </a>
-              &nbsp; + solo work as time allows.
+              &nbsp; + soloprojekt som tiden tillåter.
             </li>
             <li>
-              <strong>Previously</strong>:{" "}
+              <strong>Tidigare</strong>:{" "}
               <a
                 href="https://we-are-houses.bandcamp.com/releases"
                 target="_blank"
@@ -77,10 +77,10 @@ const AboutPage = ({ data, location }) => {
               >
                 Roger, Roll
               </a>
-              , and others in Denver circa 2007-2011.
+              , och andra i Denver cirka 2007-2011.
             </li>
             <li>
-              <strong>Production/engineering</strong> for&nbsp;
+              <strong>Musikproduktion/teknik</strong> för&nbsp;
               <a
                 href="https://iamthedot.bandcamp.com/album/a-collection-of-songs-2008-2010"
                 target="_blank"
@@ -96,14 +96,14 @@ const AboutPage = ({ data, location }) => {
               >
                 KVDU Live Vol 1
               </a>
-              ,&nbsp; and others.
+              ,&nbsp; och andra.
             </li>
             <li>Pacific Northwest Bossa Nova</li>
           </ul>
-          <h3 id="software">Software</h3>
+          <h3 id="software">Programvara</h3>
           <ul>
             <li>
-              Currently co-founder at{" "}
+              För närvarande medgrundare på{" "}
               <a
                 href="https://www.automatoninc.com"
                 target="_blank"
@@ -111,26 +111,26 @@ const AboutPage = ({ data, location }) => {
               >
                 Automaton
               </a>
-              , working on QA automation for SaaS and marketing technology.
+              , jobbar med kvalitetssäkringsautomatisering för SaaS och
+              marknadsföringsteknik.
             </li>
             <li>
-              <strong>8 years at Tableau</strong> in Seattle: Director,
-              Marketing Engineering. Responsible for web, data, and QA
-              engineering.
+              <strong>8 år på Tableau</strong> i Seattle: Director, Marketing
+              Engineering. Ansvar för web, data, och QA teknik.
             </li>
             <li>
-              First introduced to <strong>open source software</strong> through
-              Drupal at the Open Media Foundation
+              Introducerades först på{" "}
+              <strong>programvara med öppen källkod</strong> genom Drupal på
+              Open Media Foundation.
             </li>
             <li>
-              Formal education at the <strong>University of Denver</strong>:
-              dual degree B.S. Computer Science, B.A. Digital Media. Most
-              influential course: Unix Tools
+              Formell utbildning på <strong>University of Denver</strong>:
+              dubbel grad med kandidatexamen i både datavetenskap och digitala
+              mediestudier. Den mest inflytelserika banan: Unix Tools.
             </li>
             <li>
-              One of those people who got started{" "}
-              <strong>back in the Geocities</strong> days. Proud MySpace CSS
-              hacker.
+              En av de som börjades <strong>förr i Geocities:s</strong> tiden.
+              En stolt MySpace CSS-hackare.
             </li>
           </ul>
         </div>
