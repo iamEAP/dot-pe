@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title, img }) {
+function SEO({ description, lang, meta, link, keywords, title, img }) {
   const { site, defaultImage } = useStaticQuery(
     graphql`
       query {
@@ -22,9 +22,7 @@ function SEO({ description, lang, meta, keywords, title, img }) {
             baseUrl
           }
         }
-        defaultImage: file(
-          relativePath: { eq: "eap-at-tractor.jpg" }
-        ) {
+        defaultImage: file(relativePath: { eq: "eap-at-tractor.jpg" }) {
           childImageSharp {
             fixed(width: 800) {
               src
@@ -44,6 +42,7 @@ function SEO({ description, lang, meta, keywords, title, img }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={link}
       meta={[
         {
           name: `description`,
@@ -63,7 +62,9 @@ function SEO({ description, lang, meta, keywords, title, img }) {
         },
         {
           property: `og:image`,
-          content: img || `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
+          content:
+            img ||
+            `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
         },
         {
           name: `twitter:card`,
@@ -83,7 +84,9 @@ function SEO({ description, lang, meta, keywords, title, img }) {
         },
         {
           name: `twitter:image`,
-          content: img  || `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
+          content:
+            img ||
+            `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
         },
       ]
         .concat(
@@ -103,14 +106,16 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  link: [],
   description: ``,
-  img: '',
+  img: "",
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  link: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   img: PropTypes.string,
