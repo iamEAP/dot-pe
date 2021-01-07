@@ -219,7 +219,7 @@ body {
   align-items: center;
 }
 
-.social-links {
+.language-links {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -343,7 +343,7 @@ body {
     width: 100%;
     margin-top: 3vw;
   }
-  .social-links {
+  .language-links {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -703,7 +703,8 @@ body {
 
 .page-template .post-content-body h1,
 .page-template .post-content-body h2,
-.page-template .post-content-body h3 {
+.page-template .post-content-body h3,
+.not-found > * {
   text-align: center;
 }
 
