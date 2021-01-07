@@ -7,17 +7,17 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../../components/layout"
+import Layout from "../../layouts/en"
 import SEO from "../../components/seo"
 
 import "../../utils/normalize.css"
 import "../../utils/css/screen.css"
 
-const LegacyWdcGeneratorPage = ({ data }, location) => {
+const LegacyWdcGeneratorPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} location={location}>
       <SEO
         title="Yo, Tableau Web Data Connector!"
         keywords={[
