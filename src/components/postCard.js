@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "./link"
 
 export default props => (
   <article
@@ -8,9 +8,7 @@ export default props => (
     } ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`}
     style={
       props.node.frontmatter.thumbnail && {
-        backgroundImage: `url(${
-          props.node.frontmatter.thumbnail.childImageSharp.fluid.src
-        })`,
+        backgroundImage: `url(${props.node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
       }
     }
   >
