@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { getSlugForPost } = require("./src/utils/i18n-urls")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -19,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                langKey
               }
             }
           }
@@ -36,12 +38,17 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
+      const path = getSlugForPost(
+        post.node.frontmatter.langKey,
+        post.node.fields.slug
+      )
 
       createPage({
-        path: post.node.fields.slug,
+        path,
         component: blogPost,
         context: {
           slug: post.node.fields.slug,
+          langKey: post.node.frontmatter.langKey,
           previous,
           next,
         },
