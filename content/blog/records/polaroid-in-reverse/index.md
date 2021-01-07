@@ -3,6 +3,7 @@ title: Polaroid in Reverse
 date: "2010-07-20T17:10:26-07:00"
 description: Is there value in documentation or is memory's degradation insurmountable?
 thumbnail: ./volunteer-park.jpg
+langKey: en
 ---
 
 <iframe width="100%" height="210" src="//bandcamp.com/EmbeddedPlayer/album=23354821/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" frameborder="0"></iframe>
@@ -33,6 +34,5 @@ Polaroid in Reverse explores some of these themes through not only the music and
 > Eric Peterson's final record in his brief but influential career as a Denver musician was lathe-cut rather than pressed in the traditional manner. As a consequence, the record is more delicate and will bear the marks of repeated listens; the songs will become fuzzier and eventually disappear entirely into white noise. And in that way, the record embodies its message: Polaroid in Reverse offers a contemplation on the world's ceaseless entropy.
 >
 > ~ [Westword Best Use of the LP Format 2011](https://www.westword.com/best-of/2011/arts-and-entertainment/best-use-of-the-lp-format-5158203)
-
 
 <a href="https://gum.co/jTkiw/5mte3lf?wanted=true" target="_blank" class="gumroad-button button fit" data-gumroad-single-product="true">Download for Free</a>
