@@ -1,25 +1,60 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import moment from "moment"
+import localization from "moment/locale/sv"
+import { withTranslation } from "react-i18next"
 
-import Layout from "../components/layout"
+import { default as EnLayout } from "../layouts/en"
+import { default as SvLayout } from "../layouts/sv"
+import Link from "../components/link"
 import SEO from "../components/seo"
 
-class BlogPostTemplate extends React.Component {
+class PreBlogPostTemplate extends React.Component {
   render() {
+    const { t, i18n } = this.props
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const { title, siteUrl, baseUrl } = this.props.data.site.siteMetadata
     const allPosts = this.props.data.allMarkdownRemark.edges
     const prevNext = allPosts.filter(edge => {
       return edge.node.fields.slug === this.props.pageContext.slug
     })[0]
+    const langKey = post.frontmatter.langKey || "en"
+    const LocalLayout = langKey === "sv" ? SvLayout : EnLayout
+    moment.updateLocale(langKey, localization)
+    i18n.changeLanguage(langKey)
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <LocalLayout
+        location={this.props.location}
+        title={title}
+        isTranslated={post.frontmatter.isTranslated}
+      >
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
-          img={`${this.props.data.site.siteMetadata.baseUrl}${post.frontmatter.thumbnail.childImageSharp.fluid.src}`}
+          img={`${baseUrl}${post.frontmatter.thumbnail.childImageSharp.fluid.src}`}
+          lang={langKey === "sv" ? "sv-SE" : "en-US"}
+          link={(post.frontmatter.isTranslated
+            ? [
+                {
+                  rel: "alternate",
+                  href: `${siteUrl}/${
+                    langKey === "sv" ? "" : "sv/"
+                  }${this.props.pageContext.slug.substr(1)}`,
+                  hreflang: langKey === "sv" ? "en" : "sv",
+                },
+              ]
+            : []
+          ).concat([
+            {
+              rel: "alternate",
+              type: "application/rss+xml",
+              href: `${siteUrl}/rss${
+                langKey === "en" ? "" : `.${langKey}`
+              }.xml`,
+            },
+          ])}
         />
         <article
           className={`post-content ${post.frontmatter.thumbnail || `no-image`}`}
@@ -57,10 +92,16 @@ class BlogPostTemplate extends React.Component {
                     rel="previous"
                     to={prevNext.next.fields.slug}
                     className="button fit"
-                  >{`Fast-forward to ${prevNext.next.frontmatter.date}`}</Link>
+                  >
+                    {t("Fast-forward to {{date}}", {
+                      date: moment(prevNext.next.frontmatter.date).format(
+                        "MMMM YYYY"
+                      ),
+                    })}
+                  </Link>
                 )) || (
                   <button disabled className="fit">
-                    There will probably be more...
+                    {`${t("There will probably be more")}...`}
                   </button>
                 )}
               </li>
@@ -70,10 +111,16 @@ class BlogPostTemplate extends React.Component {
                     rel="next"
                     to={prevNext.previous.fields.slug}
                     className="button fit"
-                  >{`Rewind to ${prevNext.previous.frontmatter.date}`}</Link>
+                  >
+                    {t("Rewind to {{date}}", {
+                      date: moment(prevNext.previous.frontmatter.date).format(
+                        "MMMM YYYY"
+                      ),
+                    })}
+                  </Link>
                 )) || (
                   <button disabled className="fit">
-                    There was probably more...
+                    {`${t("There was probably more")}...`}
                   </button>
                 )}
               </li>
@@ -84,20 +131,22 @@ class BlogPostTemplate extends React.Component {
         default byline. */}
           </footer>
         </article>
-      </Layout>
+      </LocalLayout>
     )
   }
 }
+const BlogPostTemplate = withTranslation()(PreBlogPostTemplate)
 
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $langKey: String!) {
     site {
       siteMetadata {
         title
         author
         baseUrl
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -109,6 +158,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         hideImage
+        langKey
+        isTranslated
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 1360) {
@@ -118,7 +169,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: ASC }
+      filter: { frontmatter: { langKey: { eq: $langKey } } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -131,7 +185,7 @@ export const pageQuery = graphql`
         }
         previous {
           frontmatter {
-            date(formatString: "MMMM YYYY")
+            date
             title
           }
           fields {
@@ -140,7 +194,7 @@ export const pageQuery = graphql`
         }
         next {
           frontmatter {
-            date(formatString: "MMMM YYYY")
+            date
             title
           }
           fields {
