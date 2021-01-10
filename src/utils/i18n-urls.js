@@ -1,3 +1,5 @@
+const prefix = require("../../siteConfig").prefix
+
 /**
  * Given a post's langKey and its slug, returns the local (lang-prefixed) slug.
  * @param {string} langKey - Language key (e.g. sv or en)
@@ -5,17 +7,20 @@
  * @return {string}
  */
 function getSlugForPost(langKey, slug) {
-  let path
+  let path, slugCopy
+
+  // Remove any prefix (handled by Gatsby)
+  slugCopy = slug.replace(prefix, "")
 
   // Clean up slug (in case it erroneously already includes a prefix)
-  if (langKey && slug.indexOf(`/${langKey}`) === 0) {
-    slug = slug.replace(`/${langKey}`, "")
+  if (langKey && slugCopy.indexOf(`/${langKey}`) === 0) {
+    slugCopy = slugCopy.replace(`/${langKey}`, "")
   }
 
   if ([null, "en"].includes(langKey)) {
-    path = slug
+    path = slugCopy
   } else {
-    path = `/${langKey}${slug.replace(`index.${langKey}/`, "")}`
+    path = `/${langKey}${slugCopy.replace(`index.${langKey}/`, "")}`
   }
 
   return path
