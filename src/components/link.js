@@ -14,6 +14,7 @@ function Link(props) {
 
   if (props.forceLang && props.forceLang !== langKey) {
     const matches = localizedUrl.match(/^(\/[a-z]{2})\//)
+    console.log({ props, matches, localizedUrl, langKey })
     // Non-English to English
     if (matches && matches[1]) {
       localizedUrl = localizedUrl.replace(matches[1], "")
