@@ -89,16 +89,6 @@
   Link: </terson/component---src-templates-blog-post-js-4b5a6b7dd1cf15f2bd77.js>; rel=preload; as=script
   Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </terson/page-data/records/get-you-alone/page-data.json>; rel=preload; as=fetch; crossorigin
-/terson/travels-to/new-zealand-2018/
-  Link: </terson/webpack-runtime-b09c9189cfbb7d7017d2.js>; rel=preload; as=script
-  Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
-  Link: </terson/framework-acd7498685eeb36e39da.js>; rel=preload; as=script
-  Link: </terson/app-19dd0ddb57253434647c.js>; rel=preload; as=script
-  Link: </terson/3eb971a0038c82c275b0416d42b037114f5a18ad-5f52c1ce838ee5a2d98d.js>; rel=preload; as=script
-  Link: </terson/d5f044ba29f53e52ee9384db743e503b2148a1ec-1eeec8863f0242150bea.js>; rel=preload; as=script
-  Link: </terson/component---src-templates-blog-post-js-4b5a6b7dd1cf15f2bd77.js>; rel=preload; as=script
-  Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </terson/page-data/travels-to/new-zealand-2018/page-data.json>; rel=preload; as=fetch; crossorigin
 /terson/sv/travels-to/new-zealand-2018/
   Link: </terson/webpack-runtime-b09c9189cfbb7d7017d2.js>; rel=preload; as=script
   Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
@@ -109,6 +99,16 @@
   Link: </terson/component---src-templates-blog-post-js-4b5a6b7dd1cf15f2bd77.js>; rel=preload; as=script
   Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </terson/page-data/sv/travels-to/new-zealand-2018/page-data.json>; rel=preload; as=fetch; crossorigin
+/terson/travels-to/new-zealand-2018/
+  Link: </terson/webpack-runtime-b09c9189cfbb7d7017d2.js>; rel=preload; as=script
+  Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </terson/framework-acd7498685eeb36e39da.js>; rel=preload; as=script
+  Link: </terson/app-19dd0ddb57253434647c.js>; rel=preload; as=script
+  Link: </terson/3eb971a0038c82c275b0416d42b037114f5a18ad-5f52c1ce838ee5a2d98d.js>; rel=preload; as=script
+  Link: </terson/d5f044ba29f53e52ee9384db743e503b2148a1ec-1eeec8863f0242150bea.js>; rel=preload; as=script
+  Link: </terson/component---src-templates-blog-post-js-4b5a6b7dd1cf15f2bd77.js>; rel=preload; as=script
+  Link: </terson/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </terson/page-data/travels-to/new-zealand-2018/page-data.json>; rel=preload; as=fetch; crossorigin
 /terson/travels-to/the-west-coast-2017/
   Link: </terson/webpack-runtime-b09c9189cfbb7d7017d2.js>; rel=preload; as=script
   Link: </terson/styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
