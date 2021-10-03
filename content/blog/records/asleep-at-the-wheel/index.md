@@ -8,5 +8,3 @@ langKey: en
 ---
 
 <iframe src="//player.vimeo.com/video/9932047?title=0&byline=0&portrait=0&color=54b4d8&" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<a href="https://gum.co/lfKz/1rkmf9q?wanted=true" target="_blank" class="gumroad-button button fit" data-gumroad-single-product="true">Download for Free</a>
