@@ -29,8 +29,8 @@ const AboutPage = ({ data, location }) => {
       <article className="post-content page-template no-image">
         <div className="post-content-body">
           <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
-            Eric Peterson skapar programvara och musik. Vanligtvis på datorer.
-            Ibland i verkliga livet.
+            Eric Peterson skapar software och musik. Vanligtvis på datorer.
+            Ibland i det verkliga livet.
           </h2>
           <figure className="kg-card kg-image-card kg-width-full">
             <Img
@@ -42,7 +42,10 @@ const AboutPage = ({ data, location }) => {
           <h3 id="music">Musik</h3>
           <ul>
             <li>
-              <strong>För närvarande</strong>: gitarr, piano, & vokaler med{" "}
+              <strong>För närvarande</strong>: soloprojekt som tiden tillåter.
+            </li>
+            <li>
+              <strong>Tidigare</strong>:{" "}
               <a
                 href="https://www.goldenidols.net"
                 target="_blank"
@@ -50,10 +53,7 @@ const AboutPage = ({ data, location }) => {
               >
                 Golden Idols
               </a>
-              &nbsp; + soloprojekt som tiden tillåter.
-            </li>
-            <li>
-              <strong>Tidigare</strong>:{" "}
+              ,&nbsp;
               <a
                 href="https://we-are-houses.bandcamp.com/releases"
                 target="_blank"
@@ -100,33 +100,35 @@ const AboutPage = ({ data, location }) => {
             </li>
             <li>Pacific Northwest Bossa Nova</li>
           </ul>
-          <h3 id="software">Programvara</h3>
+          <h3 id="software">Software</h3>
           <ul>
             <li>
-              För närvarande medgrundare på{" "}
+              <strong>För närvarande</strong>: fokuserad på{" "}
               <a
-                href="https://www.automatoninc.com"
+                href="https://backstage.io/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Automaton
-              </a>
-              , jobbar med kvalitetssäkringsautomatisering för SaaS och
-              marknadsföringsteknik.
+                Backstage, en open source utvecklarportal
+              </a>{" "}
+              platform.
+            </li>
+            <li>
+              <strong>Medgrundare på Automaton</strong>, en QA automatisering
+              platform till SaaS och marknadsföringsteknik.
             </li>
             <li>
               <strong>8 år på Tableau</strong> i Seattle: Director, Marketing
-              Engineering. Ansvar för web, data, och QA teknik.
+              Engineering. Ansvarig för web, data, och QA teknik.
             </li>
             <li>
-              Introducerades först på{" "}
-              <strong>programvara med öppen källkod</strong> genom Drupal på
-              Open Media Foundation.
+              Introducerades först på <strong>open source software</strong>{" "}
+              genom Drupal på Open Media Foundation.
             </li>
             <li>
               Formell utbildning på <strong>University of Denver</strong>:
               dubbel grad med kandidatexamen i både datavetenskap och digitala
-              mediestudier. Den mest inflytelserika banan: Unix Tools.
+              mediestudier. Den mest formande kursen: Unix Tools.
             </li>
             <li>
               En av de som börjades <strong>förr i Geocities:s</strong> tiden.

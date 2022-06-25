@@ -42,7 +42,10 @@ const AboutPage = ({ data, location }) => {
           <h3 id="music">Music</h3>
           <ul>
             <li>
-              <strong>Currently</strong>: guitar, keys, & vocals with{" "}
+              <strong>Currently</strong>: solo work as time allows.
+            </li>
+            <li>
+              <strong>Previously</strong>:{" "}
               <a
                 href="https://www.goldenidols.net"
                 target="_blank"
@@ -50,10 +53,7 @@ const AboutPage = ({ data, location }) => {
               >
                 Golden Idols
               </a>
-              &nbsp; + solo work as time allows.
-            </li>
-            <li>
-              <strong>Previously</strong>:{" "}
+              ,&nbsp;
               <a
                 href="https://we-are-houses.bandcamp.com/releases"
                 target="_blank"
@@ -103,15 +103,19 @@ const AboutPage = ({ data, location }) => {
           <h3 id="software">Software</h3>
           <ul>
             <li>
-              Currently co-founder at{" "}
+              <strong>Currently</strong>: focused on{" "}
               <a
-                href="https://www.automatoninc.com"
+                href="https://backstage.io/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Automaton
-              </a>
-              , working on QA automation for SaaS and marketing technology.
+                Backstage, an open source developer portal
+              </a>{" "}
+              platform.
+            </li>
+            <li>
+              <strong>Co-founder at Automaton</strong>, a QA automation platform
+              for SaaS and marketing technology.
             </li>
             <li>
               <strong>8 years at Tableau</strong> in Seattle: Director,
