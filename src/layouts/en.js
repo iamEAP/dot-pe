@@ -72,41 +72,9 @@ const Layout = props => {
           <div id="swup" className="transition-fade">
             {children}
           </div>
-          <form
-            action="https://gumroad.com/follow_from_embed_form"
-            className="post-content"
-            method="post"
-            target="_blank"
-            style={{ paddingBottom: 0 }}
-          >
-            <input name="seller_id" type="hidden" value="2626546698508" />
-            <div className="row gtr-uniform">
-              <div class="col-10 col-12-xsmall">
-                <input
-                  name="email"
-                  placeholder="Your email address"
-                  type="email"
-                />
-              </div>
-              <div className="col-2 col-12-xsmall">
-                <button type="submit" className="button primary fit">
-                  Follow
-                </button>
-              </div>
-            </div>
-          </form>
         </main>
         <footer className="site-foot">
-          &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link>{" "}
-          &mdash; Built with{" "}
-          <a
-            href="https://gatsbyjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "rgb(171, 171, 171)" }}
-          >
-            Gatsby
-          </a>
+          &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link>
         </footer>
       </div>
     </LanguageContext.Provider>
