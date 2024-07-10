@@ -47,7 +47,7 @@ const AboutPage = ({ data, location }) => {
             <li>
               <strong>Previously</strong>:{" "}
               <a
-                href="https://www.goldenidols.net"
+                href="https://open.spotify.com/artist/7h769bq6OFp1gm0h7zFrW9"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -55,7 +55,7 @@ const AboutPage = ({ data, location }) => {
               </a>
               ,&nbsp;
               <a
-                href="https://we-are-houses.bandcamp.com/releases"
+                href="https://open.spotify.com/artist/3hNw9tlTAG1NKzUip7FMJy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -63,15 +63,15 @@ const AboutPage = ({ data, location }) => {
               </a>
               ,&nbsp;
               <a
-                href="https://store.cdbaby.com/cd/amazingtwin"
+                href="https://open.spotify.com/album/7hippNatzXIFuxvkdbIpgA"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Old Radio
+                Amazing Twin
               </a>
               ,&nbsp;
               <a
-                href="http://rogerroll.net/"
+                href="https://open.spotify.com/album/7pCllDE8OKLB0u0CgfAbFp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
