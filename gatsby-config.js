@@ -173,5 +173,6 @@ module.exports = {
         prefixDefault: false,
       },
     },
+    `gatsby-plugin-client-side-redirect`,
   ],
 }

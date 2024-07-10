@@ -36,7 +36,7 @@ const Layout = props => {
                 </li>
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
                 <li className="nav-about" role="menuitem">
-                  <Link to="/is">Om Mig</Link>
+                  <Link to="/posts">Inlägg</Link>
                 </li>
                 {/*<li className="nav-elements" role="menuitem">
                   <Link to={`/elements`}>Elements</Link>

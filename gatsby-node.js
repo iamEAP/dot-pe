@@ -3,7 +3,17 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const { getSlugForPost } = require("./src/utils/i18n-urls")
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  // Static redirects
+  createRedirect({
+    fromPath: "/is",
+    toPath: "/",
+  })
+  createRedirect({
+    fromPath: "/sv/is",
+    toPath: "/sv",
+  })
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
