@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^5.0.0",
     "husky": "^2.2.0",
     "postcss-color-function": "^4.1.0",
     "postcss-custom-properties": "^8.0.10",
