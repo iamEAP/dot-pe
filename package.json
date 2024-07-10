@@ -46,7 +46,7 @@
     "url-join": "^4.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.4.19",
     "gh-pages": "^5.0.0",
     "husky": "^2.2.0",
     "postcss-custom-properties": "^13.3.12",
