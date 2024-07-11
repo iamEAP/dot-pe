@@ -7,6 +7,7 @@ const Layout = props => {
   const { title, children, location, isTranslated = false } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   const [context, setContext] = React.useState({ langKey: "en", isTranslated })
+  const isHome = location.pathname === "/" || location.pathname === "/terson/"
 
   return (
     <LanguageContext.Provider value={[context, setContext]}>
@@ -32,11 +33,21 @@ const Layout = props => {
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
               <ul className="nav" role="menu">
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-                <li className="nav-home nav-current" role="menuitem">
+                <li
+                  className={["nav-home", isHome ? "nav-current" : ""]
+                    .filter(c => !!c)
+                    .join(" ")}
+                  role="menuitem"
+                >
                   <Link to="/">Home</Link>
                 </li>
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-                <li className="nav-about" role="menuitem">
+                <li
+                  className={["nav-posts", !isHome ? "nav-current" : ""].join(
+                    " "
+                  )}
+                  role="menuitem"
+                >
                   <Link to="/posts">Posts</Link>
                 </li>
               </ul>

@@ -7,6 +7,9 @@ const Layout = props => {
   const { title, children, location, isTranslated = false } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   const [context, setContext] = React.useState({ langKey: "sv", isTranslated })
+  const isHome =
+    location.pathname === "/sv/" || location.pathname === "/terson/sv/"
+
   return (
     <LanguageContext.Provider value={[context, setContext]}>
       <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
@@ -31,11 +34,21 @@ const Layout = props => {
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
               <ul className="nav" role="menu">
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-                <li className="nav-home nav-current" role="menuitem">
+                <li
+                  className={["nav-home", isHome ? "nav-current" : ""]
+                    .filter(c => !!c)
+                    .join(" ")}
+                  role="menuitem"
+                >
                   <Link to="/">Startsida</Link>
                 </li>
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-                <li className="nav-about" role="menuitem">
+                <li
+                  className={["nav-posts", !isHome ? "nav-current" : ""].join(
+                    " "
+                  )}
+                  role="menuitem"
+                >
                   <Link to="/posts">Inlägg</Link>
                 </li>
                 {/*<li className="nav-elements" role="menuitem">
