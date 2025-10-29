@@ -34,15 +34,23 @@ const AboutPage = ({ data, location }) => {
           </h2>
           <figure className="kg-card kg-image-card kg-width-full">
             <Img
-              fluid={data.eapAtTractor.childImageSharp.fluid}
+              fluid={data.eapInDalsland.childImageSharp.fluid}
               className="kg-image"
             />
-            <figcaption>Bild av Tony Mihovilovich</figcaption>
+            <figcaption>Bild av Naomi Ominey Pongolini</figcaption>
           </figure>
           <h3 id="music">Musik</h3>
           <ul>
             <li>
-              <strong>För närvarande</strong>: soloprojekt i mån av tid.
+              <strong>För närvarande</strong>:{" "}
+              <a
+                href="https://open.spotify.com/album/1y6L7Nwm5bidp9OC7DzPu4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Roger, Roll
+              </a>{" "}
+              och andra soloprojekt i mån av tid.
             </li>
             <li>
               <strong>Tidigare</strong>:{" "}
@@ -68,14 +76,6 @@ const AboutPage = ({ data, location }) => {
                 rel="noopener noreferrer"
               >
                 Amazing Twin
-              </a>
-              ,&nbsp;
-              <a
-                href="https://open.spotify.com/album/7pCllDE8OKLB0u0CgfAbFp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Roger, Roll
               </a>
               , och andra i Denver cirka 2007-2011.
             </li>
@@ -149,7 +149,7 @@ const indexQuery = graphql`
         siteUrl
       }
     }
-    eapAtTractor: file(relativePath: { eq: "eap-at-tractor.jpg" }) {
+    eapInDalsland: file(relativePath: { eq: "eap-in-dalsland.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1360) {
           ...GatsbyImageSharpFluid
