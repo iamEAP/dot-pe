@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "./link"
 
-export default props => (
+export default (props) => (
   <article
     className={`post-card ${props.count % 3 === 0 && `post-card-large`} ${
       props.postClass

@@ -3,7 +3,7 @@ import Link from "../components/link"
 import { LanguageContext } from "../contexts/language"
 import "../i18n"
 
-const Layout = props => {
+const Layout = (props) => {
   const { title, children, location, isTranslated = false } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   const [context, setContext] = React.useState({ langKey: "en", isTranslated })
@@ -35,7 +35,7 @@ const Layout = props => {
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
                 <li
                   className={["nav-home", isHome ? "nav-current" : ""]
-                    .filter(c => !!c)
+                    .filter((c) => !!c)
                     .join(" ")}
                   role="menuitem"
                 >

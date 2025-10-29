@@ -16,7 +16,7 @@ class PreBlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const { title, siteUrl, baseUrl } = this.props.data.site.siteMetadata
     const allPosts = this.props.data.allMarkdownRemark.edges
-    const prevNext = allPosts.filter(edge => {
+    const prevNext = allPosts.filter((edge) => {
       return edge.node.fields.slug === this.props.pageContext.slug
     })[0]
     const langKey = post.frontmatter.langKey || "en"
