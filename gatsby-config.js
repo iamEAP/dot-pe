@@ -39,8 +39,8 @@ module.exports = {
               maxWidth: 1360,
               withWebp: true,
               showCaptions: false,
-              quality: 75,
-              wrapperStyle: `margin: 7vw 0;`,
+              quality: 80,
+              wrapperStyle: `margin: 0;`,
             },
           },
           {
@@ -104,10 +104,10 @@ module.exports = {
             }
           }
         `,
-        feeds: ["en", "sv"].map(langKey => {
+        feeds: ["en", "sv"].map((langKey) => {
           return {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
