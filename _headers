@@ -5,46 +5,6 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
-/static/alegreya-latin-400-f607aa719f59c32e577b543d82da15b0.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-400-db098d9bbdcd94f8f0d0df3446f30bf1.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-400italic-8a0ccdb7eee90ab7d7aa79d40c13f279.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-400italic-997da1524e7869325936da6d2c8ac0d9.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-500-0df32eaf11fdaf36643b2ca191b15657.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-500-f1d33cafacf14c9f2248577b094e6a35.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-500italic-6e6a7356942e95c24c3a403cccb97733.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-500italic-f86dab9c43829598356f6c038f4f7aa9.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-700-74d1b457031071a7bdee631a6174636f.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-700-ab6de58ef8a9f8a2eb72865925b08d94.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-700italic-5684c7a60b9951baa9838afb618ea70d.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-700italic-69ae4ffae90a3469319dac62d989f197.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-800-1ea3e43d33a96504f730c0f3ed269eee.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-800-417e7357ab6fbcbd32a71dac021bb110.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-800italic-614c4f3e543d152c634b521dee400489.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-800italic-7bae29ea4b703f4de568ccbb0554902c.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-900-0fb0a1d1b80d643b6be0cb5031bfc11e.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-900-2ef44a4d99b0a344984cc32994128054.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-900italic-be223b79ba7a26f4e3b629e93f5290c5.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/alegreya-latin-900italic-e9985176860b983e3397cbe9b992d964.woff
-  Cache-Control: public, max-age=31536000, immutable
 /static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2
   Cache-Control: public, max-age=31536000, immutable
 /static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff
@@ -133,6 +93,46 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/nunito-latin-900italic-66bfbc5cc45b01b08838b970bfaadeb6.woff
   Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-400-f607aa719f59c32e577b543d82da15b0.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-400-db098d9bbdcd94f8f0d0df3446f30bf1.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-400italic-8a0ccdb7eee90ab7d7aa79d40c13f279.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-400italic-997da1524e7869325936da6d2c8ac0d9.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-500-0df32eaf11fdaf36643b2ca191b15657.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-500-f1d33cafacf14c9f2248577b094e6a35.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-500italic-6e6a7356942e95c24c3a403cccb97733.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-500italic-f86dab9c43829598356f6c038f4f7aa9.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-700-74d1b457031071a7bdee631a6174636f.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-700-ab6de58ef8a9f8a2eb72865925b08d94.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-700italic-5684c7a60b9951baa9838afb618ea70d.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-700italic-69ae4ffae90a3469319dac62d989f197.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-800-1ea3e43d33a96504f730c0f3ed269eee.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-800-417e7357ab6fbcbd32a71dac021bb110.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-800italic-614c4f3e543d152c634b521dee400489.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-800italic-7bae29ea4b703f4de568ccbb0554902c.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-900-0fb0a1d1b80d643b6be0cb5031bfc11e.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-900-2ef44a4d99b0a344984cc32994128054.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-900italic-be223b79ba7a26f4e3b629e93f5290c5.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/alegreya-latin-900italic-e9985176860b983e3397cbe9b992d964.woff
+  Cache-Control: public, max-age=31536000, immutable
 /static/montserrat-latin-100-a5bfe500a212b55e1d97ab22ec963cc2.woff2
   Cache-Control: public, max-age=31536000, immutable
 /static/montserrat-latin-100-f3fd3a8cda2788c9187834cf76d76d57.woff
@@ -205,9 +205,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/montserrat-latin-900italic-1d7048d5048513c46705b15fb67a4379.woff
   Cache-Control: public, max-age=31536000, immutable
-/styles.f5111370c35e205fa0f2.css
+/styles.78f6998bb7e01c8dbb80.css
   Cache-Control: public, max-age=31536000, immutable
-/app-180e5be741de201e3b93.js.LICENSE.txt
+/app-fb17eae7fdb6ca0c853e.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-blog-post-js-cc7079fe64bd57046764.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
@@ -215,9 +215,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /polyfill-7122607e90863851e7d8.js
   Cache-Control: public, max-age=31536000, immutable
-/app-180e5be741de201e3b93.js
+/app-fb17eae7fdb6ca0c853e.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-7f0a4bce1da4cfa0d9b0.js
+/webpack-runtime-491f51f2544535b45ff2.js
   Cache-Control: public, max-age=31536000, immutable
 /component---cache-caches-gatsby-plugin-offline-app-shell-js-c93cd5159308fbdab465.js
   Cache-Control: public, max-age=31536000, immutable
@@ -235,19 +235,23 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-posts-sv-js-c3165f35cdc30ca08f9e.js
   Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-sv-writes-a-response-to-sou-2025-1-js-8f18c990999510f40617.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-writes-a-response-to-sou-2025-1-js-fc32b1ee290cc3ab4f75.js
+  Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-blog-post-js-cc7079fe64bd57046764.js
   Cache-Control: public, max-age=31536000, immutable
 /framework-bed1f67146cad3ec385f.js
   Cache-Control: public, max-age=31536000, immutable
-/2e84487df60285eba913ca0beed8dd4f62db4940-f888f73e2df07027299a.js
+/f5aef3f945fb0165d6666aef3ef41afdd6715a31-c1da8650e0443d910ff4.js
   Cache-Control: public, max-age=31536000, immutable
-/2ab20dde5125683fd83fe6189d4fdde0ec023393-3fe6ffc3193f03d8d7c0.js
+/c4d52654c6c2eacd02abceb8332c7ef8a26be783-0f0211e0f3093eebc60b.js
   Cache-Control: public, max-age=31536000, immutable
 /polyfill-7122607e90863851e7d8.js.map
   Cache-Control: public, max-age=31536000, immutable
-/app-180e5be741de201e3b93.js.map
+/app-fb17eae7fdb6ca0c853e.js.map
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-7f0a4bce1da4cfa0d9b0.js.map
+/webpack-runtime-491f51f2544535b45ff2.js.map
   Cache-Control: public, max-age=31536000, immutable
 /component---cache-caches-gatsby-plugin-offline-app-shell-js-c93cd5159308fbdab465.js.map
   Cache-Control: public, max-age=31536000, immutable
@@ -265,13 +269,17 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-posts-sv-js-c3165f35cdc30ca08f9e.js.map
   Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-sv-writes-a-response-to-sou-2025-1-js-8f18c990999510f40617.js.map
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-writes-a-response-to-sou-2025-1-js-fc32b1ee290cc3ab4f75.js.map
+  Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-blog-post-js-cc7079fe64bd57046764.js.map
   Cache-Control: public, max-age=31536000, immutable
 /framework-bed1f67146cad3ec385f.js.map
   Cache-Control: public, max-age=31536000, immutable
-/2e84487df60285eba913ca0beed8dd4f62db4940-f888f73e2df07027299a.js.map
+/f5aef3f945fb0165d6666aef3ef41afdd6715a31-c1da8650e0443d910ff4.js.map
   Cache-Control: public, max-age=31536000, immutable
-/2ab20dde5125683fd83fe6189d4fdde0ec023393-3fe6ffc3193f03d8d7c0.js.map
+/c4d52654c6c2eacd02abceb8332c7ef8a26be783-0f0211e0f3093eebc60b.js.map
   Cache-Control: public, max-age=31536000, immutable
 /static/*
   Cache-Control: public, max-age=31536000, immutable
