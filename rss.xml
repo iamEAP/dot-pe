@@ -1,4 +1,392 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Peterson]]></title><description><![CDATA[From Eric Peterson's Brain]]></description><link>https://eric.pe/terson</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 12 Jul 2024 09:31:41 GMT</lastBuildDate><item><title><![CDATA[Software Engineering and the Social Contract]]></title><description><![CDATA[From time to time, I get the question “Why did you move from the USA to Sweden?” The one-liner I deploy in most situations is that I moved…]]></description><link>https://eric.pe/terson/writes/on-software-engineering-and-the-social-contract/</link><guid isPermaLink="false">https://eric.pe/terson/writes/on-software-engineering-and-the-social-contract/</guid><pubDate>Thu, 11 Jul 2024 22:06:00 GMT</pubDate><content:encoded>&lt;p&gt;From time to time, I get the question “Why did you move from the USA to Sweden?” The one-liner I deploy in most situations is that I moved “in search of a better life.” While this isn’t an entirely untrue statement, it’s a simplification of a more complex set of motivations related to social responsibility and values that not everyone is interested in hearing in the moment. This is my attempt at articulating those underlying reasons.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Peterson]]></title><description><![CDATA[From Eric Peterson's Brain]]></description><link>https://eric.pe/terson</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Oct 2025 10:57:43 GMT</lastBuildDate><item><title><![CDATA[Byafest, 2025]]></title><description><![CDATA[Photos by Simon Hovemyr.]]></description><link>https://eric.pe/terson/performs/byafest-2025/</link><guid isPermaLink="false">https://eric.pe/terson/performs/byafest-2025/</guid><pubDate>Sat, 20 Sep 2025 15:30:00 GMT</pubDate><content:encoded>&lt;div class=&quot;kg-card kg-image-card kg-width-full&quot;&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/ebce2b07956b9776f05aac49b010a7d2/1bfdd/eric-solo.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.76470588235294%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAUCBAb/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAc00RWFiLjL/xAAcEAACAgIDAAAAAAAAAAAAAAABAgMEBSEAEhT/2gAIAQEAAQUCTTWehtM0SmMn1ZDWR5//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwGq/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAB/9oACAECAQE/AQ2L/8QAIRAAAQIEBwAAAAAAAAAAAAAAAAERAgMQIRIxMkFRYXH/2gAIAQEABj8Cw2ycn6XhVLLwx0QLuTvaf//EABwQAAICAgMAAAAAAAAAAAAAAAABESExcUFR8P/aAAgBAQABPyFdmlInIS0iohqnpU0Wjllj0fIG28s//9oADAMBAAIAAwAAABCTP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAwEBPxAaNq//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPxBAR//EABsQAQEAAwEBAQAAAAAAAAAAAAERACExQVFh/9oACAEBAAE/EOeqxbQ8iZVd8D2hHqMhigyt3TbVSbmVm4vTz9xKKRGvkY4UYTef/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/ebce2b07956b9776f05aac49b010a7d2/3b4fb/eric-solo.webp 340w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/63aff/eric-solo.webp 680w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/2035a/eric-solo.webp 1360w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/6dd0f/eric-solo.webp 2040w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/7fc7a/eric-solo.webp 2720w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/26395/eric-solo.webp 2912w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/ebce2b07956b9776f05aac49b010a7d2/25f10/eric-solo.jpg 340w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/fc6d8/eric-solo.jpg 680w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/68efc/eric-solo.jpg 1360w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/65002/eric-solo.jpg 2040w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/26bb5/eric-solo.jpg 2720w,
+/terson/static/ebce2b07956b9776f05aac49b010a7d2/1bfdd/eric-solo.jpg 2912w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/ebce2b07956b9776f05aac49b010a7d2/68efc/eric-solo.jpg&quot;
+            alt=&quot;Eric plays solo&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/34f24e970ea19e58b7e277e41f60dd7b/e6277/the-choir.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.17647058823529%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABkLUJreQgJ//EAB0QAAICAQUAAAAAAAAAAAAAAAECAwQSABMVISP/2gAIAQEAAQUCNRI6WOBPRWZ+PtSee6x1/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERAv/aAAgBAwEBPwHThT//xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAIAQIBAT8BDJC//8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACEQMSIjEhMlH/2gAIAQEABj8CY903vy0i6zGmBcCuFTHroXUSTtSV/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFBUYGh/9oACAEBAAE/IclSFMh4X7KJpRQdyvYHZqt8t2gZecEX7RSpaz//2gAMAwEAAgADAAAAEIPf/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhQf/aAAgBAwEBPxBUB2M7f//EABcRAQEBAQAAAAAAAAAAAAAAAAEAEUH/2gAIAQIBAT8Q3S8ZSpf/xAAdEAEBAAICAwEAAAAAAAAAAAABEQAhMZFBcaGB/9oACAEBAAE/EFO2jFKblNT2wfayRWJDyO/znFIogVPIa7xizVLssC8c9AYssXRtml6+5SmqsC/M/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/34f24e970ea19e58b7e277e41f60dd7b/3b4fb/the-choir.webp 340w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/63aff/the-choir.webp 680w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/2035a/the-choir.webp 1360w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/6dd0f/the-choir.webp 2040w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/2a9f6/the-choir.webp 2670w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/34f24e970ea19e58b7e277e41f60dd7b/25f10/the-choir.jpg 340w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/fc6d8/the-choir.jpg 680w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/68efc/the-choir.jpg 1360w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/65002/the-choir.jpg 2040w,
+/terson/static/34f24e970ea19e58b7e277e41f60dd7b/e6277/the-choir.jpg 2670w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/34f24e970ea19e58b7e277e41f60dd7b/68efc/the-choir.jpg&quot;
+            alt=&quot;Joined by the choir&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/3d5eb5d49795378a228a829eb9e5f45a/5e7d4/magasin-kalleboa.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.88235294117648%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGBP/EABUBAQEAAAAAAAAAAAAAAAAAAAID/9oADAMBAAIQAxAAAAFKzX74WoyRGP/EABoQAAMBAAMAAAAAAAAAAAAAAAECAwUEERL/2gAIAQEAAQUCnyHIlo3mJ6KGaskgnSzv7Df/xAAWEQADAAAAAAAAAAAAAAAAAAAAARL/2gAIAQMBAT8BpDk//8QAGBEAAwEBAAAAAAAAAAAAAAAAAAEhAjH/2gAIAQIBAT8BiFqdP//EACAQAAIBBAEFAAAAAAAAAAAAAAECAAMRElETYWJxgeH/2gAIAQEABj8CvxU28zFEW2soDVUqx1LBe33H46a5HH7AOm5//8QAHRABAAMAAQUAAAAAAAAAAAAAAQARITFBUWGhwf/aAAgBAQABPyHDx3TcrZW4X+Q39aGyGMSoDIGZ0XXU8ox10HKZ6n//2gAMAwEAAgADAAAAEFjv/8QAGBEBAQEBAQAAAAAAAAAAAAAAAREAIZH/2gAIAQMBAT8QJA98wpg7/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREA/9oACAECAQE/EGwrLrhjf//EABsQAQADAQEBAQAAAAAAAAAAAAEAETEhcVFh/9oACAEBAAE/EP3hCkldX7kTmlmkHxVS+SDit1YtXkRk6uKarfBFy4pnWsqkiHD3c9lNsIAaean/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/3d5eb5d49795378a228a829eb9e5f45a/3b4fb/magasin-kalleboa.webp 340w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/63aff/magasin-kalleboa.webp 680w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/2035a/magasin-kalleboa.webp 1360w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/6dd0f/magasin-kalleboa.webp 2040w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/e0f78/magasin-kalleboa.webp 2562w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/3d5eb5d49795378a228a829eb9e5f45a/25f10/magasin-kalleboa.jpg 340w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/fc6d8/magasin-kalleboa.jpg 680w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/68efc/magasin-kalleboa.jpg 1360w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/65002/magasin-kalleboa.jpg 2040w,
+/terson/static/3d5eb5d49795378a228a829eb9e5f45a/5e7d4/magasin-kalleboa.jpg 2562w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/3d5eb5d49795378a228a829eb9e5f45a/68efc/magasin-kalleboa.jpg&quot;
+            alt=&quot;The venue: Magasin Kalleboa&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Photos by &lt;a href=&quot;https://www.kioskflippingfilms.com&quot; target=&quot;_blank&quot;&gt;Simon Hovemyr&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Iceland, 2025]]></title><link>https://eric.pe/terson/travels-to/iceland-2025/</link><guid isPermaLink="false">https://eric.pe/terson/travels-to/iceland-2025/</guid><pubDate>Fri, 12 Sep 2025 11:00:00 GMT</pubDate><content:encoded>&lt;div class=&quot;kg-card kg-image-card kg-width-full&quot;&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/9c762257ba484539e00f8840e9991af2/58ad8/skogafoss.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAv/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAcWVmYECQZv/xAAbEAACAwADAAAAAAAAAAAAAAABAgADBBESFP/aAAgBAQABBQIDk4ywG+110U5oo86dLb5//8QAFhEBAQEAAAAAAAAAAAAAAAAAAAES/9oACAEDAQE/Aay//8QAGREAAgMBAAAAAAAAAAAAAAAAAAECAxEh/9oACAECAQE/AYLB29P/xAAfEAACAQMFAQAAAAAAAAAAAAAAAQIRIjETITIzUXH/2gAIAQEABj8C7JNfR3vIklW03wSm8KrNVvl6f//EABsQAAICAwEAAAAAAAAAAAAAAAERACExQWFR/9oACAEBAAE/IcyjgI0n3yDRAhs9MrZYRNHWjYUbNu0f/9oADAMBAAIAAwAAABCHP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAIf/aAAgBAwEBPxBDGb//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAECAQE/EG6ItD//xAAdEAEAAgICAwAAAAAAAAAAAAABETEAIVFxQZHB/9oACAEBAAE/EEbgFUCNnA/MKDxImgHjPZja8xhRovrAhVnTuqxh4D2QYPZkHE1hMRqqM//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/9c762257ba484539e00f8840e9991af2/3b4fb/skogafoss.webp 340w,
+/terson/static/9c762257ba484539e00f8840e9991af2/63aff/skogafoss.webp 680w,
+/terson/static/9c762257ba484539e00f8840e9991af2/2035a/skogafoss.webp 1360w,
+/terson/static/9c762257ba484539e00f8840e9991af2/6dd0f/skogafoss.webp 2040w,
+/terson/static/9c762257ba484539e00f8840e9991af2/7fc7a/skogafoss.webp 2720w,
+/terson/static/9c762257ba484539e00f8840e9991af2/88d9d/skogafoss.webp 3024w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/9c762257ba484539e00f8840e9991af2/25f10/skogafoss.jpg 340w,
+/terson/static/9c762257ba484539e00f8840e9991af2/fc6d8/skogafoss.jpg 680w,
+/terson/static/9c762257ba484539e00f8840e9991af2/68efc/skogafoss.jpg 1360w,
+/terson/static/9c762257ba484539e00f8840e9991af2/65002/skogafoss.jpg 2040w,
+/terson/static/9c762257ba484539e00f8840e9991af2/26bb5/skogafoss.jpg 2720w,
+/terson/static/9c762257ba484539e00f8840e9991af2/58ad8/skogafoss.jpg 3024w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/9c762257ba484539e00f8840e9991af2/68efc/skogafoss.jpg&quot;
+            alt=&quot;Skógafoss&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/b2de2f773fc353961d7d80929300ad8f/69ad3/vik.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAcDBAb/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAdPZVsjDDFqW/wD/xAAaEAADAQEBAQAAAAAAAAAAAAAAAQIDFAQT/9oACAEBAAEFAsx3KPvKOi5H7d2dWp//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwGI/8QAFREBAQAAAAAAAAAAAAAAAAAAACH/2gAIAQIBAT8BV//EAB4QAAIBAwUAAAAAAAAAAAAAAAABIQMRMxIxgZGh/9oACAEBAAY/Ar6iDdEVGuDM+jJ4f//EABwQAQACAQUAAAAAAAAAAAAAAAEAESFBYXGBkf/aAAgBAQABPyFl2CbQmlFlN3MHeIIVlusU1z//2gAMAwEAAgADAAAAEOcP/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8QIf/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPxC6p//EABwQAQACAgMBAAAAAAAAAAAAAAEAESFBMWGR4f/aAAgBAQABPxAwUzhexOQNZuNBBpJD1hePimEkQQtVek//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/b2de2f773fc353961d7d80929300ad8f/3b4fb/vik.webp 340w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/63aff/vik.webp 680w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/2035a/vik.webp 1360w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/6dd0f/vik.webp 2040w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/7fc7a/vik.webp 2720w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/0222e/vik.webp 2856w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/b2de2f773fc353961d7d80929300ad8f/25f10/vik.jpg 340w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/fc6d8/vik.jpg 680w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/68efc/vik.jpg 1360w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/65002/vik.jpg 2040w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/26bb5/vik.jpg 2720w,
+/terson/static/b2de2f773fc353961d7d80929300ad8f/69ad3/vik.jpg 2856w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/b2de2f773fc353961d7d80929300ad8f/68efc/vik.jpg&quot;
+            alt=&quot;Víkkyrkan&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-6&quot;&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/f66fe396d1a577963242d57592f96204/4140c/hallgrimskirkja.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.23529411764707%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMGBAX/xAAXAQEBAQEAAAAAAAAAAAAAAAACAQAD/9oADAMBAAIQAxAAAAGrRMdHR4wZ4Ts2LmrAmBT/xAAZEAEBAQEBAQAAAAAAAAAAAAADAgEEADH/2gAIAQEAAQUCjTebP25mbxdNgnSzYtEm1ywJedpWudKQN+39B1OP/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECECH/2gAIAQIBAT8BRhGv/8QAIBAAAQQCAQUAAAAAAAAAAAAAAQACERIDIRATQVFSkf/aAAgBAQAGPwI0NuYOTT/ixn12psupko7w0bRhtRCa7XBPdVa8gSv/xAAeEAACAgICAwAAAAAAAAAAAAABEQAhMUFhkVFxof/aAAgBAQABPyEwLAolbjzVGHAKfMOCgJ2i3mYQNlt1MefkJMIsyDFRAAT7lmlLqEi4JA7ltxuHdoFP/9oADAMBAAIAAwAAABBw/PH/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARUf/aAAgBAwEBPxBS28nH/8QAGREBAAIDAAAAAAAAAAAAAAAAAQAREDFR/9oACAECAQE/ELpcDqaY/8QAIRABAAMBAAIABwAAAAAAAAAAAREhMQBBUWGBobHB0eH/2gAIAQEAAT8QM7f4BDLOXAlB+uQoDbT9OZtEKsMznr+ciknqMfIfCebAhCI/DsrWpOP2NmvRy2zM0tyY8bwWkvbWaM1tcyxwHgJZ1luQV6MOkFPBDaE6d//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/f66fe396d1a577963242d57592f96204/3b4fb/hallgrimskirkja.webp 340w,
+/terson/static/f66fe396d1a577963242d57592f96204/63aff/hallgrimskirkja.webp 680w,
+/terson/static/f66fe396d1a577963242d57592f96204/2035a/hallgrimskirkja.webp 1360w,
+/terson/static/f66fe396d1a577963242d57592f96204/6dd0f/hallgrimskirkja.webp 2040w,
+/terson/static/f66fe396d1a577963242d57592f96204/048a1/hallgrimskirkja.webp 2142w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/f66fe396d1a577963242d57592f96204/25f10/hallgrimskirkja.jpg 340w,
+/terson/static/f66fe396d1a577963242d57592f96204/fc6d8/hallgrimskirkja.jpg 680w,
+/terson/static/f66fe396d1a577963242d57592f96204/68efc/hallgrimskirkja.jpg 1360w,
+/terson/static/f66fe396d1a577963242d57592f96204/65002/hallgrimskirkja.jpg 2040w,
+/terson/static/f66fe396d1a577963242d57592f96204/4140c/hallgrimskirkja.jpg 2142w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/f66fe396d1a577963242d57592f96204/68efc/hallgrimskirkja.jpg&quot;
+            alt=&quot;Hallgrímskrikja&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-6&quot;&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/df4ec/harpa.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.23529411764707%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUBAwQG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/9oADAMBAAIQAxAAAAGnG0V6LCsi61ZomlKNQr//xAAcEAADAAIDAQAAAAAAAAAAAAABAgMAIhESITL/2gAIAQEAAQUCsoWhIomuX9VvRTqHGyA6WXh5EnG+mA5//8QAFhEAAwAAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/AXD/xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8BdP/EACIQAAICAAQHAAAAAAAAAAAAAAABAhEDEiFBECIxMoGRof/aAAgBAQAGPwJ+0X40Ob6KQ1HuoakZSV0svU0WxhvdxHw//8QAHhABAAICAwADAAAAAAAAAAAAAQARITFRYXGBsfD/2gAIAQEAAT8hI+/G41uJwbfPmCraXfd+5v8ArD1E0KgwtUXz+7mJFnMo62krt8A3UbCZtlhithV5gK6wrcRoT//aAAwDAQACAAMAAAAQx+6z/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQAQEf/aAAgBAwEBPxAZtv/EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAECAQE/EEh//8QAHxABAQADAAICAwAAAAAAAAAAAREAITFBUWFxgbHw/9oACAEBAAE/EC3JSaNXdUE1vwYVKqKwXlTnBdyvrGypqIUPdBg246v26hHfx8uXWPDqen4XnlPpleNtVWdPGKXVw9Ic/vH3kKS0402K6jGzxh1kJEZ49egfzjskm6p1zUbSp3TlQsybPTM//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/3b4fb/harpa.webp 340w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/63aff/harpa.webp 680w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/2035a/harpa.webp 1360w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/6dd0f/harpa.webp 2040w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/fb12d/harpa.webp 2268w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/25f10/harpa.jpg 340w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/fc6d8/harpa.jpg 680w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/68efc/harpa.jpg 1360w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/65002/harpa.jpg 2040w,
+/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/df4ec/harpa.jpg 2268w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/cfaf402b0bfc97de9b85c61f17bbf048/68efc/harpa.jpg&quot;
+            alt=&quot;Harpa Konserthus&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/terson/static/4373c3deb6e970256d91853260ebef69/56dca/alftanes.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQb/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAb0c/YTTONH/xAAbEAABBQEBAAAAAAAAAAAAAAADAAECBBEFFP/aAAgBAQABBQLxqdTE4H0fTLsr5E90rr//xAAXEQADAQAAAAAAAAAAAAAAAAAAARIC/9oACAEDAQE/AYySj//EABcRAAMBAAAAAAAAAAAAAAAAAAACElH/2gAIAQIBAT8Bt8LY/8QAHRAAAgIBBQAAAAAAAAAAAAAAAAIBAzERIjJhof/aAAgBAQAGPwIwYN9r+GkWu09nJj//xAAcEAADAAEFAAAAAAAAAAAAAAAAARExIWGhscH/2gAIAQEAAT8hVLA0FIorKXbDgQSaOsheDa9B/9oADAMBAAIAAwAAABD/AO//xAAYEQACAwAAAAAAAAAAAAAAAAABEEGh4f/aAAgBAwEBPxAimtT/AP/EABoRAAICAwAAAAAAAAAAAAAAAAABMZFh4fD/2gAIAQIBAT8QTpS9GDqP/8QAGxABAQACAwEAAAAAAAAAAAAAAQARoSExQXH/2gAIAQEAAT8QHJR1E/JdpTSFGBoFkB0A0k5HPi8dX//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/terson/static/4373c3deb6e970256d91853260ebef69/3b4fb/alftanes.webp 340w,
+/terson/static/4373c3deb6e970256d91853260ebef69/63aff/alftanes.webp 680w,
+/terson/static/4373c3deb6e970256d91853260ebef69/2035a/alftanes.webp 1360w,
+/terson/static/4373c3deb6e970256d91853260ebef69/43d96/alftanes.webp 1600w&quot;
+              sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/terson/static/4373c3deb6e970256d91853260ebef69/25f10/alftanes.jpg 340w,
+/terson/static/4373c3deb6e970256d91853260ebef69/fc6d8/alftanes.jpg 680w,
+/terson/static/4373c3deb6e970256d91853260ebef69/68efc/alftanes.jpg 1360w,
+/terson/static/4373c3deb6e970256d91853260ebef69/56dca/alftanes.jpg 1600w&quot;
+            sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/terson/static/4373c3deb6e970256d91853260ebef69/68efc/alftanes.jpg&quot;
+            alt=&quot;Álftanes&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[One Thread]]></title><description><![CDATA[Originally planned as a series of singles, the first (dubbed Polaroid in Reverse) was released in 2010 as a limited edition of 7” lathe-cut…]]></description><link>https://eric.pe/terson/records/one-thread/</link><guid isPermaLink="false">https://eric.pe/terson/records/one-thread/</guid><pubDate>Thu, 20 Feb 2025 23:00:00 GMT</pubDate><content:encoded>&lt;iframe width=&quot;100%&quot; height=&quot;310&quot; src=&quot;//bandcamp.com/EmbeddedPlayer/album=1079686129/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/&quot; seamless=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Originally planned as a series of singles, the first (dubbed &lt;a href=&quot;../polaroid-in-reverse/&quot;&gt;Polaroid in Reverse&lt;/a&gt;) was released in 2010 as a limited edition of 7” lathe-cut records. Roger, Roll co-headlined the release show with future collaborator Corey Teruya’s &lt;a href=&quot;https://open.spotify.com/album/6ZYUnUgu80KQ8GlrEVaij6&quot;&gt;Hello Kavita&lt;/a&gt;, and was opened by future household names &lt;a href=&quot;https://open.spotify.com/album/2MTEiVNgRgIvVIrJAqHNBu&quot;&gt;The Lumineers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now 15 years later, from the hushed beauty of Sweden’s forests, and featuring Teruya and James Han (&lt;a href=&quot;https://open.spotify.com/artist/6GDiB0aIxZqPwgDpysxbIE?si=0M3nvvPrRA28m0F95EJpuw&quot;&gt;Landlines&lt;/a&gt;, &lt;a href=&quot;https://open.spotify.com/album/5sMF0P8JErrHQISyKFqfOs?si=otqCuCNwRv-w0f7fa-biWA&quot;&gt;Nathaniel Rateliff &amp;#x26; The Wheel&lt;/a&gt;), One Thread finally sees the light of day—the 5-song EP emphatically closing the door on Roger, Roll’s first two decades, opening up for more music to come.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One Thread’s reflective songs are a blend of a type of Americana tonally illuminated with incandescent keyboard melodies, spare rhythm guitar and Peterson’s expressive and commanding vocals. Peterson spent many of the intervening years abroad and these tracks feel like he’s reconnected with a neglected part of himself, giving voice to that specific range of emotions experienced after taking stock of one’s life and rediscovering a part of your psyche that tenderly needs nurturing now.&lt;/p&gt;
+&lt;p&gt;~ &lt;a href=&quot;https://www.birdymagazine.com/issue/138/&quot;&gt;Tom Murphy, Queen City Sounds, Birdy Magazine&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Software Engineering and the Social Contract]]></title><description><![CDATA[From time to time, I get the question “Why did you move from the USA to Sweden?” The one-liner I deploy in most situations is that I moved…]]></description><link>https://eric.pe/terson/writes/on-software-engineering-and-the-social-contract/</link><guid isPermaLink="false">https://eric.pe/terson/writes/on-software-engineering-and-the-social-contract/</guid><pubDate>Thu, 11 Jul 2024 22:06:00 GMT</pubDate><content:encoded>&lt;p&gt;From time to time, I get the question “Why did you move from the USA to Sweden?” The one-liner I deploy in most situations is that I moved “in search of a better life.” While this isn’t an entirely untrue statement, it’s a simplification of a more complex set of motivations related to social responsibility and values that not everyone is interested in hearing in the moment. This is my attempt at articulating those underlying reasons.&lt;/p&gt;
 &lt;p&gt;I am a software engineer by trade, and it’s an interesting time to be in my line of work. Never before in history has such a large group of workers had such a high degree of mobility. Look at the top economies across the world and you’ll struggle to find a country that doesn’t list software engineering under its “in-demand skills” list for labor migration.&lt;/p&gt;
 &lt;p&gt;Unlike other high-demand roles like doctors, healthcare professionals, and engineers of other sorts, software engineers need no formal qualifications when landing a job: no certification or license from some nationally recognized standards body, no years-long specialized higher education program–in fact, increasingly no degree is needed at all. In competitive labor markets and especially at multinational organizations, software jobs are typically performed in English too, reducing language as a barrier to mobility for many.&lt;/p&gt;
 &lt;p&gt;Given strong global demand, compensation tends to be relatively high for software engineers. Nowhere is this more true than the United States of America, where even entry-level engineers can earn six figures, with more experienced engineers clearing three times that in total compensation (even more for exceptionally experienced engineers and for those working at the largest tech companies).&lt;/p&gt;
@@ -53,11 +441,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;p&gt;&lt;a href=&quot;https://songwhip.com/song/golden-idols/get-you-alone&quot; target=&quot;_blank&quot; class=&quot;button primary fit&quot;&gt;Stream, Download, Buy&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Zealand, 2018]]></title><link>https://eric.pe/terson/travels-to/new-zealand-2018/</link><guid isPermaLink="false">https://eric.pe/terson/travels-to/new-zealand-2018/</guid><pubDate>Tue, 13 Feb 2018 00:10:04 GMT</pubDate><content:encoded>&lt;div class=&quot;kg-card kg-image-card kg-width-full&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/1ca3f/hb-auckland.jpg&quot;
+    href=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/af8d6/hb-auckland.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -68,24 +456,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/51a8e/hb-auckland.webp 340w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/713b7/hb-auckland.webp 680w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/54376/hb-auckland.webp 1360w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/e0aab/hb-auckland.webp 1920w&quot;
+              srcset=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/3b4fb/hb-auckland.webp 340w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/63aff/hb-auckland.webp 680w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/2035a/hb-auckland.webp 1360w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/f3ff0/hb-auckland.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/2e524/hb-auckland.jpg 340w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/d330d/hb-auckland.jpg 680w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/6c26c/hb-auckland.jpg 1360w,
-/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/1ca3f/hb-auckland.jpg 1920w&quot;
+            srcset=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/25f10/hb-auckland.jpg 340w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/fc6d8/hb-auckland.jpg 680w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/68efc/hb-auckland.jpg 1360w,
+/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/af8d6/hb-auckland.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/6c26c/hb-auckland.jpg&quot;
+            src=&quot;/terson/static/315f3a164b08a229cfd85ac83d4ac6bc/68efc/hb-auckland.jpg&quot;
             alt=&quot;Auckland Anniversary Day&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -98,11 +486,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/1ca3f/cathedral-cove.jpg&quot;
+    href=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/af8d6/cathedral-cove.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -113,24 +501,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/51a8e/cathedral-cove.webp 340w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/713b7/cathedral-cove.webp 680w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/54376/cathedral-cove.webp 1360w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/e0aab/cathedral-cove.webp 1920w&quot;
+              srcset=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/3b4fb/cathedral-cove.webp 340w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/63aff/cathedral-cove.webp 680w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/2035a/cathedral-cove.webp 1360w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/f3ff0/cathedral-cove.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/2e524/cathedral-cove.jpg 340w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/d330d/cathedral-cove.jpg 680w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/6c26c/cathedral-cove.jpg 1360w,
-/terson/static/4de3a67726dd713bc83fc927940cab9e/1ca3f/cathedral-cove.jpg 1920w&quot;
+            srcset=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/25f10/cathedral-cove.jpg 340w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/fc6d8/cathedral-cove.jpg 680w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/68efc/cathedral-cove.jpg 1360w,
+/terson/static/4de3a67726dd713bc83fc927940cab9e/af8d6/cathedral-cove.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/6c26c/cathedral-cove.jpg&quot;
+            src=&quot;/terson/static/4de3a67726dd713bc83fc927940cab9e/68efc/cathedral-cove.jpg&quot;
             alt=&quot;Cathedral Cove&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -142,11 +530,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/1ca3f/huka-falls.jpg&quot;
+    href=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/af8d6/huka-falls.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -157,24 +545,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/51a8e/huka-falls.webp 340w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/713b7/huka-falls.webp 680w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/54376/huka-falls.webp 1360w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/e0aab/huka-falls.webp 1920w&quot;
+              srcset=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/3b4fb/huka-falls.webp 340w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/63aff/huka-falls.webp 680w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/2035a/huka-falls.webp 1360w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/f3ff0/huka-falls.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/2e524/huka-falls.jpg 340w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/d330d/huka-falls.jpg 680w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/6c26c/huka-falls.jpg 1360w,
-/terson/static/b7099692d37f42c795f93e1322a8eb7b/1ca3f/huka-falls.jpg 1920w&quot;
+            srcset=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/25f10/huka-falls.jpg 340w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/fc6d8/huka-falls.jpg 680w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/68efc/huka-falls.jpg 1360w,
+/terson/static/b7099692d37f42c795f93e1322a8eb7b/af8d6/huka-falls.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/6c26c/huka-falls.jpg&quot;
+            src=&quot;/terson/static/b7099692d37f42c795f93e1322a8eb7b/68efc/huka-falls.jpg&quot;
             alt=&quot;Huka Falls&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -186,11 +574,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/1ca3f/lake-taupo.jpg&quot;
+    href=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/af8d6/lake-taupo.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -201,24 +589,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/51a8e/lake-taupo.webp 340w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/713b7/lake-taupo.webp 680w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/54376/lake-taupo.webp 1360w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/e0aab/lake-taupo.webp 1920w&quot;
+              srcset=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/3b4fb/lake-taupo.webp 340w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/63aff/lake-taupo.webp 680w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/2035a/lake-taupo.webp 1360w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/f3ff0/lake-taupo.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/2e524/lake-taupo.jpg 340w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/d330d/lake-taupo.jpg 680w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/6c26c/lake-taupo.jpg 1360w,
-/terson/static/d175ac064f6ad99224657a1102c0274f/1ca3f/lake-taupo.jpg 1920w&quot;
+            srcset=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/25f10/lake-taupo.jpg 340w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/fc6d8/lake-taupo.jpg 680w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/68efc/lake-taupo.jpg 1360w,
+/terson/static/d175ac064f6ad99224657a1102c0274f/af8d6/lake-taupo.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/6c26c/lake-taupo.jpg&quot;
+            src=&quot;/terson/static/d175ac064f6ad99224657a1102c0274f/68efc/lake-taupo.jpg&quot;
             alt=&quot;Lake Taupo&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -230,11 +618,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
     &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[West Coast Tour, 2017]]></title><link>https://eric.pe/terson/travels-to/the-west-coast-2017/</link><guid isPermaLink="false">https://eric.pe/terson/travels-to/the-west-coast-2017/</guid><pubDate>Sat, 25 Feb 2017 21:10:04 GMT</pubDate><content:encoded>&lt;div class=&quot;kg-card kg-image-card kg-width-full&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/1ca3f/winters-tavern.jpg&quot;
+    href=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/af8d6/winters-tavern.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -245,24 +633,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/51a8e/winters-tavern.webp 340w,
-/terson/static/c0d699587a8db564b7039b17200245ec/713b7/winters-tavern.webp 680w,
-/terson/static/c0d699587a8db564b7039b17200245ec/54376/winters-tavern.webp 1360w,
-/terson/static/c0d699587a8db564b7039b17200245ec/e0aab/winters-tavern.webp 1920w&quot;
+              srcset=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/3b4fb/winters-tavern.webp 340w,
+/terson/static/c0d699587a8db564b7039b17200245ec/63aff/winters-tavern.webp 680w,
+/terson/static/c0d699587a8db564b7039b17200245ec/2035a/winters-tavern.webp 1360w,
+/terson/static/c0d699587a8db564b7039b17200245ec/f3ff0/winters-tavern.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/2e524/winters-tavern.jpg 340w,
-/terson/static/c0d699587a8db564b7039b17200245ec/d330d/winters-tavern.jpg 680w,
-/terson/static/c0d699587a8db564b7039b17200245ec/6c26c/winters-tavern.jpg 1360w,
-/terson/static/c0d699587a8db564b7039b17200245ec/1ca3f/winters-tavern.jpg 1920w&quot;
+            srcset=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/25f10/winters-tavern.jpg 340w,
+/terson/static/c0d699587a8db564b7039b17200245ec/fc6d8/winters-tavern.jpg 680w,
+/terson/static/c0d699587a8db564b7039b17200245ec/68efc/winters-tavern.jpg 1360w,
+/terson/static/c0d699587a8db564b7039b17200245ec/af8d6/winters-tavern.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/6c26c/winters-tavern.jpg&quot;
+            src=&quot;/terson/static/c0d699587a8db564b7039b17200245ec/68efc/winters-tavern.jpg&quot;
             alt=&quot;Winters Tavern&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -275,11 +663,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/1ca3f/tour-van.jpg&quot;
+    href=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/af8d6/tour-van.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -290,24 +678,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/51a8e/tour-van.webp 340w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/713b7/tour-van.webp 680w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/54376/tour-van.webp 1360w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/e0aab/tour-van.webp 1920w&quot;
+              srcset=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/3b4fb/tour-van.webp 340w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/63aff/tour-van.webp 680w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/2035a/tour-van.webp 1360w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/f3ff0/tour-van.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/2e524/tour-van.jpg 340w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/d330d/tour-van.jpg 680w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/6c26c/tour-van.jpg 1360w,
-/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/1ca3f/tour-van.jpg 1920w&quot;
+            srcset=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/25f10/tour-van.jpg 340w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/fc6d8/tour-van.jpg 680w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/68efc/tour-van.jpg 1360w,
+/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/af8d6/tour-van.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/6c26c/tour-van.jpg&quot;
+            src=&quot;/terson/static/dd9e86ffbb8e2c50f05d3e721f7f9c6f/68efc/tour-van.jpg&quot;
             alt=&quot;The Van&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -321,11 +709,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &lt;div class=&quot;col-6&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/4325daf910df8658b334d5d523865721/1ca3f/el-rancho.jpg&quot;
+    href=&quot;/terson/static/4325daf910df8658b334d5d523865721/af8d6/el-rancho.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -336,24 +724,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/4325daf910df8658b334d5d523865721/51a8e/el-rancho.webp 340w,
-/terson/static/4325daf910df8658b334d5d523865721/713b7/el-rancho.webp 680w,
-/terson/static/4325daf910df8658b334d5d523865721/54376/el-rancho.webp 1360w,
-/terson/static/4325daf910df8658b334d5d523865721/e0aab/el-rancho.webp 1920w&quot;
+              srcset=&quot;/terson/static/4325daf910df8658b334d5d523865721/3b4fb/el-rancho.webp 340w,
+/terson/static/4325daf910df8658b334d5d523865721/63aff/el-rancho.webp 680w,
+/terson/static/4325daf910df8658b334d5d523865721/2035a/el-rancho.webp 1360w,
+/terson/static/4325daf910df8658b334d5d523865721/f3ff0/el-rancho.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/4325daf910df8658b334d5d523865721/2e524/el-rancho.jpg 340w,
-/terson/static/4325daf910df8658b334d5d523865721/d330d/el-rancho.jpg 680w,
-/terson/static/4325daf910df8658b334d5d523865721/6c26c/el-rancho.jpg 1360w,
-/terson/static/4325daf910df8658b334d5d523865721/1ca3f/el-rancho.jpg 1920w&quot;
+            srcset=&quot;/terson/static/4325daf910df8658b334d5d523865721/25f10/el-rancho.jpg 340w,
+/terson/static/4325daf910df8658b334d5d523865721/fc6d8/el-rancho.jpg 680w,
+/terson/static/4325daf910df8658b334d5d523865721/68efc/el-rancho.jpg 1360w,
+/terson/static/4325daf910df8658b334d5d523865721/af8d6/el-rancho.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/4325daf910df8658b334d5d523865721/6c26c/el-rancho.jpg&quot;
+            src=&quot;/terson/static/4325daf910df8658b334d5d523865721/68efc/el-rancho.jpg&quot;
             alt=&quot;El Rancho Verde&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -367,11 +755,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &lt;div class=&quot;col-6&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/1ca3f/shoes.jpg&quot;
+    href=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/af8d6/shoes.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -382,24 +770,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/51a8e/shoes.webp 340w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/713b7/shoes.webp 680w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/54376/shoes.webp 1360w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/e0aab/shoes.webp 1920w&quot;
+              srcset=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/3b4fb/shoes.webp 340w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/63aff/shoes.webp 680w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/2035a/shoes.webp 1360w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/f3ff0/shoes.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/2e524/shoes.jpg 340w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/d330d/shoes.jpg 680w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/6c26c/shoes.jpg 1360w,
-/terson/static/941711bf4bc37caa43edc2a8e6a74013/1ca3f/shoes.jpg 1920w&quot;
+            srcset=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/25f10/shoes.jpg 340w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/fc6d8/shoes.jpg 680w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/68efc/shoes.jpg 1360w,
+/terson/static/941711bf4bc37caa43edc2a8e6a74013/af8d6/shoes.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/6c26c/shoes.jpg&quot;
+            src=&quot;/terson/static/941711bf4bc37caa43edc2a8e6a74013/68efc/shoes.jpg&quot;
             alt=&quot;Golden Shoes&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -413,11 +801,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/1ca3f/point-of-view.jpg&quot;
+    href=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/af8d6/point-of-view.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -428,24 +816,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/51a8e/point-of-view.webp 340w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/713b7/point-of-view.webp 680w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/54376/point-of-view.webp 1360w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/e0aab/point-of-view.webp 1920w&quot;
+              srcset=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/3b4fb/point-of-view.webp 340w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/63aff/point-of-view.webp 680w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/2035a/point-of-view.webp 1360w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/f3ff0/point-of-view.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/2e524/point-of-view.jpg 340w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/d330d/point-of-view.jpg 680w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/6c26c/point-of-view.jpg 1360w,
-/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/1ca3f/point-of-view.jpg 1920w&quot;
+            srcset=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/25f10/point-of-view.jpg 340w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/fc6d8/point-of-view.jpg 680w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/68efc/point-of-view.jpg 1360w,
+/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/af8d6/point-of-view.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/6c26c/point-of-view.jpg&quot;
+            src=&quot;/terson/static/fc74b1dbfb49f67f95d08efd166cbdfa/68efc/point-of-view.jpg&quot;
             alt=&quot;From My Point of View&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -462,11 +850,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;p&gt;&lt;br /&gt;&lt;a href=&quot;https://soundcloud.com/iameap/oh-annie&quot; target=&quot;_blank&quot; class=&quot;button primary fit&quot;&gt;Stream, Download&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tokyo, 2015]]></title><link>https://eric.pe/terson/travels-to/tokyo-2015/</link><guid isPermaLink="false">https://eric.pe/terson/travels-to/tokyo-2015/</guid><pubDate>Sun, 14 Jun 2015 00:10:04 GMT</pubDate><content:encoded>&lt;div class=&quot;kg-card kg-image-card kg-width-full&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/8f2ea/train-spotting.jpg&quot;
+    href=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/5cabe/train-spotting.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -477,26 +865,26 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/51a8e/train-spotting.webp 340w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/713b7/train-spotting.webp 680w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/54376/train-spotting.webp 1360w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/0be89/train-spotting.webp 2040w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/c3759/train-spotting.webp 2440w&quot;
+              srcset=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/3b4fb/train-spotting.webp 340w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/63aff/train-spotting.webp 680w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/2035a/train-spotting.webp 1360w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/6dd0f/train-spotting.webp 2040w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/bf1aa/train-spotting.webp 2440w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/2e524/train-spotting.jpg 340w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/d330d/train-spotting.jpg 680w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/6c26c/train-spotting.jpg 1360w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/afd2d/train-spotting.jpg 2040w,
-/terson/static/e490968a08e3d48c472ca7f1c24fafb0/8f2ea/train-spotting.jpg 2440w&quot;
+            srcset=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/25f10/train-spotting.jpg 340w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/fc6d8/train-spotting.jpg 680w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/68efc/train-spotting.jpg 1360w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/65002/train-spotting.jpg 2040w,
+/terson/static/e490968a08e3d48c472ca7f1c24fafb0/5cabe/train-spotting.jpg 2440w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/6c26c/train-spotting.jpg&quot;
+            src=&quot;/terson/static/e490968a08e3d48c472ca7f1c24fafb0/68efc/train-spotting.jpg&quot;
             alt=&quot;Train Spotting&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -509,11 +897,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;/div&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1360px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/1ca3f/kawa.jpg&quot;
+    href=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/af8d6/kawa.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -524,24 +912,24 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/51a8e/kawa.webp 340w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/713b7/kawa.webp 680w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/54376/kawa.webp 1360w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/e0aab/kawa.webp 1920w&quot;
+              srcset=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/3b4fb/kawa.webp 340w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/63aff/kawa.webp 680w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/2035a/kawa.webp 1360w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/f3ff0/kawa.webp 1920w&quot;
               sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/2e524/kawa.jpg 340w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/d330d/kawa.jpg 680w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/6c26c/kawa.jpg 1360w,
-/terson/static/a083fb259af617fc8d72134c3944aa85/1ca3f/kawa.jpg 1920w&quot;
+            srcset=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/25f10/kawa.jpg 340w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/fc6d8/kawa.jpg 680w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/68efc/kawa.jpg 1360w,
+/terson/static/a083fb259af617fc8d72134c3944aa85/af8d6/kawa.jpg 1920w&quot;
             sizes=&quot;(max-width: 1360px) 100vw, 1360px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/6c26c/kawa.jpg&quot;
+            src=&quot;/terson/static/a083fb259af617fc8d72134c3944aa85/68efc/kawa.jpg&quot;
             alt=&quot;Nomi Gawa&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -574,11 +962,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &lt;div class=&quot;col-6&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/a8fee/polaroid-print-process.jpg&quot;
+    href=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/c0c3d/polaroid-print-process.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -589,22 +977,22 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/51a8e/polaroid-print-process.webp 340w,
-/terson/static/a70a53e6b3568e6004669787ff9a3f76/713b7/polaroid-print-process.webp 680w,
-/terson/static/a70a53e6b3568e6004669787ff9a3f76/71e09/polaroid-print-process.webp 720w&quot;
+              srcset=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/3b4fb/polaroid-print-process.webp 340w,
+/terson/static/a70a53e6b3568e6004669787ff9a3f76/63aff/polaroid-print-process.webp 680w,
+/terson/static/a70a53e6b3568e6004669787ff9a3f76/fb07f/polaroid-print-process.webp 720w&quot;
               sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/2e524/polaroid-print-process.jpg 340w,
-/terson/static/a70a53e6b3568e6004669787ff9a3f76/d330d/polaroid-print-process.jpg 680w,
-/terson/static/a70a53e6b3568e6004669787ff9a3f76/a8fee/polaroid-print-process.jpg 720w&quot;
+            srcset=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/25f10/polaroid-print-process.jpg 340w,
+/terson/static/a70a53e6b3568e6004669787ff9a3f76/fc6d8/polaroid-print-process.jpg 680w,
+/terson/static/a70a53e6b3568e6004669787ff9a3f76/c0c3d/polaroid-print-process.jpg 720w&quot;
             sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/a8fee/polaroid-print-process.jpg&quot;
+            src=&quot;/terson/static/a70a53e6b3568e6004669787ff9a3f76/c0c3d/polaroid-print-process.jpg&quot;
             alt=&quot;Polaroid in Reverse, inking the wood block&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -618,11 +1006,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &lt;div class=&quot;col-6&quot;&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/a8fee/polaroid-print-proof.jpg&quot;
+    href=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/c0c3d/polaroid-print-proof.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -633,22 +1021,22 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/51a8e/polaroid-print-proof.webp 340w,
-/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/713b7/polaroid-print-proof.webp 680w,
-/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/71e09/polaroid-print-proof.webp 720w&quot;
+              srcset=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/3b4fb/polaroid-print-proof.webp 340w,
+/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/63aff/polaroid-print-proof.webp 680w,
+/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/fb07f/polaroid-print-proof.webp 720w&quot;
               sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/2e524/polaroid-print-proof.jpg 340w,
-/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/d330d/polaroid-print-proof.jpg 680w,
-/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/a8fee/polaroid-print-proof.jpg 720w&quot;
+            srcset=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/25f10/polaroid-print-proof.jpg 340w,
+/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/fc6d8/polaroid-print-proof.jpg 680w,
+/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/c0c3d/polaroid-print-proof.jpg 720w&quot;
             sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/a8fee/polaroid-print-proof.jpg&quot;
+            src=&quot;/terson/static/ea84a678bf8884aa0a6a6c2f3f205776/c0c3d/polaroid-print-proof.jpg&quot;
             alt=&quot;Polaroid in Reverse, inspecting a recent print&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
@@ -663,11 +1051,11 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;p&gt;Polaroid in Reverse explores some of these themes through not only the music and lyrics themselves, but also in its presentation. While traditionally pressed records are stamped out using heavy duty industrial equipment and have relative longevity, lathe cut records such as this are individually carved in real-time, one-by-one, and last only a fraction of the time pressed records do. Each time you play this record, the quality degrades slightly, until eventually, it’s rendered totally unplayable. The cover art was also hand printed using a technique called wood cut reduction printing which is similarly destructive.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1000px; margin: 7vw 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1000px; margin: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/4edc6/finished-product.jpg&quot;
+    href=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/16038/finished-product.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -678,22 +1066,22 @@ energy in the coming year.&lt;/p&gt;</content:encoded></item><item><title><![CDA
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/51a8e/finished-product.webp 340w,
-/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/713b7/finished-product.webp 680w,
-/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/d0dac/finished-product.webp 1000w&quot;
+              srcset=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/3b4fb/finished-product.webp 340w,
+/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/63aff/finished-product.webp 680w,
+/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/e00f7/finished-product.webp 1000w&quot;
               sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/2e524/finished-product.jpg 340w,
-/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/d330d/finished-product.jpg 680w,
-/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/4edc6/finished-product.jpg 1000w&quot;
+            srcset=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/25f10/finished-product.jpg 340w,
+/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/fc6d8/finished-product.jpg 680w,
+/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/16038/finished-product.jpg 1000w&quot;
             sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot;
             type=&quot;image/jpeg&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/4edc6/finished-product.jpg&quot;
+            src=&quot;/terson/static/d9642c0dddbbbcfb3ffa573e4f1444a0/16038/finished-product.jpg&quot;
             alt=&quot;Polaroid in Reverse packaging&quot;
             title=&quot;&quot;
             loading=&quot;lazy&quot;
