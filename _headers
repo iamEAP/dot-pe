@@ -5,38 +5,6 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
-/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff
-  Cache-Control: public, max-age=31536000, immutable
 /static/alegreya-latin-400-f607aa719f59c32e577b543d82da15b0.woff2
   Cache-Control: public, max-age=31536000, immutable
 /static/alegreya-latin-400-db098d9bbdcd94f8f0d0df3446f30bf1.woff
@@ -77,61 +45,37 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/alegreya-latin-900italic-e9985176860b983e3397cbe9b992d964.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-200-60090754c0dc5c5e613e8c62d82c3b61.woff2
+/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-200-bbbe6172a1d1dceb9842628144ed1cd1.woff
+/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-200italic-5b53a0a2db35512eba1168d943f813ef.woff2
+/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-200italic-f326ccc1db4c603b905f101de369b1db.woff
+/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-300-f2a64a9415f98707bbae7671ceb317e5.woff2
+/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-300-baf2e456764cf6e866b7271ca2a489e8.woff
+/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-300italic-470da4a752054aceb5c1e904577f0074.woff2
+/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-300italic-543ab6a6d08125b74ca3aa011eb057fa.woff
+/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-400-e1a82f0996dd8f55ba1d02168d46f49f.woff2
+/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-400-39bb43d46b1bb3af1b5a39e1688311a9.woff
+/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-400italic-7daaee77d474951f553c591e76202b10.woff2
+/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-400italic-488c56e5fe64eb976aa442d52d1b61c2.woff
+/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-600-5a8861ee91a28236d75f972d89a4ce33.woff2
+/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-600-8cc384f348013f88810fef0c6d0e5194.woff
+/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-600italic-d1b62d2d7a421beebfebac58cfe1d457.woff2
+/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2
   Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-600italic-5c201facb7e8d1c3cbe7b4f3da9071b2.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-700-bf2c237c68a92acc331d34594704eb74.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-700-735c583f3c7e217ee34c81ab41e23a52.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-700italic-d25893931175558b61d4c2d2ced38487.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-700italic-22ae1634e4fc8fa9d52331f8904dd23e.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-800-f3638e8b2959bbec3c8cf2c55ecca459.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-800-b7f09b7689159cac52b26b40e96d807b.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-800italic-5410fb9ccfd57b98f012be9295a13c48.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-800italic-810daf1589b409bd7ac9a1efbba46d5f.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-900-46d8b086d972265d1dce2a1083bc897c.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-900-d4d9e51119e9daa5e3d3af11f6a78f9f.woff
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-900italic-ee481e81f046a7b11a0d13ec34bb163c.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/static/nunito-latin-900italic-66bfbc5cc45b01b08838b970bfaadeb6.woff
+/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff
   Cache-Control: public, max-age=31536000, immutable
 /static/montserrat-latin-100-a5bfe500a212b55e1d97ab22ec963cc2.woff2
   Cache-Control: public, max-age=31536000, immutable
@@ -204,6 +148,62 @@
 /static/montserrat-latin-900italic-3028f5dd9ff9ce34cb18fac0f6ffbbda.woff2
   Cache-Control: public, max-age=31536000, immutable
 /static/montserrat-latin-900italic-1d7048d5048513c46705b15fb67a4379.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-200-60090754c0dc5c5e613e8c62d82c3b61.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-200-bbbe6172a1d1dceb9842628144ed1cd1.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-200italic-5b53a0a2db35512eba1168d943f813ef.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-200italic-f326ccc1db4c603b905f101de369b1db.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-300-f2a64a9415f98707bbae7671ceb317e5.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-300-baf2e456764cf6e866b7271ca2a489e8.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-300italic-470da4a752054aceb5c1e904577f0074.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-300italic-543ab6a6d08125b74ca3aa011eb057fa.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-400-e1a82f0996dd8f55ba1d02168d46f49f.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-400-39bb43d46b1bb3af1b5a39e1688311a9.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-400italic-7daaee77d474951f553c591e76202b10.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-400italic-488c56e5fe64eb976aa442d52d1b61c2.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-600-5a8861ee91a28236d75f972d89a4ce33.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-600-8cc384f348013f88810fef0c6d0e5194.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-600italic-d1b62d2d7a421beebfebac58cfe1d457.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-600italic-5c201facb7e8d1c3cbe7b4f3da9071b2.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-700-bf2c237c68a92acc331d34594704eb74.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-700-735c583f3c7e217ee34c81ab41e23a52.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-700italic-d25893931175558b61d4c2d2ced38487.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-700italic-22ae1634e4fc8fa9d52331f8904dd23e.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-800-f3638e8b2959bbec3c8cf2c55ecca459.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-800-b7f09b7689159cac52b26b40e96d807b.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-800italic-5410fb9ccfd57b98f012be9295a13c48.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-800italic-810daf1589b409bd7ac9a1efbba46d5f.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-900-46d8b086d972265d1dce2a1083bc897c.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-900-d4d9e51119e9daa5e3d3af11f6a78f9f.woff
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-900italic-ee481e81f046a7b11a0d13ec34bb163c.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/static/nunito-latin-900italic-66bfbc5cc45b01b08838b970bfaadeb6.woff
   Cache-Control: public, max-age=31536000, immutable
 /styles.78f6998bb7e01c8dbb80.css
   Cache-Control: public, max-age=31536000, immutable
