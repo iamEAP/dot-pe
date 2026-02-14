@@ -70,7 +70,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -b master",
+    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -b master && gh-pages -d public -b pages -o codeberg",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
