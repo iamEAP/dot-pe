@@ -31,11 +31,39 @@ Check logs if it doesn't come up: `tail -20 /tmp/gatsby-dev.log`
 
 ## Take screenshots
 
-Use Playwright via the global install at `/opt/node22/lib/node_modules/playwright/index.mjs`.
-Use `waitUntil: 'load'` — NOT `networkidle` (Gatsby's hot-reload websocket keeps the connection open and causes a timeout).
+Use Playwright. Resolve it from the project's `node_modules` if present, otherwise
+fall back to a global install (the Claude Code remote environment has one at
+`/opt/node22/lib/node_modules/playwright`):
 
 ```js
-import { chromium } from "/opt/node22/lib/node_modules/playwright/index.mjs"
+import { createRequire } from "module"
+import { existsSync } from "fs"
+
+const localPw = new URL(
+  "../../node_modules/playwright/index.js",
+  import.meta.url
+).pathname
+const globalPw = "/opt/node22/lib/node_modules/playwright/index.mjs"
+const pwPath = existsSync(localPw) ? localPw : globalPw
+
+const { chromium } = await import(pwPath)
+const browser = await chromium.launch()
+```
+
+Use `waitUntil: 'load'` — NOT `networkidle` (Gatsby's hot-reload websocket keeps
+the connection open and causes a timeout).
+
+Full example:
+
+```js
+import { existsSync } from "fs"
+
+const localPw = new URL(
+  "../../node_modules/playwright/index.js",
+  import.meta.url
+).pathname
+const globalPw = "/opt/node22/lib/node_modules/playwright/index.mjs"
+const { chromium } = await import(existsSync(localPw) ? localPw : globalPw)
 
 const browser = await chromium.launch()
 
@@ -57,7 +85,8 @@ for (const scheme of ["light", "dark"]) {
 await browser.close()
 ```
 
-Save as a `.mjs` file and run with `node`.
+Save as a `.mjs` file and run with `node`. If Playwright isn't available anywhere,
+install it: `npm install --save-dev playwright` then `npx playwright install chromium`.
 
 ## Key URLs
 
