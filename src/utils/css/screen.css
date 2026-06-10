@@ -18,6 +18,7 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "components/actions.css";
 @import "components/hamburger.css";
 @import "components/animations.css";
+@import "components/dark-mode.css";
 
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
@@ -84,7 +85,7 @@ body {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: color(var(--color-base) l(+50%));
+  color: var(--color-secondary);
 }
 
 .error-link {
@@ -106,7 +107,7 @@ body {
 
 .page-head-description {
   margin: 0 0 1.6vw;
-  color: color(var(--color-border) l(-20%));
+  color: var(--color-secondary);
   font-size: 2.2rem;
   line-height: 1.35em;
 }
@@ -119,7 +120,7 @@ body {
 .site-foot {
   margin: 3vw 0 1vw;
   text-align: center;
-  color: color(var(--color-border) l(-20%));
+  color: var(--color-secondary);
   font-size: 1.4rem;
 }
 
@@ -289,7 +290,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     height: 40px;
-    background: rgba(255, 255, 255, 0);
+    background: transparent;
     z-index: -1;
     transition: all 0.4s ease-out;
     overflow: hidden;
@@ -349,7 +350,7 @@ body {
   }
 
   .site-head-open {
-    background: rgba(255, 255, 255, 1);
+    background: var(--color-bg);
     transition: background 0.5s ease-out;
     transition-delay: 0.25;
     overflow: hidden;
@@ -620,11 +621,11 @@ body {
   margin: 1.5em 0 3em;
   padding: 20px;
   max-width: 100%;
-  border: color(var(--color-base) l(-10%)) 1px solid;
+  border: #000 1px solid;
   color: var(--color-bg);
   font-size: 1.4rem;
   line-height: 1.5em;
-  background: color(var(--color-base) l(-3%));
+  background: #0d0d0d;
   border-radius: 5px;
 }
 
@@ -671,7 +672,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  color: color(var(--color-border) l(-20%));
+  color: var(--color-secondary);
 }
 
 .author-links {
