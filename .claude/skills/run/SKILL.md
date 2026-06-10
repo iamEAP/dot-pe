@@ -63,5 +63,5 @@ Save as a `.mjs` file and run with `node`.
 
 - Home: `http://localhost:8000/`
 - Posts: `http://localhost:8000/posts/`
-- Individual post: `http://localhost:8000/on-gaining-a-civic-voice-with-llms/`
+- Individual post: `http://localhost:8000/writes/on-gaining-a-civic-voice-with-llms/`
 - Swedish version: `http://localhost:8000/sv/`
