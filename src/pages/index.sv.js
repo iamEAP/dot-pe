@@ -41,7 +41,7 @@ const AboutPage = ({ data, location }) => {
             />
             <figcaption>Bild av Naomi Ominey Pongolini</figcaption>
           </figure>
-          <h3 id="senaste">Senaste</h3>
+          <h3 id="nyligen">Nyligen</h3>
           <div className="home-recent-feed" aria-hidden="true">
             {recentPosts.map(({ node }) => (
               <article
