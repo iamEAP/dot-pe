@@ -10,6 +10,7 @@
     --color-base: #131313;
     --color-border: #ddd;
     --color-bg: #f8f8f8;
+    --color-secondary: #ababab;
 
     /* Fonts */
     --font-sans-serif: 'Muli', sans-serif;
@@ -32,4 +33,14 @@
     --margin: 2rem;
     --radius: 0.5rem;
 
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #5cc4f8;
+        --color-base: #dadada;
+        --color-border: #555;
+        --color-bg: #1a1a1a;
+        --color-secondary: #888;
+    }
 }
