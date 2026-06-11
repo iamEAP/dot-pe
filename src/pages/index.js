@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import moment from "moment"
 
 import Layout from "../layouts/en"
 import SEO from "../components/seo"
@@ -57,7 +58,7 @@ const AboutPage = ({ data, location }) => {
               >
                 <Link to={node.fields.slug} className="home-recent-card-link">
                   <span className="home-recent-card-date">
-                    {node.frontmatter.date}
+                    {moment(node.frontmatter.date).format("MMMM YYYY")}
                   </span>
                   <div className="home-recent-card-content">
                     <h4 className="home-recent-card-title">
@@ -71,8 +72,10 @@ const AboutPage = ({ data, location }) => {
           <ul className="home-recent-list">
             {recentPosts.map(({ node }) => (
               <li key={node.fields.slug}>
-                <strong>{node.frontmatter.date}</strong>:{" "}
-                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                <strong>
+                  {moment(node.frontmatter.date).format("MMMM YYYY")}
+                </strong>
+                : <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               </li>
             ))}
           </ul>
@@ -206,7 +209,7 @@ const indexQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM YYYY")
+            date
             title
             thumbnail {
               childImageSharp {
