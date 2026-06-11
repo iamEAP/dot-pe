@@ -4,12 +4,14 @@ import Img from "gatsby-image"
 
 import Layout from "../layouts/en"
 import SEO from "../components/seo"
+import Link from "../components/link"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 
 const AboutPage = ({ data, location }) => {
   const { title, siteUrl } = data.site.siteMetadata
+  const recentPosts = data.allMarkdownRemark.edges
 
   return (
     <Layout title={title} location={location} isTranslated={true}>
@@ -39,6 +41,41 @@ const AboutPage = ({ data, location }) => {
             />
             <figcaption>Photo by Naomi Ominey Pongolini</figcaption>
           </figure>
+          <h3 id="recently">Recently</h3>
+          <div className="home-recent-feed" aria-hidden="true">
+            {recentPosts.map(({ node }) => (
+              <article
+                key={node.fields.slug}
+                className={`home-recent-card ${node.frontmatter.thumbnail ? "with-image" : "no-image"}`}
+                style={
+                  node.frontmatter.thumbnail
+                    ? {
+                        backgroundImage: `url(${node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
+                      }
+                    : {}
+                }
+              >
+                <Link to={node.fields.slug} className="home-recent-card-link">
+                  <span className="home-recent-card-date">
+                    {node.frontmatter.date}
+                  </span>
+                  <div className="home-recent-card-content">
+                    <h4 className="home-recent-card-title">
+                      {node.frontmatter.title}
+                    </h4>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+          <ul className="home-recent-list">
+            {recentPosts.map(({ node }) => (
+              <li key={node.fields.slug}>
+                <strong>{node.frontmatter.date}</strong>:{" "}
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </li>
+            ))}
+          </ul>
           <h3 id="music">Music</h3>
           <ul>
             <li>
@@ -155,6 +192,30 @@ const indexQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 1360) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { langKey: { eq: "en" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM YYYY")
+            title
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }

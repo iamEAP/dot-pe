@@ -311,7 +311,8 @@ body {
     line-height: 1.15em;
     font-weight: 200;
     opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),
       opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(1.1) translateY(-25px);
   }
@@ -372,7 +373,8 @@ body {
   .site-head-open .site-head-left a,
   .site-head-open .site-head-right a {
     opacity: 1;
-    transition: transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    transition:
+      transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99),
       opacity 0.9s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(1) translateY(0px);
   }
@@ -397,7 +399,7 @@ body {
 
 .post-feed {
   display: flex;
-  align-items: ;
+  align-items:;
   flex-wrap: wrap;
 }
 
@@ -506,6 +508,96 @@ body {
 @media (max-width: 700px) {
   .post-card.no-image:before {
     font-size: 50vw;
+  }
+}
+
+/* Homepage Recent Posts
+/* ---------------------------------------------------------- */
+
+.home-recent-feed {
+  display: flex;
+  margin: 0 0 3.5rem;
+  overflow: hidden;
+}
+
+.home-recent-card {
+  position: relative;
+  flex: 1 1 33.333%;
+  height: 18vw;
+  background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.home-recent-card-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.home-recent-card-date {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.home-recent-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.home-recent-card-link:hover .home-recent-card-content {
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.home-recent-card-link:hover .home-recent-card-date {
+  opacity: 0;
+}
+
+.home-recent-card-title {
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  font-weight: var(--font-bold);
+  text-align: center;
+  color: #fff;
+  line-height: 1.3em;
+}
+
+.home-recent-list {
+  display: none;
+  margin: 0 0 3.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.home-recent-list li {
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 700px) {
+  .home-recent-feed {
+    display: none;
+  }
+  .home-recent-list {
+    display: block;
   }
 }
 
