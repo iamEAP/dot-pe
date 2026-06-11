@@ -401,6 +401,7 @@ body {
   display: flex;
   align-items:;
   flex-wrap: wrap;
+  gap: 2px;
 }
 
 .post-card {
@@ -516,14 +517,15 @@ body {
 
 .home-recent-feed {
   display: flex;
+  gap: 4px;
   margin: 0 0 3.5rem;
   overflow: hidden;
 }
 
 .home-recent-card {
   position: relative;
-  flex: 1 1 33.333%;
-  height: 18vw;
+  flex: 1 1 50%;
+  height: 22vw;
   background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
   background-size: cover;
   overflow: hidden;
@@ -579,6 +581,10 @@ body {
   text-align: center;
   color: #fff;
   line-height: 1.3em;
+}
+
+.home-recent-card:nth-child(n + 3) {
+  display: none;
 }
 
 .home-recent-list {
