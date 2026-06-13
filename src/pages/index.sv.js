@@ -1,15 +1,19 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import moment from "moment"
+import "moment/locale/sv"
 
 import Layout from "../layouts/sv"
 import SEO from "../components/seo"
+import Link from "../components/link"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 
 const AboutPage = ({ data, location }) => {
   const { title, siteUrl } = data.site.siteMetadata
+  const recentPosts = data.allMarkdownRemark.edges
 
   return (
     <Layout title={title} location={location} isTranslated={true}>
@@ -39,6 +43,49 @@ const AboutPage = ({ data, location }) => {
             />
             <figcaption>Bild av Naomi Ominey Pongolini</figcaption>
           </figure>
+          <h3 id="nyligen">Nyligen</h3>
+          <div className="home-recent-feed">
+            {recentPosts.map(({ node }) => (
+              <article
+                key={node.fields.slug}
+                className={`home-recent-card ${node.frontmatter.thumbnail ? "with-image" : "no-image"}`}
+                style={
+                  node.frontmatter.thumbnail
+                    ? {
+                        backgroundImage: `url(${node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
+                      }
+                    : {}
+                }
+              >
+                <Link to={node.fields.slug} className="home-recent-card-link">
+                  <span className="home-recent-card-date">
+                    Från{" "}
+                    {moment(node.frontmatter.date)
+                      .locale("sv")
+                      .format("MMMM YYYY")}
+                  </span>
+                  <div className="home-recent-card-content">
+                    <h4 className="home-recent-card-title">
+                      {node.frontmatter.title}
+                    </h4>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+          <ul className="home-recent-list">
+            {recentPosts.map(({ node }) => (
+              <li key={node.fields.slug}>
+                <strong>
+                  Från{" "}
+                  {moment(node.frontmatter.date)
+                    .locale("sv")
+                    .format("MMMM YYYY")}
+                </strong>
+                : <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </li>
+            ))}
+          </ul>
           <h3 id="music">Musik</h3>
           <ul>
             <li>
@@ -153,6 +200,30 @@ const indexQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 1360) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { langKey: { eq: "sv" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date
+            title
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }
