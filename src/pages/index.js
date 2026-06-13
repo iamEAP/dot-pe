@@ -43,7 +43,7 @@ const AboutPage = ({ data, location }) => {
             <figcaption>Photo by Naomi Ominey Pongolini</figcaption>
           </figure>
           <h3 id="recently">Recently</h3>
-          <div className="home-recent-feed" aria-hidden="true">
+          <div className="home-recent-feed">
             {recentPosts.map(({ node }) => (
               <article
                 key={node.fields.slug}
