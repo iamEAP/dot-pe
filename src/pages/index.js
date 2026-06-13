@@ -73,7 +73,7 @@ const AboutPage = ({ data, location }) => {
             {recentPosts.map(({ node }) => (
               <li key={node.fields.slug}>
                 <strong>
-                  {moment(node.frontmatter.date).format("MMMM YYYY")}
+                  From {moment(node.frontmatter.date).format("MMMM YYYY")}
                 </strong>
                 : <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               </li>

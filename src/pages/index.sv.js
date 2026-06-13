@@ -77,6 +77,7 @@ const AboutPage = ({ data, location }) => {
             {recentPosts.map(({ node }) => (
               <li key={node.fields.slug}>
                 <strong>
+                  Från{" "}
                   {moment(node.frontmatter.date)
                     .locale("sv")
                     .format("MMMM YYYY")}
