@@ -406,7 +406,7 @@ body {
 
 .post-card {
   position: relative;
-  flex: 1 1 50%;
+  flex: 1 1 calc(50% - 0.5rem);
   display: flex;
   position: relative;
   height: 35vw;
@@ -524,8 +524,8 @@ body {
 
 .home-recent-card {
   position: relative;
-  flex: 1 1 50%;
-  height: 22vw;
+  flex: 1 1 calc(50% - 0.5rem);
+  aspect-ratio: 3 / 2;
   background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
   background-size: cover;
   overflow: hidden;
@@ -573,7 +573,7 @@ body {
   opacity: 0;
 }
 
-.home-recent-card-title {
+.home-recent-card-content .home-recent-card-title {
   margin: 0;
   padding: 0 1rem;
   font-size: 1.6rem;

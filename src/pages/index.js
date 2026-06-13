@@ -58,7 +58,7 @@ const AboutPage = ({ data, location }) => {
               >
                 <Link to={node.fields.slug} className="home-recent-card-link">
                   <span className="home-recent-card-date">
-                    {moment(node.frontmatter.date).format("MMMM YYYY")}
+                    From {moment(node.frontmatter.date).format("MMMM YYYY")}
                   </span>
                   <div className="home-recent-card-content">
                     <h4 className="home-recent-card-title">

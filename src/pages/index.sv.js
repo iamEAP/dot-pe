@@ -59,6 +59,7 @@ const AboutPage = ({ data, location }) => {
               >
                 <Link to={node.fields.slug} className="home-recent-card-link">
                   <span className="home-recent-card-date">
+                    Från{" "}
                     {moment(node.frontmatter.date)
                       .locale("sv")
                       .format("MMMM YYYY")}
