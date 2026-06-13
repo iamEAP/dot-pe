@@ -1,28 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import moment from "moment"
-import localization from "moment/locale/sv"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
+import dayjs from "dayjs"
+import "dayjs/locale/sv"
 import { withTranslation } from "react-i18next"
 
 import { default as EnLayout } from "../layouts/en"
 import { default as SvLayout } from "../layouts/sv"
 import Link from "../components/link"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 class PreBlogPostTemplate extends React.Component {
   render() {
-    const { t, i18n } = this.props
+    const { t } = this.props
     const post = this.props.data.markdownRemark
-    const { title, siteUrl, baseUrl } = this.props.data.site.siteMetadata
+    const { title } = this.props.data.site.siteMetadata
     const allPosts = this.props.data.allMarkdownRemark.edges
     const prevNext = allPosts.filter((edge) => {
       return edge.node.fields.slug === this.props.pageContext.slug
     })[0]
     const langKey = post.frontmatter.langKey || "en"
     const LocalLayout = langKey === "sv" ? SvLayout : EnLayout
-    moment.updateLocale(langKey, localization)
-    i18n.changeLanguage(langKey)
+    this.props.i18n.changeLanguage(langKey)
 
     return (
       <LocalLayout
@@ -30,32 +29,6 @@ class PreBlogPostTemplate extends React.Component {
         title={title}
         isTranslated={post.frontmatter.isTranslated}
       >
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-          img={`${baseUrl}${post.frontmatter.thumbnail.childImageSharp.fluid.src}`}
-          lang={langKey === "sv" ? "sv-SE" : "en-US"}
-          link={(post.frontmatter.isTranslated
-            ? [
-                {
-                  rel: "alternate",
-                  href: `${siteUrl}/${
-                    langKey === "sv" ? "" : "sv/"
-                  }${this.props.pageContext.slug.substr(1)}`,
-                  hreflang: langKey === "sv" ? "en" : "sv",
-                },
-              ]
-            : []
-          ).concat([
-            {
-              rel: "alternate",
-              type: "application/rss+xml",
-              href: `${siteUrl}/rss${
-                langKey === "en" ? "" : `.${langKey}`
-              }.xml`,
-            },
-          ])}
-        />
         <article
           className={`post-content ${post.frontmatter.thumbnail || `no-image`}`}
         >
@@ -71,9 +44,9 @@ class PreBlogPostTemplate extends React.Component {
 
           {!post.frontmatter.hideImage && post.frontmatter.thumbnail && (
             <div className="post-content-image">
-              <Img
+              <GatsbyImage
                 className="kg-image"
-                fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                image={getImage(post.frontmatter.thumbnail)}
                 alt={post.frontmatter.title}
               />
             </div>
@@ -96,9 +69,9 @@ class PreBlogPostTemplate extends React.Component {
                     className="button fit"
                   >
                     {t("Fast-forward to {{date}}", {
-                      date: moment(prevNext.next.frontmatter.date).format(
-                        "MMMM YYYY"
-                      ),
+                      date: dayjs(prevNext.next.frontmatter.date)
+                        .locale(langKey)
+                        .format("MMMM YYYY"),
                     })}
                   </Link>
                 )) || (
@@ -115,9 +88,9 @@ class PreBlogPostTemplate extends React.Component {
                     className="button fit"
                   >
                     {t("Rewind to {{date}}", {
-                      date: moment(prevNext.previous.frontmatter.date).format(
-                        "MMMM YYYY"
-                      ),
+                      date: dayjs(prevNext.previous.frontmatter.date)
+                        .locale(langKey)
+                        .format("MMMM YYYY"),
                     })}
                   </Link>
                 )) || (
@@ -127,10 +100,6 @@ class PreBlogPostTemplate extends React.Component {
                 )}
               </li>
             </ul>
-            {/* There are two options for how we display the byline/author-info.
-        If the post has more than one author, we load a specific template
-        from includes/byline-multiple.hbs, otherwise, we just use the
-        default byline. */}
           </footer>
         </article>
       </LocalLayout>
@@ -140,6 +109,42 @@ class PreBlogPostTemplate extends React.Component {
 const BlogPostTemplate = withTranslation()(PreBlogPostTemplate)
 
 export default BlogPostTemplate
+
+export function Head({ data, pageContext }) {
+  const post = data.markdownRemark
+  const { siteUrl, baseUrl } = data.site.siteMetadata
+  const langKey = post.frontmatter.langKey || "en"
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+      img={
+        post.frontmatter.thumbnail
+          ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
+          : undefined
+      }
+      lang={langKey === "sv" ? "sv-SE" : "en-US"}
+      link={(post.frontmatter.isTranslated
+        ? [
+            {
+              rel: "alternate",
+              href: `${siteUrl}/${
+                langKey === "sv" ? "" : "sv/"
+              }${pageContext.slug.substr(1)}`,
+              hreflang: langKey === "sv" ? "en" : "sv",
+            },
+          ]
+        : []
+      ).concat([
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          href: `${siteUrl}/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
+        },
+      ])}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!, $langKey: String!) {
@@ -164,15 +169,13 @@ export const pageQuery = graphql`
         isTranslated
         thumbnail {
           childImageSharp {
-            fluid(maxWidth: 1360) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 1360, layout: CONSTRAINED)
           }
         }
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { frontmatter: { date: ASC } }
       filter: { frontmatter: { langKey: { eq: $langKey } } }
     ) {
       edges {

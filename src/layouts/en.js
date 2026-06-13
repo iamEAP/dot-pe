@@ -30,23 +30,18 @@ const Layout = (props) => {
               </div>
             </button>
             <nav id="swup" className="site-head-left">
-              {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-              <ul className="nav" role="menu">
-                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
+              <ul className="nav">
                 <li
                   className={["nav-home", isHome ? "nav-current" : ""]
                     .filter((c) => !!c)
                     .join(" ")}
-                  role="menuitem"
                 >
                   <Link to="/">Home</Link>
                 </li>
-                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
                 <li
                   className={["nav-posts", !isHome ? "nav-current" : ""].join(
                     " "
                   )}
-                  role="menuitem"
                 >
                   <Link to="/posts">Posts</Link>
                 </li>

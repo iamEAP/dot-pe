@@ -4,11 +4,11 @@
  */
 
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 
 import Layout from "../../layouts/en"
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 
 import "../../utils/normalize.css"
 import "../../utils/css/screen.css"
@@ -18,18 +18,6 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
 
   return (
     <Layout title={siteTitle} location={location}>
-      <SEO
-        title="Yo, Tableau Web Data Connector!"
-        keywords={[
-          `Tableau`,
-          `WDC`,
-          `Web Data Connector`,
-          `Generator`,
-          `Yeoman`,
-        ]}
-        img={`${data.yoTableauDataConnector.childImageSharp.fluid.src}`}
-      />
-
       <article className="post-content page-template no-image">
         <header className="post-content-header">
           <h1 className="post-content-title">
@@ -38,9 +26,10 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
         </header>
         <div className="post-content-body">
           <div className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.yoTableauDataConnector.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.yoTableauDataConnector)}
               className="kg-image"
+              alt="Yo, Tableau Web Data Connector"
             />
           </div>
           <p>
@@ -83,9 +72,10 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
             community all the time.
           </p>
           <hr />
-          <Img
-            fluid={data.wdcConnectionWindow.childImageSharp.fluid}
+          <GatsbyImage
+            image={getImage(data.wdcConnectionWindow)}
             className="kg-image"
+            alt="WDC connection window"
           />
           <hr />
           <h3>Overwhelming opportunity</h3>
@@ -378,7 +368,25 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
   )
 }
 
-const indexQuery = graphql`
+export default LegacyWdcGeneratorPage
+
+export function Head({ data }) {
+  return (
+    <Seo
+      title="Yo, Tableau Web Data Connector!"
+      keywords={[
+        `Tableau`,
+        `WDC`,
+        `Web Data Connector`,
+        `Generator`,
+        `Yeoman`,
+      ]}
+      img={getSrc(data.yoTableauDataConnector)}
+    />
+  )
+}
+
+export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -389,32 +397,15 @@ const indexQuery = graphql`
       relativePath: { eq: "legacy/yo-web-data-connector.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
     wdcConnectionWindow: file(
       relativePath: { eq: "legacy/wdc-connection-window.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
   }
 `
-
-export default props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => (
-      <LegacyWdcGeneratorPage
-        location={props.location}
-        data={data}
-        {...props}
-      />
-    )}
-  />
-)
