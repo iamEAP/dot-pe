@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://eric.pe/terson/sitemap-index.xml
