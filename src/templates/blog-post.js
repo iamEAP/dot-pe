@@ -114,7 +114,8 @@ export function Head({ data, pageContext }) {
   const post = data.markdownRemark
   const { siteUrl, baseUrl, author } = data.site.siteMetadata
   const langKey = post.frontmatter.langKey || "en"
-  const slugWithoutLeadingSlash = pageContext.slug.substr(1)
+  // slug from Gatsby already has a trailing slash, strip it before we re-add one
+  const slugWithoutLeadingSlash = pageContext.slug.replace(/^\/|\/$/g, "")
   const canonical = `${siteUrl}/${langKey === "sv" ? `sv/${slugWithoutLeadingSlash}` : slugWithoutLeadingSlash}/`
   const ogImage =
     post.frontmatter.thumbnail
