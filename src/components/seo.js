@@ -1,16 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
-function SEO({ description, lang, meta, link, keywords, title, img }) {
+function Seo({ description, lang, meta, link, keywords, title, img }) {
   const { site, defaultImage } = useStaticQuery(graphql`
     query {
       site {
@@ -23,84 +16,49 @@ function SEO({ description, lang, meta, link, keywords, title, img }) {
       }
       defaultImage: file(relativePath: { eq: "eap-at-tractor.jpg" }) {
         childImageSharp {
-          fixed(width: 800) {
-            src
-          }
+          gatsbyImageData(width: 800, layout: FIXED)
         }
       }
     }
   `)
 
   const metaDescription = description || site.siteMetadata.description
+  const ogImage =
+    img || `${site.siteMetadata.baseUrl}${getSrc(defaultImage)}`
+  const allMeta = [
+    { name: `description`, content: metaDescription },
+    { property: `og:title`, content: title },
+    { property: `og:description`, content: metaDescription },
+    { property: `og:type`, content: `website` },
+    { property: `og:image`, content: ogImage },
+    { name: `twitter:card`, content: `summary_large_image` },
+    { name: `twitter:creator`, content: site.siteMetadata.author },
+    { name: `twitter:title`, content: title },
+    { name: `twitter:description`, content: metaDescription },
+    { name: `twitter:image`, content: ogImage },
+    ...(keywords.length > 0
+      ? [{ name: `keywords`, content: keywords.join(`, `) }]
+      : []),
+    ...meta,
+  ]
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={link}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content:
-            img ||
-            `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content:
-            img ||
-            `${site.siteMetadata.baseUrl}${defaultImage.childImageSharp.fixed.src}`,
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
-    />
+    <>
+      <html lang={lang} />
+      <title>
+        {title} | {site.siteMetadata.title}
+      </title>
+      {allMeta.map((attrs, i) => (
+        <meta key={i} {...attrs} />
+      ))}
+      {link.map((attrs, i) => (
+        <link key={i} {...attrs} />
+      ))}
+    </>
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
@@ -109,7 +67,7 @@ SEO.defaultProps = {
   img: "",
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
@@ -119,4 +77,4 @@ SEO.propTypes = {
   img: PropTypes.string,
 }
 
-export default SEO
+export default Seo

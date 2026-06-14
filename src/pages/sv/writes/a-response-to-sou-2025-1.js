@@ -4,11 +4,11 @@
  */
 
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 
 import Layout from "../../../layouts/sv"
-import SEO from "../../../components/seo"
+import Seo from "../../../components/seo"
 
 import "../../../utils/normalize.css"
 import "../../../utils/css/screen.css"
@@ -18,17 +18,6 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
 
   return (
     <Layout title={siteTitle} location={location} isTranslated>
-      <SEO
-        title="Remissvar över betänkandet SOU 2025:1 Utredningen om skärpta krav för att förvärva svenskt medborgarskap"
-        keywords={[
-          `Sverige`,
-          `Medborgarskap`,
-          `Tech`,
-          `Arbetskraftsinvandring`,
-        ]}
-        img={`${data.svenskaFlaggan.childImageSharp.fluid.src}`}
-      />
-
       <article className="post-content page-template no-image">
         <header className="post-content-header">
           <h1 className="post-content-title">
@@ -42,6 +31,7 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
             <a
               href="https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/01/sou-20251/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               skärpta krav för att få svenskt medborgarskap
             </a>
@@ -51,9 +41,10 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
             därpå.
           </p>
           <figure className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.svenskaFlaggan.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.svenskaFlaggan)}
               className="kg-image"
+              alt="Svenska flaggan"
             />
             <figcaption>
               bild av{" "}
@@ -62,7 +53,7 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Håkan Dahlström
+                Håkan Dahlström
               </a>
             </figcaption>
           </figure>
@@ -222,7 +213,25 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
   )
 }
 
-const indexQuery = graphql`
+export default StaticSou20251ResponsePage
+
+export function Head({ data }) {
+  return (
+    <Seo
+      title="Remissvar över betänkandet SOU 2025:1 Utredningen om skärpta krav för att förvärva svenskt medborgarskap"
+      keywords={[
+        `Sverige`,
+        `Medborgarskap`,
+        `Tech`,
+        `Arbetskraftsinvandring`,
+      ]}
+      lang="sv-SE"
+      img={getSrc(data.svenskaFlaggan)}
+    />
+  )
+}
+
+export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -233,23 +242,8 @@ const indexQuery = graphql`
       relativePath: { eq: "sou-2025-1/svenska-flaggan.jpg" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
   }
 `
-
-export default (props) => (
-  <StaticQuery
-    query={indexQuery}
-    render={(data) => (
-      <StaticSou20251ResponsePage
-        location={props.location}
-        data={data}
-        {...props}
-      />
-    )}
-  />
-)

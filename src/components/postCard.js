@@ -1,14 +1,15 @@
 import React from "react"
+import { getSrc } from "gatsby-plugin-image"
 import Link from "./link"
 
-export default (props) => (
+const PostCard = (props) => (
   <article
     className={`post-card ${props.count % 3 === 0 && `post-card-large`} ${
       props.postClass
     } ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`}
     style={
       props.node.frontmatter.thumbnail && {
-        backgroundImage: `url(${props.node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
+        backgroundImage: `url(${getSrc(props.node.frontmatter.thumbnail)})`,
       }
     }
   >
@@ -21,3 +22,5 @@ export default (props) => (
     </Link>
   </article>
 )
+
+export default PostCard

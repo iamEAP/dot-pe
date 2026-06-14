@@ -4,11 +4,11 @@
  */
 
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 
 import Layout from "../../layouts/en"
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 
 import "../../utils/normalize.css"
 import "../../utils/css/screen.css"
@@ -18,18 +18,6 @@ const LegacyWdcPromisesPage = ({ data, location }) => {
 
   return (
     <Layout title={siteTitle} location={location}>
-      <SEO
-        title="Better WDC Performance with Promises"
-        keywords={[
-          `Tableau`,
-          `Web Data Connector`,
-          `JavaScript`,
-          `Performance`,
-          `Promise`,
-        ]}
-        img={`${data.promises.childImageSharp.fluid.src}`}
-      />
-
       <article className="post-content page-template no-image">
         <header className="post-content-header">
           <h1 className="post-content-title">
@@ -38,9 +26,10 @@ const LegacyWdcPromisesPage = ({ data, location }) => {
         </header>
         <div className="post-content-body">
           <figure className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.promises.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.promises)}
               className="kg-image"
+              alt="Promises illustration"
             />
             <figcaption>
               image courtesy{" "}
@@ -142,9 +131,10 @@ const LegacyWdcPromisesPage = ({ data, location }) => {
             look something like this:
           </p>
           <div className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.waterfallSync.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.waterfallSync)}
               className="kg-image"
+              alt="Synchronous waterfall chart"
             />
           </div>
           <p>
@@ -224,9 +214,10 @@ console.log('First: No data yet!');`}</code>
             like this:
           </p>
           <div className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.waterfallAsync.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.waterfallAsync)}
               className="kg-image"
+              alt="Asynchronous waterfall chart"
             />
           </div>
           <p>
@@ -428,7 +419,25 @@ Promise.all(allPromisesFor('https://api.example.com', [1, 2, 3])
   )
 }
 
-const indexQuery = graphql`
+export default LegacyWdcPromisesPage
+
+export function Head({ data }) {
+  return (
+    <Seo
+      title="Better WDC Performance with Promises"
+      keywords={[
+        `Tableau`,
+        `Web Data Connector`,
+        `JavaScript`,
+        `Performance`,
+        `Promise`,
+      ]}
+      img={getSrc(data.promises)}
+    />
+  )
+}
+
+export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -437,33 +446,18 @@ const indexQuery = graphql`
     }
     promises: file(relativePath: { eq: "legacy/promises.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
     waterfallSync: file(relativePath: { eq: "legacy/waterfall-sync.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
     waterfallAsync: file(relativePath: { eq: "legacy/waterfall-async.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
   }
 `
-
-export default props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => (
-      <LegacyWdcPromisesPage location={props.location} data={data} {...props} />
-    )}
-  />
-)

@@ -1,11 +1,11 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import moment from "moment"
-import "moment/locale/sv"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
+import dayjs from "dayjs"
+import "dayjs/locale/sv"
 
 import Layout from "../layouts/sv"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Link from "../components/link"
 
 import "../utils/normalize.css"
@@ -17,19 +17,6 @@ const AboutPage = ({ data, location }) => {
 
   return (
     <Layout title={title} location={location} isTranslated={true}>
-      <SEO
-        title="Om"
-        keywords={[`Eric Peterson`, `Ingenjör`, `Musiker`, `Saudade`]}
-        lang="sv-SE"
-        link={[
-          {
-            rel: "alternate",
-            href: `${siteUrl}/is`,
-            hreflang: "en",
-          },
-        ]}
-      />
-
       <article className="post-content page-template no-image">
         <div className="post-content-body">
           <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
@@ -37,9 +24,10 @@ const AboutPage = ({ data, location }) => {
             Ibland i det verkliga livet.
           </h2>
           <figure className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.eapInDalsland.childImageSharp.fluid}
+            <GatsbyImage
+              image={getImage(data.eapInDalsland)}
               className="kg-image"
+              alt="Eric Peterson i Dalsland"
             />
             <figcaption>Bild av Naomi Ominey Pongolini</figcaption>
           </figure>
@@ -52,7 +40,7 @@ const AboutPage = ({ data, location }) => {
                 style={
                   node.frontmatter.thumbnail
                     ? {
-                        backgroundImage: `url(${node.frontmatter.thumbnail.childImageSharp.fluid.src})`,
+                        backgroundImage: `url(${getSrc(node.frontmatter.thumbnail)})`,
                       }
                     : {}
                 }
@@ -60,7 +48,7 @@ const AboutPage = ({ data, location }) => {
                 <Link to={node.fields.slug} className="home-recent-card-link">
                   <span className="home-recent-card-date">
                     Från{" "}
-                    {moment(node.frontmatter.date)
+                    {dayjs(node.frontmatter.date)
                       .locale("sv")
                       .format("MMMM YYYY")}
                   </span>
@@ -78,7 +66,7 @@ const AboutPage = ({ data, location }) => {
               <li key={node.fields.slug}>
                 <strong>
                   Från{" "}
-                  {moment(node.frontmatter.date)
+                  {dayjs(node.frontmatter.date)
                     .locale("sv")
                     .format("MMMM YYYY")}
                 </strong>
@@ -188,7 +176,27 @@ const AboutPage = ({ data, location }) => {
   )
 }
 
-const indexQuery = graphql`
+export default AboutPage
+
+export function Head({ data }) {
+  const { siteUrl } = data.site.siteMetadata
+  return (
+    <Seo
+      title="Om"
+      keywords={[`Eric Peterson`, `Ingenjör`, `Musiker`, `Saudade`]}
+      lang="sv-SE"
+      link={[
+        {
+          rel: "alternate",
+          href: `${siteUrl}/is`,
+          hreflang: "en",
+        },
+      ]}
+    />
+  )
+}
+
+export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -198,14 +206,12 @@ const indexQuery = graphql`
     }
     eapInDalsland: file(relativePath: { eq: "eap-in-dalsland.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 1360, layout: CONSTRAINED)
       }
     }
     allMarkdownRemark(
       filter: { frontmatter: { langKey: { eq: "sv" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       limit: 3
     ) {
       edges {
@@ -218,9 +224,7 @@ const indexQuery = graphql`
             title
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600, layout: CONSTRAINED)
               }
             }
           }
@@ -229,12 +233,3 @@ const indexQuery = graphql`
     }
   }
 `
-
-export default (props) => (
-  <StaticQuery
-    query={indexQuery}
-    render={(data) => (
-      <AboutPage location={props.location} data={data} {...props} />
-    )}
-  />
-)
