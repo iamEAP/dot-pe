@@ -157,6 +157,47 @@ module.exports = {
         icon: `static/android-chrome-512x512.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/`,
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => urljoin(siteConfig.url, siteConfig.prefix),
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.filter(({ path }) => {
+            return !path.includes(`/404`) && !path.includes(`/dev-404`)
+          })
+        },
+        serialize: ({ path }) => {
+          const siteUrl = urljoin(siteConfig.url, siteConfig.prefix)
+          const withTrailing = path.endsWith(`/`) ? path : `${path}/`
+          const isSv = path.startsWith(`/sv`)
+          const enPath = isSv ? withTrailing.replace(/^\/sv/, ``) || `/` : withTrailing
+          const svPath = isSv ? withTrailing : `/sv${withTrailing}`
+          return {
+            // Relative path; with --prefix-paths the plugin prepends /terson correctly.
+            // Local builds without --prefix-paths will have wrong page URLs in the
+            // sitemap but the onPostBuild hook fixes the sitemap-index reference.
+            url: withTrailing,
+            changefreq: `monthly`,
+            priority: path === `/` || path === `/sv` || path === `/sv/` ? 1.0 : 0.7,
+            links: [
+              { lang: `x-default`, url: `${siteUrl}/` },
+              { lang: `en`, url: `${siteUrl}${enPath}` },
+              { lang: `sv`, url: `${siteUrl}${svPath}` },
+            ],
+          }
+        },
+      },
+    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     {

@@ -81,3 +81,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.onPostBuild = async ({ reporter }) => {
+  const fs = require(`fs`)
+  const siteConfig = require(`./siteConfig`)
+  const indexPath = `public/sitemap-index.xml`
+  if (!fs.existsSync(indexPath)) return
+  let content = fs.readFileSync(indexPath, `utf8`)
+  // The sitemap plugin builds index URLs using the origin only, omitting the
+  // /terson path prefix (since we build without --prefix-paths). Fix them here.
+  const origin = siteConfig.url
+  const siteUrl = `${origin}${siteConfig.prefix}`
+  content = content.replace(
+    new RegExp(`${origin}/sitemap-`, `g`),
+    `${siteUrl}/sitemap-`
+  )
+  fs.writeFileSync(indexPath, content)
+  reporter.info(`[sitemap] Fixed sitemap-index.xml references to use ${siteUrl}`)
+}

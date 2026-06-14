@@ -46,10 +46,11 @@ export function Head({ data }) {
       title="Alla inlägg"
       keywords={[`Eric Peterson`, `Blogg`, `Ingenjör`, `Musiker`, `Saudade`]}
       lang="sv-SE"
+      canonical={`${siteUrl}/sv/posts/`}
       link={[
         {
           rel: "alternate",
-          href: `${siteUrl}`,
+          href: `${siteUrl}/posts/`,
           hreflang: "en",
         },
       ]}
