@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { getSrc } from "gatsby-plugin-image"
 
-function Seo({ description, lang, meta, link, keywords, title, img }) {
+function Seo({ description, lang, meta, link, keywords, title, img, canonical, type, articleMeta }) {
   const { site, defaultImage } = useStaticQuery(graphql`
     query {
       site {
@@ -12,6 +12,10 @@ function Seo({ description, lang, meta, link, keywords, title, img }) {
           description
           author
           baseUrl
+          siteUrl
+          social {
+            twitter
+          }
         }
       }
       defaultImage: file(relativePath: { eq: "eap-at-tractor.jpg" }) {
@@ -25,21 +29,42 @@ function Seo({ description, lang, meta, link, keywords, title, img }) {
   const metaDescription = description || site.siteMetadata.description
   const ogImage =
     img || `${site.siteMetadata.baseUrl}${getSrc(defaultImage)}`
+  const ogType = type || `website`
+  const twitterHandle = site.siteMetadata.social.twitter
+
   const allMeta = [
     { name: `description`, content: metaDescription },
     { property: `og:title`, content: title },
     { property: `og:description`, content: metaDescription },
-    { property: `og:type`, content: `website` },
+    { property: `og:type`, content: ogType },
     { property: `og:image`, content: ogImage },
+    ...(canonical ? [{ property: `og:url`, content: canonical }] : []),
     { name: `twitter:card`, content: `summary_large_image` },
-    { name: `twitter:creator`, content: site.siteMetadata.author },
+    { name: `twitter:site`, content: `@${twitterHandle}` },
+    { name: `twitter:creator`, content: `@${twitterHandle}` },
     { name: `twitter:title`, content: title },
     { name: `twitter:description`, content: metaDescription },
     { name: `twitter:image`, content: ogImage },
+    ...(ogType === `article` && articleMeta
+      ? [
+          ...(articleMeta.publishedTime
+            ? [{ property: `article:published_time`, content: articleMeta.publishedTime }]
+            : []),
+          ...(articleMeta.modifiedTime
+            ? [{ property: `article:modified_time`, content: articleMeta.modifiedTime }]
+            : []),
+          { property: `article:author`, content: site.siteMetadata.author },
+        ]
+      : []),
     ...(keywords.length > 0
       ? [{ name: `keywords`, content: keywords.join(`, `) }]
       : []),
     ...meta,
+  ]
+
+  const allLink = [
+    ...(canonical ? [{ rel: `canonical`, href: canonical }] : []),
+    ...link,
   ]
 
   return (
@@ -51,7 +76,7 @@ function Seo({ description, lang, meta, link, keywords, title, img }) {
       {allMeta.map((attrs, i) => (
         <meta key={i} {...attrs} />
       ))}
-      {link.map((attrs, i) => (
+      {allLink.map((attrs, i) => (
         <link key={i} {...attrs} />
       ))}
     </>
@@ -65,6 +90,9 @@ Seo.defaultProps = {
   link: [],
   description: ``,
   img: "",
+  canonical: "",
+  type: "",
+  articleMeta: null,
 }
 
 Seo.propTypes = {
@@ -75,6 +103,12 @@ Seo.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   img: PropTypes.string,
+  canonical: PropTypes.string,
+  type: PropTypes.string,
+  articleMeta: PropTypes.shape({
+    publishedTime: PropTypes.string,
+    modifiedTime: PropTypes.string,
+  }),
 }
 
 export default Seo

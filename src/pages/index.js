@@ -175,19 +175,38 @@ export default AboutPage
 
 export function Head({ data }) {
   const { siteUrl } = data.site.siteMetadata
+  const canonical = `${siteUrl}/`
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Eric Peterson",
+    url: canonical,
+    sameAs: [
+      "https://twitter.com/iamEAP",
+      "https://github.com/iamEAP",
+    ],
+    jobTitle: "Software Engineer",
+    description: "Software engineer and musician based in Sweden.",
+  }
+
   return (
-    <Seo
-      title="About"
-      keywords={[`Eric Peterson`, `Engineer`, `Musician`, `Saudade`]}
-      lang="en-US"
-      link={[
-        {
-          rel: "alternate",
-          href: `${siteUrl}/sv/is`,
-          hreflang: "sv",
-        },
-      ]}
-    />
+    <>
+      <Seo
+        title="About"
+        keywords={[`Eric Peterson`, `Engineer`, `Musician`, `Saudade`]}
+        lang="en-US"
+        canonical={canonical}
+        link={[
+          {
+            rel: "alternate",
+            href: `${siteUrl}/sv/is/`,
+            hreflang: "sv",
+          },
+        ]}
+      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </>
   )
 }
 

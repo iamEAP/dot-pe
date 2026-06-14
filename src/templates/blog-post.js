@@ -112,37 +112,62 @@ export default BlogPostTemplate
 
 export function Head({ data, pageContext }) {
   const post = data.markdownRemark
-  const { siteUrl, baseUrl } = data.site.siteMetadata
+  const { siteUrl, baseUrl, author } = data.site.siteMetadata
   const langKey = post.frontmatter.langKey || "en"
+  const slugWithoutLeadingSlash = pageContext.slug.substr(1)
+  const canonical = `${siteUrl}/${langKey === "sv" ? `sv/${slugWithoutLeadingSlash}` : slugWithoutLeadingSlash}/`
+  const ogImage =
+    post.frontmatter.thumbnail
+      ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
+      : undefined
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.frontmatter.title,
+    description: post.frontmatter.description || post.excerpt,
+    author: {
+      "@type": "Person",
+      name: author,
+      url: `${siteUrl}/`,
+    },
+    datePublished: post.frontmatter.dateISO,
+    url: canonical,
+    ...(ogImage ? { image: ogImage } : {}),
+    inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
+  }
+
   return (
-    <Seo
-      title={post.frontmatter.title}
-      description={post.frontmatter.description || post.excerpt}
-      img={
-        post.frontmatter.thumbnail
-          ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
-          : undefined
-      }
-      lang={langKey === "sv" ? "sv-SE" : "en-US"}
-      link={(post.frontmatter.isTranslated
-        ? [
-            {
-              rel: "alternate",
-              href: `${siteUrl}/${
-                langKey === "sv" ? "" : "sv/"
-              }${pageContext.slug.substr(1)}`,
-              hreflang: langKey === "sv" ? "en" : "sv",
-            },
-          ]
-        : []
-      ).concat([
-        {
-          rel: "alternate",
-          type: "application/rss+xml",
-          href: `${siteUrl}/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
-        },
-      ])}
-    />
+    <>
+      <Seo
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        img={ogImage}
+        lang={langKey === "sv" ? "sv-SE" : "en-US"}
+        type="article"
+        canonical={canonical}
+        articleMeta={{ publishedTime: post.frontmatter.dateISO }}
+        link={(post.frontmatter.isTranslated
+          ? [
+              {
+                rel: "alternate",
+                href: `${siteUrl}/${
+                  langKey === "sv" ? "" : "sv/"
+                }${slugWithoutLeadingSlash}/`,
+                hreflang: langKey === "sv" ? "en" : "sv",
+              },
+            ]
+          : []
+        ).concat([
+          {
+            rel: "alternate",
+            type: "application/rss+xml",
+            href: `${siteUrl}/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
+          },
+        ])}
+      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </>
   )
 }
 
@@ -154,6 +179,9 @@ export const pageQuery = graphql`
         author
         baseUrl
         siteUrl
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -163,6 +191,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        dateISO: date(formatString: "YYYY-MM-DD")
         description
         hideImage
         langKey
