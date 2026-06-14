@@ -182,9 +182,11 @@ module.exports = {
           const isSv = path.startsWith(`/sv`)
           const enPath = isSv ? withTrailing.replace(/^\/sv/, ``) || `/` : withTrailing
           const svPath = isSv ? withTrailing : `/sv${withTrailing}`
-          // Return absolute URL so prefixPath's URL construction doesn't strip /terson
           return {
-            url: `${siteUrl}${withTrailing}`,
+            // Relative path; with --prefix-paths the plugin prepends /terson correctly.
+            // Local builds without --prefix-paths will have wrong page URLs in the
+            // sitemap but the onPostBuild hook fixes the sitemap-index reference.
+            url: withTrailing,
             changefreq: `monthly`,
             priority: path === `/` || path === `/sv` || path === `/sv/` ? 1.0 : 0.7,
             links: [
