@@ -120,7 +120,7 @@ export function Head({ data, pageContext }) {
   const ogImage = post.frontmatter.thumbnail
     ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
     : undefined
-  const videoEmbeds = post.frontmatter.videoEmbedUrl || []
+  const videos = post.frontmatter.videos || []
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -138,13 +138,13 @@ export function Head({ data, pageContext }) {
     inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
   }
 
-  const videoJsonLd = videoEmbeds.map((embedUrl) => ({
+  const videoJsonLd = videos.map((video) => ({
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: post.frontmatter.title,
+    name: video.name || post.frontmatter.title,
     description: post.frontmatter.description || post.excerpt,
     uploadDate: post.frontmatter.dateISO,
-    embedUrl,
+    embedUrl: video.url,
     ...(ogImage ? { thumbnailUrl: [ogImage] } : {}),
   }))
 
@@ -158,9 +158,9 @@ export function Head({ data, pageContext }) {
         type="article"
         canonical={canonical}
         articleMeta={{ publishedTime: post.frontmatter.dateISO }}
-        meta={videoEmbeds.flatMap((embedUrl) => [
-          { property: "og:video", content: embedUrl },
-          { property: "og:video:secure_url", content: embedUrl },
+        meta={videos.flatMap((video) => [
+          { property: "og:video", content: video.url },
+          { property: "og:video:secure_url", content: video.url },
           { property: "og:video:type", content: "text/html" },
         ])}
         link={(post.frontmatter.isTranslated
@@ -222,7 +222,10 @@ export const pageQuery = graphql`
         hideImage
         langKey
         isTranslated
-        videoEmbedUrl
+        videos {
+          url
+          name
+        }
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 1360, layout: CONSTRAINED)
