@@ -6,7 +6,7 @@ thumbnail: ./illuminate-the-room.jpg
 langKey: en
 isTranslated: true
 music:
-  type: MusicPlaylist
+  type: MusicAlbum
   artist: Eric Peterson
   numTracks: 14
 ---
