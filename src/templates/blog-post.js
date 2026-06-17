@@ -110,6 +110,27 @@ const BlogPostTemplate = withTranslation()(PreBlogPostTemplate)
 
 export default BlogPostTemplate
 
+// Extracts embeddable video URLs (Vimeo/YouTube) from rendered post HTML so
+// pages built around a video embed can be marked up as VideoObjects, which is
+// what Google Search Console's "is on a watch page" video indexing signal
+// actually reads.
+function extractVideoEmbeds(html) {
+  if (!html) return []
+  const embeds = []
+  const iframeSrcRegex = /<iframe[^>]*\ssrc="([^"]+)"[^>]*>/g
+  let match
+  while ((match = iframeSrcRegex.exec(html))) {
+    const src = match[1].startsWith("//") ? `https:${match[1]}` : match[1]
+    if (
+      /^https:\/\/player\.vimeo\.com\/video\/\d+/.test(src) ||
+      /^https:\/\/www\.youtube\.com\/embed\//.test(src)
+    ) {
+      embeds.push(src.split("?")[0])
+    }
+  }
+  return embeds
+}
+
 export function Head({ data, pageContext }) {
   const post = data.markdownRemark
   const { siteUrl, baseUrl, author } = data.site.siteMetadata
@@ -117,10 +138,10 @@ export function Head({ data, pageContext }) {
   // slug from Gatsby already has a trailing slash, strip it before we re-add one
   const slugWithoutLeadingSlash = pageContext.slug.replace(/^\/|\/$/g, "")
   const canonical = `${siteUrl}/${langKey === "sv" ? `sv/${slugWithoutLeadingSlash}` : slugWithoutLeadingSlash}/`
-  const ogImage =
-    post.frontmatter.thumbnail
-      ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
-      : undefined
+  const ogImage = post.frontmatter.thumbnail
+    ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
+    : undefined
+  const videoEmbeds = extractVideoEmbeds(post.html)
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -138,6 +159,16 @@ export function Head({ data, pageContext }) {
     inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
   }
 
+  const videoJsonLd = videoEmbeds.map((embedUrl) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: post.frontmatter.title,
+    description: post.frontmatter.description || post.excerpt,
+    uploadDate: post.frontmatter.dateISO,
+    embedUrl,
+    ...(ogImage ? { thumbnailUrl: [ogImage] } : {}),
+  }))
+
   return (
     <>
       <Seo
@@ -148,6 +179,11 @@ export function Head({ data, pageContext }) {
         type="article"
         canonical={canonical}
         articleMeta={{ publishedTime: post.frontmatter.dateISO }}
+        meta={videoEmbeds.flatMap((embedUrl) => [
+          { property: "og:video", content: embedUrl },
+          { property: "og:video:secure_url", content: embedUrl },
+          { property: "og:video:type", content: "text/html" },
+        ])}
         link={(post.frontmatter.isTranslated
           ? [
               {
@@ -167,7 +203,17 @@ export function Head({ data, pageContext }) {
           },
         ])}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {videoJsonLd.map((video, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(video) }}
+        />
+      ))}
     </>
   )
 }
