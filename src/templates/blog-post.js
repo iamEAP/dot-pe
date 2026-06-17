@@ -110,27 +110,6 @@ const BlogPostTemplate = withTranslation()(PreBlogPostTemplate)
 
 export default BlogPostTemplate
 
-// Extracts embeddable video URLs (Vimeo/YouTube) from rendered post HTML so
-// pages built around a video embed can be marked up as VideoObjects, which is
-// what Google Search Console's "is on a watch page" video indexing signal
-// actually reads.
-function extractVideoEmbeds(html) {
-  if (!html) return []
-  const embeds = []
-  const iframeSrcRegex = /<iframe[^>]*\ssrc="([^"]+)"[^>]*>/g
-  let match
-  while ((match = iframeSrcRegex.exec(html))) {
-    const src = match[1].startsWith("//") ? `https:${match[1]}` : match[1]
-    if (
-      /^https:\/\/player\.vimeo\.com\/video\/\d+/.test(src) ||
-      /^https:\/\/www\.youtube\.com\/embed\//.test(src)
-    ) {
-      embeds.push(src.split("?")[0])
-    }
-  }
-  return embeds
-}
-
 export function Head({ data, pageContext }) {
   const post = data.markdownRemark
   const { siteUrl, baseUrl, author } = data.site.siteMetadata
@@ -141,7 +120,7 @@ export function Head({ data, pageContext }) {
   const ogImage = post.frontmatter.thumbnail
     ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
     : undefined
-  const videoEmbeds = extractVideoEmbeds(post.html)
+  const videoEmbeds = post.frontmatter.videoEmbedUrl || []
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -243,6 +222,7 @@ export const pageQuery = graphql`
         hideImage
         langKey
         isTranslated
+        videoEmbedUrl
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 1360, layout: CONSTRAINED)

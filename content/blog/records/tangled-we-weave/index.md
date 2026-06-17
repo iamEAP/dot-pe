@@ -4,6 +4,10 @@ date: "2009-09-02T17:10:26-07:00"
 description: An experiment in blind collaboration as well as creative and personal synchronicity.
 thumbnail: ./tww.jpg
 langKey: en
+videoEmbedUrl:
+  - https://player.vimeo.com/video/6921096
+  - https://player.vimeo.com/video/7158650
+  - https://player.vimeo.com/video/10373045
 ---
 
 > An experiment in blind collaboration as well as creative and personal synchronicity, tangled; we weave is a repository for our collective, ineffable experience, one week at a time. “Everything you do shows your hand. Everything is a self-portrait. Everything is a diary.”

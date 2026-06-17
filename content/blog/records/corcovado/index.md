@@ -4,6 +4,8 @@ date: "2015-11-29T15:21:25-08:00"
 description: A Bitter, Tragic Joke
 thumbnail: ./seattle-monorail-62.jpg
 langKey: en
+videoEmbedUrl:
+  - https://player.vimeo.com/video/147229341
 ---
 
 Although the tropical climate it was conceived in is a far cry from the cool, temperate climate of the Pacific Northwest, I believe the rhythm of life in the urban PNW is a perfect match to its swaying style and melancholic air.
