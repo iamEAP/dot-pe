@@ -4,7 +4,8 @@ date: "2010-08-01T16:00:00-07:00"
 description: You're All Probablies, No For-Sures
 thumbnail: ./new-wives-tale.jpg
 langKey: en
-musicAlbum:
+music:
+  type: MusicAlbum
   artist: Amazing Twin
   url: https://songwhip.com/album/amazing-twin/new-wives-tale
 ---

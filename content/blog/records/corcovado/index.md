@@ -6,7 +6,8 @@ thumbnail: ./seattle-monorail-62.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/147229341
-musicAlbum:
+music:
+  type: MusicRecording
   artist: Eric Peterson
   url: https://soundcloud.com/iameap/corcovado
 ---

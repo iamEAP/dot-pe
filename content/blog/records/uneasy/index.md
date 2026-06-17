@@ -4,7 +4,8 @@ date: "2019-06-29T22:00:00-07:00"
 description: I've got a problem and it shares your name.
 thumbnail: ./uneasy.jpg
 langKey: en
-musicAlbum:
+music:
+  type: MusicAlbum
   artist: Golden Idols
   url: https://songwhip.com/album/golden-idols/uneasy
 ---

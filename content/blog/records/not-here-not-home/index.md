@@ -7,7 +7,8 @@ thumbnail: ./not-here-not-home.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/9035775
-musicAlbum:
+music:
+  type: MusicRecording
   artist: Eric Peterson
 ---
 

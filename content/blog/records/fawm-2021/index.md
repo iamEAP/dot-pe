@@ -5,8 +5,10 @@ description: 14 Songs in 28 Days
 thumbnail: ./illuminate-the-room.jpg
 langKey: en
 isTranslated: true
-musicAlbum:
+music:
+  type: MusicPlaylist
   artist: Eric Peterson
+  numTracks: 14
 ---
 
 A successful attempt to write and record 14 songs in 28 days as part of

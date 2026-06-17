@@ -5,7 +5,8 @@ description: Makes Me Shiver
 hideImage: true
 thumbnail: ./your-ghost.jpg
 langKey: en
-musicAlbum:
+music:
+  type: MusicRecording
   artist: Houses
   url: https://we-are-houses.bandcamp.com/track/your-ghost
 ---

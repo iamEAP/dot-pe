@@ -6,7 +6,8 @@ thumbnail: ./get-you-alone.jpg
 langKey: en
 videos:
   - url: https://www.youtube.com/embed/kioqdecHbkQ
-musicAlbum:
+music:
+  type: MusicRecording
   artist: Golden Idols
   url: https://songwhip.com/song/golden-idols/get-you-alone
 ---

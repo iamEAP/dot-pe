@@ -142,18 +142,23 @@ export function Head({ data, pageContext }) {
     },
   ]
 
-  if (post.frontmatter.musicAlbum) {
-    const { artist, url: albumUrl } = post.frontmatter.musicAlbum
+  if (post.frontmatter.music) {
+    const { type, artist, url: workUrl, numTracks } = post.frontmatter.music
+    const performer =
+      artist === author
+        ? { "@id": personId }
+        : { "@type": "MusicGroup", name: artist }
     jsonLdGraph.push({
-      "@type": "MusicAlbum",
+      "@type": type || "MusicRecording",
       name: post.frontmatter.title,
-      byArtist:
-        artist === author
-          ? { "@id": personId }
-          : { "@type": "MusicGroup", name: artist },
+      // MusicPlaylist has no byArtist property of its own; use creator instead.
+      ...(type === "MusicPlaylist"
+        ? { creator: performer }
+        : { byArtist: performer }),
       datePublished: post.frontmatter.dateISO,
-      url: albumUrl || canonical,
+      url: workUrl || canonical,
       ...(ogImage ? { image: ogImage } : {}),
+      ...(numTracks ? { numTracks } : {}),
     })
   }
 
@@ -250,9 +255,11 @@ export const pageQuery = graphql`
           url
           name
         }
-        musicAlbum {
+        music {
+          type
           artist
           url
+          numTracks
         }
         thumbnail {
           childImageSharp {

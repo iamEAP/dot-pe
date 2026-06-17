@@ -5,7 +5,8 @@ description: I wanna pull these threads of ours apart
 thumbnail: ./one-thread.jpg
 langKey: en
 isTranslated: true
-musicAlbum:
+music:
+  type: MusicAlbum
   artist: Roger, Roll
 ---
 
