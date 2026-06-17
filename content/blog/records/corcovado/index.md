@@ -6,6 +6,9 @@ thumbnail: ./seattle-monorail-62.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/147229341
+musicAlbum:
+  artist: Eric Peterson
+  url: https://soundcloud.com/iameap/corcovado
 ---
 
 Although the tropical climate it was conceived in is a far cry from the cool, temperate climate of the Pacific Northwest, I believe the rhythm of life in the urban PNW is a perfect match to its swaying style and melancholic air.

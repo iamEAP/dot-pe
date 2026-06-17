@@ -7,6 +7,8 @@ thumbnail: ./asleep-at-the-wheel.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/9932047
+musicAlbum:
+  artist: Eric Peterson
 ---
 
 <iframe src="//player.vimeo.com/video/9932047?title=0&byline=0&portrait=0&color=54b4d8&" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

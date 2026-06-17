@@ -121,21 +121,45 @@ export function Head({ data, pageContext }) {
     ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
     : undefined
   const videos = post.frontmatter.videos || []
+  const personId = `${siteUrl}/#person`
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.frontmatter.title,
-    description: post.frontmatter.description || post.excerpt,
-    author: {
+  const jsonLdGraph = [
+    {
+      "@type": "BlogPosting",
+      headline: post.frontmatter.title,
+      description: post.frontmatter.description || post.excerpt,
+      author: { "@id": personId },
+      datePublished: post.frontmatter.dateISO,
+      url: canonical,
+      ...(ogImage ? { image: ogImage } : {}),
+      inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
+    },
+    {
       "@type": "Person",
+      "@id": personId,
       name: author,
       url: `${siteUrl}/`,
     },
-    datePublished: post.frontmatter.dateISO,
-    url: canonical,
-    ...(ogImage ? { image: ogImage } : {}),
-    inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
+  ]
+
+  if (post.frontmatter.musicAlbum) {
+    const { artist, url: albumUrl } = post.frontmatter.musicAlbum
+    jsonLdGraph.push({
+      "@type": "MusicAlbum",
+      name: post.frontmatter.title,
+      byArtist:
+        artist === author
+          ? { "@id": personId }
+          : { "@type": "MusicGroup", name: artist },
+      datePublished: post.frontmatter.dateISO,
+      url: albumUrl || canonical,
+      ...(ogImage ? { image: ogImage } : {}),
+    })
+  }
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": jsonLdGraph,
   }
 
   const videoJsonLd = videos.map((video) => ({
@@ -225,6 +249,10 @@ export const pageQuery = graphql`
         videos {
           url
           name
+        }
+        musicAlbum {
+          artist
+          url
         }
         thumbnail {
           childImageSharp {

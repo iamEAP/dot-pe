@@ -5,6 +5,8 @@ description: I wanna pull these threads of ours apart
 thumbnail: ./one-thread.jpg
 langKey: en
 isTranslated: true
+musicAlbum:
+  artist: Roger, Roll
 ---
 
 <iframe width="100%" height="310" src="//bandcamp.com/EmbeddedPlayer/album=1079686129/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" frameborder="0"></iframe>

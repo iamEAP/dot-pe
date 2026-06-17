@@ -7,6 +7,9 @@ thumbnail: ./excuses-live.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/167592699
+musicAlbum:
+  artist: Eric Peterson
+  url: https://soundcloud.com/iameap/excuses
 ---
 
 <iframe src="//player.vimeo.com/video/167592699?title=0&amp;byline=0&amp;portrait=0&amp;color=54b4d8&amp" width="100%" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

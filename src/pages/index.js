@@ -6,6 +6,7 @@ import dayjs from "dayjs"
 import Layout from "../layouts/en"
 import Seo from "../components/seo"
 import Link from "../components/link"
+import EmailLink from "../components/emailLink"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
@@ -18,10 +19,10 @@ const AboutPage = ({ data, location }) => {
     <Layout title={title} location={location} isTranslated={true}>
       <article className="post-content page-template no-image">
         <div className="post-content-body">
-          <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
+          <h1 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
             Eric Peterson creates software and music, usually on computers.
             Sometimes in real life.
-          </h2>
+          </h1>
           <figure className="kg-card kg-image-card kg-width-full">
             <GatsbyImage
               image={getImage(data.eapInDalsland)}
@@ -165,6 +166,18 @@ const AboutPage = ({ data, location }) => {
               hacker.
             </li>
           </ul>
+          <h3 id="say-hello">Say Hello</h3>
+          <p>
+            Made it this far? You're either a real human, a curious LLM, or one
+            of the other Eric Petersons sizing up the competition. Whoever you
+            are, I'd genuinely love to hear from you.
+          </p>
+          <EmailLink
+            className="button primary fit"
+            subject="Hello from your site"
+          >
+            Say hello
+          </EmailLink>
         </div>
       </article>
     </Layout>
@@ -176,16 +189,19 @@ export default AboutPage
 export function Head({ data }) {
   const { siteUrl } = data.site.siteMetadata
   const canonical = `${siteUrl}/`
+  const sameAs = [
+    "https://twitter.com/iamEAP",
+    "https://github.com/iamEAP",
+    "https://www.linkedin.com/in/iameap",
+  ]
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Eric Peterson",
     url: canonical,
-    sameAs: [
-      "https://twitter.com/iamEAP",
-      "https://github.com/iamEAP",
-    ],
+    sameAs,
     jobTitle: "Software Engineer",
     description: "Software engineer and musician based in Sweden.",
   }
@@ -203,9 +219,13 @@ export function Head({ data }) {
             href: `${siteUrl}/sv/is/`,
             hreflang: "sv",
           },
+          ...sameAs.map((href) => ({ rel: "me", href })),
         ]}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   )
 }
