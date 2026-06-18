@@ -1,8 +1,5 @@
-// custom typefaces
-import "@fontsource/montserrat"
-import "@fontsource/merriweather"
-import "@fontsource/nunito"
-import "@fontsource/alegreya"
+// custom typeface
+import "@fontsource-variable/inter"
 
 /**
  * One could put some only-in-browser logic here...
