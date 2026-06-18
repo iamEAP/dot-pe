@@ -394,7 +394,7 @@ body {
     border-bottom: var(--color-base) 2px solid;
   }
   .site-head-open .site-head-right a {
-    opacity: 0.5;
+    opacity: 0.85;
   }
   .site-head-open .site-foot {
     display: block;
