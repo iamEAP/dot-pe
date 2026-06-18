@@ -117,10 +117,10 @@ export function Head({ data, pageContext }) {
   // slug from Gatsby already has a trailing slash, strip it before we re-add one
   const slugWithoutLeadingSlash = pageContext.slug.replace(/^\/|\/$/g, "")
   const canonical = `${siteUrl}/${langKey === "sv" ? `sv/${slugWithoutLeadingSlash}` : slugWithoutLeadingSlash}/`
-  const ogImage =
-    post.frontmatter.thumbnail
-      ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
-      : undefined
+  const ogImage = post.frontmatter.thumbnail
+    ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
+    : undefined
+  const videos = post.frontmatter.videos || []
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -138,6 +138,16 @@ export function Head({ data, pageContext }) {
     inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
   }
 
+  const videoJsonLd = videos.map((video) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.name || post.frontmatter.title,
+    description: post.frontmatter.description || post.excerpt,
+    uploadDate: post.frontmatter.dateISO,
+    embedUrl: video.url,
+    ...(ogImage ? { thumbnailUrl: [ogImage] } : {}),
+  }))
+
   return (
     <>
       <Seo
@@ -148,6 +158,11 @@ export function Head({ data, pageContext }) {
         type="article"
         canonical={canonical}
         articleMeta={{ publishedTime: post.frontmatter.dateISO }}
+        meta={videos.flatMap((video) => [
+          { property: "og:video", content: video.url },
+          { property: "og:video:secure_url", content: video.url },
+          { property: "og:video:type", content: "text/html" },
+        ])}
         link={(post.frontmatter.isTranslated
           ? [
               {
@@ -167,7 +182,17 @@ export function Head({ data, pageContext }) {
           },
         ])}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {videoJsonLd.map((video, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(video) }}
+        />
+      ))}
     </>
   )
 }
@@ -197,6 +222,10 @@ export const pageQuery = graphql`
         hideImage
         langKey
         isTranslated
+        videos {
+          url
+          name
+        }
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 1360, layout: CONSTRAINED)
