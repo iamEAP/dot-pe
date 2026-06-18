@@ -5,6 +5,10 @@ description: Jag vill dra isär våra trådar
 thumbnail: ./one-thread.jpg
 langKey: sv
 isTranslated: true
+music:
+  type: MusicAlbum
+  artist: Roger, Roll
+  url: https://rogerroll.bandcamp.com/album/one-thread
 ---
 
 <iframe width="100%" height="310" src="//bandcamp.com/EmbeddedPlayer/album=1079686129/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" frameborder="0"></iframe>
