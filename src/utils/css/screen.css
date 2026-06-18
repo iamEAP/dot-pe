@@ -360,8 +360,19 @@ body {
   }
 
   .site-head-open .site-head-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 100vh;
+    padding: 6vw;
+    overflow-y: auto;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     transition: height 0.2s ease-in;
+    z-index: 9000;
   }
 
   .site-head-open .site-head-left,

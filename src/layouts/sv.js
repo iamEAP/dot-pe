@@ -10,6 +10,13 @@ const Layout = (props) => {
   const isHome =
     location.pathname === "/sv/" || location.pathname === "/terson/sv/"
 
+  React.useEffect(() => {
+    document.body.style.overflow = toggleNav ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [toggleNav])
+
   return (
     <LanguageContext.Provider value={[context, setContext]}>
       <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
@@ -18,19 +25,17 @@ const Layout = (props) => {
             <button
               className="nav-burger"
               onClick={() => setToggleNav(!toggleNav)}
+              aria-expanded={toggleNav}
+              aria-controls="site-navigation"
+              aria-label={toggleNav ? "Stäng menyn" : "Öppna menyn"}
             >
-              <div
-                className="hamburger hamburger--collapse"
-                aria-label="Menu"
-                role="button"
-                aria-controls="navigation"
-              >
+              <div className="hamburger hamburger--collapse">
                 <div className="hamburger-box">
                   <div className="hamburger-inner" />
                 </div>
               </div>
             </button>
-            <nav id="swup" className="site-head-left">
+            <nav id="site-navigation" className="site-head-left">
               <ul className="nav">
                 <li
                   className={["nav-home", isHome ? "nav-current" : ""]

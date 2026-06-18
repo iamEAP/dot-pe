@@ -8,6 +8,7 @@
   --color-border: #e2e2e2;
   --color-bg: #fafaf9;
   --color-secondary: #ababab;
+  --overlay-bg: rgba(250, 250, 249, 0.82);
 
   /* Fonts */
   --font-sans-serif:
@@ -40,5 +41,6 @@
     --color-border: #4a4a4a;
     --color-bg: #161616;
     --color-secondary: #888;
+    --overlay-bg: rgba(22, 22, 22, 0.82);
   }
 }
