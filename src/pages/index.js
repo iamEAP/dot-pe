@@ -168,9 +168,8 @@ const AboutPage = ({ data, location }) => {
           </ul>
           <h3 id="say-hello">Say Hello</h3>
           <p>
-            Made it this far? You're either a real human, a curious LLM, or one
-            of the other Eric Petersons sizing up the competition. Whoever you
-            are, I'd genuinely love to hear from you.
+            Want to talk software, music, Sweden, or life? Would love to hear
+            from you.
           </p>
           <EmailLink
             className="button primary fit"

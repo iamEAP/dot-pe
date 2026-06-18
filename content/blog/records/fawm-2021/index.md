@@ -8,6 +8,7 @@ isTranslated: true
 music:
   type: MusicAlbum
   artist: Eric Peterson
+  url: https://soundcloud.com/iameap/sets/february-album-writing-month-2021
   numTracks: 14
 ---
 

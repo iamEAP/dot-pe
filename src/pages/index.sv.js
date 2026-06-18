@@ -173,9 +173,8 @@ const AboutPage = ({ data, location }) => {
           </ul>
           <h3 id="say-hello">Säg Hej</h3>
           <p>
-            Kom du hela vägen hit? Du är antingen en riktig människa, en nyfiken
-            LLM, eller en av de andra Eric Petersons som kollar konkurrensen.
-            Oavsett vem du är skulle jag gärna höra av dig.
+            Vill du prata om software, musik, Sverige, eller livet? Skulle gärna
+            höra av dig.
           </p>
           <EmailLink className="button primary fit" subject="Hej från din sida">
             Säg hej
