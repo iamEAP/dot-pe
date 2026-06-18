@@ -6,11 +6,11 @@ thumbnail: ./tww.jpg
 langKey: en
 videos:
   - url: https://player.vimeo.com/video/6921096
-    name: "Week Three"
+    name: "tangled; we weave - Week Three"
   - url: https://player.vimeo.com/video/7158650
-    name: "Week Five"
+    name: "tangled; we weave - Week Five"
   - url: https://player.vimeo.com/video/10373045
-    name: "Week Twenty-Seven"
+    name: "tangled; we weave - Week Twenty-Seven"
 ---
 
 > An experiment in blind collaboration as well as creative and personal synchronicity, tangled; we weave is a repository for our collective, ineffable experience, one week at a time. “Everything you do shows your hand. Everything is a self-portrait. Everything is a diary.”
