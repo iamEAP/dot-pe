@@ -4,6 +4,10 @@ date: "2010-07-20T17:10:26-07:00"
 description: Is there value in documentation or is memory's degradation insurmountable?
 thumbnail: ./volunteer-park.jpg
 langKey: en
+music:
+  type: MusicRecording
+  artist: Roger, Roll
+  url: https://rogerroll.bandcamp.com/album/polaroid-in-reverse
 ---
 
 <iframe width="100%" height="210" src="//bandcamp.com/EmbeddedPlayer/album=23354821/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" frameborder="0"></iframe>

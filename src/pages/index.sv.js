@@ -7,6 +7,7 @@ import "dayjs/locale/sv"
 import Layout from "../layouts/sv"
 import Seo from "../components/seo"
 import Link from "../components/link"
+import EmailLink from "../components/emailLink"
 
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
@@ -19,10 +20,10 @@ const AboutPage = ({ data, location }) => {
     <Layout title={title} location={location} isTranslated={true}>
       <article className="post-content page-template no-image">
         <div className="post-content-body">
-          <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
+          <h1 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
             Eric Peterson skapar software och musik. Vanligtvis på datorer.
             Ibland i det verkliga livet.
-          </h2>
+          </h1>
           <figure className="kg-card kg-image-card kg-width-full">
             <GatsbyImage
               image={getImage(data.eapInDalsland)}
@@ -170,6 +171,14 @@ const AboutPage = ({ data, location }) => {
               En stolt MySpace CSS-hackare.
             </li>
           </ul>
+          <h3 id="say-hello">Säg Hej</h3>
+          <p>
+            Vill du prata om software, musik, Sverige, eller livet? Skulle gärna
+            höra av dig.
+          </p>
+          <EmailLink className="button primary fit" subject="Hej från din sida">
+            Säg hej
+          </EmailLink>
         </div>
       </article>
     </Layout>
@@ -181,16 +190,19 @@ export default AboutPage
 export function Head({ data }) {
   const { siteUrl } = data.site.siteMetadata
   const canonical = `${siteUrl}/sv/is/`
+  const sameAs = [
+    "https://twitter.com/iamEAP",
+    "https://github.com/iamEAP",
+    "https://www.linkedin.com/in/iameap",
+  ]
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Eric Peterson",
     url: canonical,
-    sameAs: [
-      "https://twitter.com/iamEAP",
-      "https://github.com/iamEAP",
-    ],
+    sameAs,
     jobTitle: "Mjukvaruingenjör",
     description: "Mjukvaruingenjör och musiker baserad i Sverige.",
   }
@@ -208,9 +220,13 @@ export function Head({ data }) {
             href: `${siteUrl}/is/`,
             hreflang: "en",
           },
+          ...sameAs.map((href) => ({ rel: "me", href })),
         ]}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   )
 }

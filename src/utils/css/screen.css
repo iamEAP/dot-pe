@@ -807,6 +807,18 @@ body {
   text-align: center;
 }
 
+/* The about page's intro is marked up as an h1 for document outline
+   purposes, but should keep the visual size it had as an h2. */
+.page-template .post-content-body h1 {
+  font-size: 4rem;
+  margin: 1.5em 0 0.5em 0;
+}
+@media (max-width: 500px) {
+  .page-template .post-content-body h1 {
+    font-size: 2rem;
+  }
+}
+
 /* Attempt to make iframes not stupid on mobile.
 /* ---------------------------------------------------------- */
 @media (max-width: 321px) {

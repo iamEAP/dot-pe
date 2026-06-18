@@ -5,6 +5,11 @@ description: 14 Songs in 28 Days
 thumbnail: ./illuminate-the-room.jpg
 langKey: en
 isTranslated: true
+music:
+  type: MusicAlbum
+  artist: Eric Peterson
+  url: https://soundcloud.com/iameap/sets/february-album-writing-month-2021
+  numTracks: 14
 ---
 
 A successful attempt to write and record 14 songs in 28 days as part of

@@ -121,21 +121,50 @@ export function Head({ data, pageContext }) {
     ? `${baseUrl}${getSrc(post.frontmatter.thumbnail)}`
     : undefined
   const videos = post.frontmatter.videos || []
+  const personId = `${siteUrl}/#person`
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.frontmatter.title,
-    description: post.frontmatter.description || post.excerpt,
-    author: {
+  const jsonLdGraph = [
+    {
+      "@type": "BlogPosting",
+      headline: post.frontmatter.title,
+      description: post.frontmatter.description || post.excerpt,
+      author: { "@id": personId },
+      datePublished: post.frontmatter.dateISO,
+      url: canonical,
+      ...(ogImage ? { image: ogImage } : {}),
+      inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
+    },
+    {
       "@type": "Person",
+      "@id": personId,
       name: author,
       url: `${siteUrl}/`,
     },
-    datePublished: post.frontmatter.dateISO,
-    url: canonical,
-    ...(ogImage ? { image: ogImage } : {}),
-    inLanguage: langKey === "sv" ? "sv-SE" : "en-US",
+  ]
+
+  if (post.frontmatter.music) {
+    const { type, artist, url: workUrl, numTracks } = post.frontmatter.music
+    const performer =
+      artist === author
+        ? { "@id": personId }
+        : { "@type": "MusicGroup", name: artist }
+    jsonLdGraph.push({
+      "@type": type || "MusicRecording",
+      name: post.frontmatter.title,
+      // MusicPlaylist has no byArtist property of its own; use creator instead.
+      ...(type === "MusicPlaylist"
+        ? { creator: performer }
+        : { byArtist: performer }),
+      datePublished: post.frontmatter.dateISO,
+      url: workUrl || canonical,
+      ...(ogImage ? { image: ogImage } : {}),
+      ...(numTracks ? { numTracks } : {}),
+    })
+  }
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": jsonLdGraph,
   }
 
   const videoJsonLd = videos.map((video) => ({
@@ -225,6 +254,12 @@ export const pageQuery = graphql`
         videos {
           url
           name
+        }
+        music {
+          type
+          artist
+          url
+          numTracks
         }
         thumbnail {
           childImageSharp {
