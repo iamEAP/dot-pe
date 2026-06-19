@@ -78,6 +78,15 @@ module.exports = {
       options: {
         printRejected: false,
         whitelistPatternsChildren: ["/post-content-body/"],
+        // PurgeCSS only scans src/**/*.{js,jsx,ts,tsx} by default, so it never
+        // sees classes that exist only in markdown/Ghost content (kg-*,
+        // gatsby-resp-image-*). Protect them here so rules targeting them
+        // aren't stripped from the production bundle.
+        purgeCSSOptions: {
+          safelist: {
+            greedy: [/^kg-/, /^gatsby-resp-image/],
+          },
+        },
       },
     },
     {
@@ -180,7 +189,9 @@ module.exports = {
           const siteUrl = urljoin(siteConfig.url, siteConfig.prefix)
           const withTrailing = path.endsWith(`/`) ? path : `${path}/`
           const isSv = path.startsWith(`/sv`)
-          const enPath = isSv ? withTrailing.replace(/^\/sv/, ``) || `/` : withTrailing
+          const enPath = isSv
+            ? withTrailing.replace(/^\/sv/, ``) || `/`
+            : withTrailing
           const svPath = isSv ? withTrailing : `/sv${withTrailing}`
           return {
             // Relative path; with --prefix-paths the plugin prepends /terson correctly.
@@ -188,7 +199,8 @@ module.exports = {
             // sitemap but the onPostBuild hook fixes the sitemap-index reference.
             url: withTrailing,
             changefreq: `monthly`,
-            priority: path === `/` || path === `/sv` || path === `/sv/` ? 1.0 : 0.7,
+            priority:
+              path === `/` || path === `/sv` || path === `/sv/` ? 1.0 : 0.7,
             links: [
               { lang: `x-default`, url: `${siteUrl}/` },
               { lang: `en`, url: `${siteUrl}${enPath}` },
