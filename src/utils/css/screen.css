@@ -276,6 +276,12 @@ body {
   }
   .nav-burger {
     display: block;
+    /* Fixed (not absolute) and at a constant offset in both open and
+       closed states, so toggling the menu never changes its containing
+       block or position values, eliminating any jump/flash on toggle. */
+    position: fixed;
+    left: 6vw;
+    top: 6vw;
     box-shadow: none;
     color: transparent;
     background-color: transparent;
@@ -372,21 +378,29 @@ body {
     height: 100dvh;
     padding: 6vw;
     overflow-y: auto;
+    z-index: 9000;
+  }
+
+  /* A dedicated, viewport-pinned layer for the glass effect, kept separate
+     from the scrollable nav content above so backdrop-filter always covers
+     the full screen regardless of how tall the nav content itself is. */
+  .site-head-open .site-head::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: var(--overlay-bg);
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
-    z-index: 9000;
+    z-index: -1;
   }
 
   .site-head-open .site-head-container {
     height: auto;
     overflow: visible;
     transition: height 0.2s ease-in;
-  }
-
-  .site-head-open .nav-burger {
-    left: 6vw;
-    top: 6vw;
   }
 
   .site-head-open .site-head-left,
