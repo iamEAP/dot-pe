@@ -10,7 +10,7 @@ music:
   url: https://kvdu.bandcamp.com/
 ---
 
-<iframe src="//bandcamp.com/EmbeddedPlayer/album=4234864881/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless="" width="100%" height="300" frameborder="0"></iframe>
+<iframe src="//bandcamp.com/EmbeddedPlayer/album=4234864881/size=large/bgcol=ffffff/linkcol=2f8fd1/artwork=small/transparent=true/" seamless="" width="100%" height="300" frameborder="0"></iframe>
 
 ---
 

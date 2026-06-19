@@ -8,6 +8,31 @@ const Layout = (props) => {
   const [toggleNav, setToggleNav] = React.useState(false)
   const [context, setContext] = React.useState({ langKey: "en", isTranslated })
   const isHome = location.pathname === "/" || location.pathname === "/terson/"
+  const scrollPositionRef = React.useRef(0)
+
+  const handleToggleNav = () => {
+    if (!toggleNav) {
+      scrollPositionRef.current = window.scrollY
+    }
+    setToggleNav(!toggleNav)
+  }
+
+  React.useEffect(() => {
+    if (toggleNav) {
+      const scrollY = scrollPositionRef.current
+      document.body.style.position = "fixed"
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.left = "0"
+      document.body.style.right = "0"
+      return () => {
+        document.body.style.position = ""
+        document.body.style.top = ""
+        document.body.style.left = ""
+        document.body.style.right = ""
+        window.scrollTo(0, scrollY)
+      }
+    }
+  }, [toggleNav])
 
   return (
     <LanguageContext.Provider value={[context, setContext]}>
@@ -16,20 +41,18 @@ const Layout = (props) => {
           <div className="site-head-container">
             <button
               className="nav-burger"
-              onClick={() => setToggleNav(!toggleNav)}
+              onClick={handleToggleNav}
+              aria-expanded={toggleNav}
+              aria-controls="site-navigation"
+              aria-label={toggleNav ? "Close menu" : "Open menu"}
             >
-              <div
-                className="hamburger hamburger--collapse"
-                aria-label="Menu"
-                role="button"
-                aria-controls="navigation"
-              >
+              <div className="hamburger hamburger--collapse">
                 <div className="hamburger-box">
                   <div className="hamburger-inner" />
                 </div>
               </div>
             </button>
-            <nav id="swup" className="site-head-left">
+            <nav id="site-navigation" className="site-head-left">
               <ul className="nav">
                 <li
                   className={["nav-home", isHome ? "nav-current" : ""]

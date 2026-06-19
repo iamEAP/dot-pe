@@ -2,62 +2,58 @@
 /* ---------------------------------------------------------- */
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background: var(--color-bg);
-    }
+  body {
+    background: var(--color-bg);
+  }
 
-    ::selection {
-        background: #1a6b9a;
-        color: #fff;
-    }
+  ::selection {
+    background: #1a6b9a;
+    color: #fff;
+  }
 
-    mark {
-        background-color: #4a4400;
-        color: #e8e8e8;
-    }
+  mark {
+    background-color: #4a4400;
+    color: #e8e8e8;
+  }
 
-    /* Mobile nav open state */
-    .site-head-open {
-        background: rgba(26, 26, 26, 1);
-    }
+  /* Mobile nav open state */
+  .site-head-open {
+    background: rgba(22, 22, 22, 1);
+  }
 
-    /* Code blocks */
-    .post-content-body pre {
-        border-color: #333;
-        background: #111;
-    }
+  /* Code blocks */
+  .post-content-body pre {
+    border-color: #333;
+    background: #111;
+  }
 
-    .post-content-body code {
-        background: #2d2d2d;
-        color: var(--color-base);
-    }
+  .post-content-body code {
+    background: #2d2d2d;
+    color: var(--color-base);
+  }
 
-    /* Post cards without images: lighten the counter number */
-    .post-card.no-image:before {
-        color: rgba(255, 255, 255, 0.1);
-    }
+  /* Post cards without images: lighten the counter number */
+  .post-card.no-image:before {
+    color: rgba(255, 255, 255, 0.1);
+  }
 
-    /* Subscribe button border */
-    .subscribe-button {
-        border-color: var(--color-base);
-        color: var(--color-base);
-    }
+  /* Subscribe button border */
+  .subscribe-button {
+    border-color: var(--color-base);
+    color: var(--color-base);
+  }
 
-    /* Prism syntax highlighting adjustments */
-    .token.comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-        color: #8292a2;
-    }
+  /* Prism syntax highlighting adjustments */
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #8292a2;
+  }
 }
 
 @media (prefers-color-scheme: dark) and (max-width: 850px) {
-    .site-head-container {
-        background: rgba(26, 26, 26, 0);
-    }
-
-    .site-head-open .site-head-container {
-        background: rgba(26, 26, 26, 1);
-    }
+  .site-head-container {
+    background: rgba(22, 22, 22, 0);
+  }
 }

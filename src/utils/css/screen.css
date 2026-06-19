@@ -24,7 +24,7 @@ production stylesheet in assets/built/screen.css using gulp dev
 /* ---------------------------------------------------------- */
 
 body {
-  font-family: "Muli", sans-serif;
+  font-family: var(--font-sans-serif);
   background: var(--color-bg);
   transition: background 0.3s ease-out;
   transition-delay: 0.25;
@@ -174,6 +174,7 @@ body {
   color: var(--color-base);
   font-weight: 600;
   opacity: 0.4;
+  transition: opacity 0.3s ease;
 }
 
 .nav-current a,
@@ -201,6 +202,7 @@ body {
   letter-spacing: 1px;
 }
 
+.site-head-logo,
 .site-head-logo:hover {
   text-decoration: none;
 }
@@ -265,6 +267,7 @@ body {
   left: 0;
   z-index: 9999;
   padding: 12px 12px 12px 0;
+  transition: none;
 }
 
 @media (max-width: 850px) {
@@ -356,11 +359,34 @@ body {
     transition-delay: 0.25;
     overflow: hidden;
     height: 100vh;
+    height: 100dvh;
+  }
+
+  .site-head-open .site-head {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    height: 100dvh;
+    padding: 6vw;
+    overflow-y: auto;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    z-index: 9000;
   }
 
   .site-head-open .site-head-container {
-    height: 100vh;
+    height: auto;
+    overflow: visible;
     transition: height 0.2s ease-in;
+  }
+
+  .site-head-open .nav-burger {
+    left: 6vw;
+    top: 6vw;
   }
 
   .site-head-open .site-head-left,
@@ -382,7 +408,7 @@ body {
     border-bottom: var(--color-base) 2px solid;
   }
   .site-head-open .site-head-right a {
-    opacity: 0.5;
+    opacity: 0.85;
   }
   .site-head-open .site-foot {
     display: block;
@@ -406,6 +432,7 @@ body {
 
 .post-card {
   position: relative;
+  border-radius: var(--radius);
   flex: 1 1 calc(50% - 0.5rem);
   display: flex;
   position: relative;
@@ -414,6 +441,31 @@ body {
   background-size: cover;
   overflow: hidden;
   counter-increment: posts;
+}
+
+.post-card.with-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: var(--post-card-image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.9s cubic-bezier(0.33, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.post-card.with-image:hover::before {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-card.with-image::before {
+    transition: none;
+  }
 }
 
 @media (max-width: 700px) {
@@ -524,6 +576,7 @@ body {
 
 .home-recent-card {
   position: relative;
+  border-radius: var(--radius);
   flex: 1 1 calc(50% - 0.5rem);
   aspect-ratio: 3 / 2;
   background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
@@ -686,7 +739,7 @@ body {
 .post-content-body blockquote {
   margin: 0 0 1.5em;
   padding: 0 1.5em;
-  border-left: #3eb0ef 3px solid;
+  border-left: var(--color-primary) 3px solid;
 }
 
 .post-content-body blockquote p {

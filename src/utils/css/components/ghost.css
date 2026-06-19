@@ -15,6 +15,7 @@
 .kg-image {
   max-width: 100%;
   width: 100%;
+  border-radius: var(--radius);
 }
 
 .kg-card figcaption {
@@ -54,6 +55,9 @@
 @media (max-width: 800px) {
   .kg-width-full {
     width: 100vw;
+  }
+  .kg-width-full .kg-image {
+    border-radius: 0;
   }
   .kg-width-full figcaption {
     padding-left: 6vw;

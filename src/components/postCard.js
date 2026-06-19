@@ -9,7 +9,7 @@ const PostCard = (props) => (
     } ${props.node.frontmatter.thumbnail ? `with-image` : `no-image`}`}
     style={
       props.node.frontmatter.thumbnail && {
-        backgroundImage: `url(${getSrc(props.node.frontmatter.thumbnail)})`,
+        "--post-card-image": `url(${getSrc(props.node.frontmatter.thumbnail)})`,
       }
     }
   >
