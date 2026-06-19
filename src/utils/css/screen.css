@@ -267,6 +267,7 @@ body {
   left: 0;
   z-index: 9999;
   padding: 12px 12px 12px 0;
+  transition: none;
 }
 
 @media (max-width: 850px) {
@@ -358,6 +359,7 @@ body {
     transition-delay: 0.25;
     overflow: hidden;
     height: 100vh;
+    height: 100dvh;
   }
 
   .site-head-open .site-head {
@@ -367,6 +369,7 @@ body {
     bottom: 0;
     left: 0;
     height: 100vh;
+    height: 100dvh;
     padding: 6vw;
     overflow-y: auto;
     background: var(--overlay-bg);
@@ -451,7 +454,7 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: transform 1.2s cubic-bezier(0.33, 0, 0.2, 1);
+  transition: transform 0.9s cubic-bezier(0.33, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -700,10 +703,6 @@ body {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   transform: translateX(calc(50vw - 50%));
-}
-
-.post-content-image .kg-image {
-  border-radius: 0;
 }
 
 .post-content-body {

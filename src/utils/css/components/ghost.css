@@ -18,12 +18,6 @@
   border-radius: var(--radius);
 }
 
-/* Full-bleed images should stay edge-to-edge, un-rounded */
-.kg-width-wide .kg-image,
-.kg-width-full .kg-image {
-  border-radius: 0;
-}
-
 .kg-card figcaption {
   padding: 1.5rem;
   font-size: 1.3rem;
@@ -61,6 +55,9 @@
 @media (max-width: 800px) {
   .kg-width-full {
     width: 100vw;
+  }
+  .kg-width-full .kg-image {
+    border-radius: 0;
   }
   .kg-width-full figcaption {
     padding-left: 6vw;
