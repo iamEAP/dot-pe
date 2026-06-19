@@ -18,6 +18,13 @@
   border-radius: var(--radius);
 }
 
+/* Markdown-authored post images (rendered via gatsby-remark-images, not
+   Ghost's own kg-image markup) need their own rounding rule. */
+.gatsby-resp-image-wrapper {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
 .kg-card figcaption {
   padding: 1.5rem;
   font-size: 1.3rem;
@@ -56,7 +63,8 @@
   .kg-width-full {
     width: 100vw;
   }
-  .kg-width-full .kg-image {
+  .kg-width-full .kg-image,
+  .kg-width-full .gatsby-resp-image-wrapper {
     border-radius: 0;
   }
   .kg-width-full figcaption {
