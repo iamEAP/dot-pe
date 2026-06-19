@@ -300,6 +300,14 @@ body {
     outline: none;
     color: transparent;
     background-color: transparent;
+    /* The global `button:hover { transition: 0.2s ease }` rule outranks the
+       base `.nav-burger { transition: none }` once the button is tapped/hovered,
+       which silently re-enables transitions on `left`/`top`. Because opening the
+       menu flips `.site-head`'s containing block from in-flow to fixed instantly
+       while these offsets change from (0,0) to (6vw,6vw), the animated offset
+       makes the burger snap to a corner and glide back. Re-assert `none` here
+       (higher specificity than `button:hover`) so the toggle stays jump-free. */
+    transition: none;
   }
   .site-head-container {
     flex-direction: column;
