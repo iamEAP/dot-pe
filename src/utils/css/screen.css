@@ -276,16 +276,22 @@ body {
   }
   .nav-burger {
     display: block;
-    /* Fixed (not absolute) and at a constant offset in both open and
-       closed states, so toggling the menu never changes its containing
-       block or position values, eliminating any jump/flash on toggle. */
-    position: fixed;
-    left: 6vw;
-    top: 6vw;
+    /* Stays absolute (relative to .site-head), so it scrolls away with the
+       page like the rest of the header when closed, rather than floating
+       over content. */
+    top: 0;
     box-shadow: none;
     color: transparent;
     background-color: transparent;
     outline: none;
+  }
+  .site-head-open .nav-burger {
+    /* .site-head itself becomes fixed full-screen on open, so this offset
+       is relative to the viewport at that point. Matching it to where the
+       closed-state offset (0,0) lands once .site-wrapper's 6vw padding is
+       accounted for keeps the button visually anchored across the toggle. */
+    left: 6vw;
+    top: 6vw;
   }
   .nav-burger:focus,
   .nav-burger:hover,
