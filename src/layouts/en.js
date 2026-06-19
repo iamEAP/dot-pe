@@ -6,6 +6,7 @@ import "../i18n"
 const Layout = (props) => {
   const { title, children, location, isTranslated = false } = props
   const [toggleNav, setToggleNav] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false)
   const [context, setContext] = React.useState({ langKey: "en", isTranslated })
   const isHome = location.pathname === "/" || location.pathname === "/terson/"
   const scrollPositionRef = React.useRef(0)
@@ -16,6 +17,12 @@ const Layout = (props) => {
     }
     setToggleNav(!toggleNav)
   }
+
+  React.useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 40)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   React.useEffect(() => {
     if (toggleNav) {
@@ -40,7 +47,9 @@ const Layout = (props) => {
         <header className="site-head">
           <div className="site-head-container">
             <button
-              className="nav-burger"
+              className={`nav-burger ${
+                !toggleNav && isScrolled ? `nav-burger-hidden` : ``
+              }`}
               onClick={handleToggleNav}
               aria-expanded={toggleNav}
               aria-controls="site-navigation"
