@@ -276,22 +276,25 @@ body {
   }
   .nav-burger {
     display: block;
-    /* Stays absolute (relative to .site-head), so it scrolls away with the
-       page like the rest of the header when closed, rather than floating
-       over content. */
-    top: 0;
+    /* Fixed, at a constant offset, in both open and closed states -- the
+       position value never changes on toggle, which is the only way we've
+       found that's reliably jump-free on real iOS Safari (matching
+       coordinates across an absolute/fixed switch still visibly jumped on
+       device even though the math checked out and headless testing showed
+       no jump). Floating over content while scrolled is handled separately
+       via the nav-burger-hidden class below. */
+    position: fixed;
+    left: 6vw;
+    top: 6vw;
     box-shadow: none;
     color: transparent;
     background-color: transparent;
     outline: none;
+    transition: opacity 0.2s ease-out;
   }
-  .site-head-open .nav-burger {
-    /* .site-head itself becomes fixed full-screen on open, so this offset
-       is relative to the viewport at that point. Matching it to where the
-       closed-state offset (0,0) lands once .site-wrapper's 6vw padding is
-       accounted for keeps the button visually anchored across the toggle. */
-    left: 6vw;
-    top: 6vw;
+  .nav-burger.nav-burger-hidden {
+    opacity: 0;
+    pointer-events: none;
   }
   .nav-burger:focus,
   .nav-burger:hover,
