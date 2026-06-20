@@ -2,7 +2,7 @@
 description: Verify SEO and build correctness against the real built dot-pe site
 ---
 
-# Verify skill: dot-pe SEO + build hygiene
+# Verify skill: dot-pe build correctness
 
 This site has significant SEO investment (structured data, hreflang, sitemap,
 OG/Twitter cards, manifest, RSS, etc.) plus other build-output correctness
@@ -10,6 +10,10 @@ concerns. Run this verification whenever you change anything that could
 affect head metadata, structured data, internal links, images, i18n strings,
 redirects, or the production build in general — and always before reporting
 such a change as done.
+
+Note: this is the slower, build-against-real-output verification, intentionally
+kept out of `npm test`. `npm test` is reserved for fast, idempotent unit tests
+(of which there are none yet).
 
 ## When to run it
 
@@ -23,7 +27,7 @@ such a change as done.
 ## Run it
 
 ```bash
-npm run seo:verify
+npm run verify
 ```
 
 This does a clean `gatsby build --prefix-paths` (mirroring the real
@@ -35,7 +39,7 @@ If `public/` is already freshly built with `--prefix-paths` and you only
 changed test files, you can skip the rebuild:
 
 ```bash
-npm run seo:verify:fast
+npm run verify:fast
 ```
 
 ## Reading results

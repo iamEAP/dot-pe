@@ -75,9 +75,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "seo:build": "gatsby clean && gatsby build --prefix-paths",
-    "seo:verify": "npm run seo:build && npm run seo:verify:fast",
-    "seo:verify:fast": "node --test tests/build/*.test.js"
+    "verify:build": "gatsby clean && gatsby build --prefix-paths",
+    "verify": "npm run verify:build && npm run verify:fast",
+    "verify:fast": "node --test tests/build/*.test.js"
   },
   "browserslist": [
     "last 2 versions"
