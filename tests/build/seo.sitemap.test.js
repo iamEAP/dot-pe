@@ -56,6 +56,21 @@ test("every sitemap url resolves to a page that was actually built", () => {
   })
 })
 
+test("every hreflang alternate href resolves to a page that was actually built", () => {
+  // Directly guards the failure mode where a page advertises a translated
+  // alternate (e.g. an /sv/... twin) that was never built. Checked against
+  // disk rather than transitively via the <loc> set, so it stands on its own.
+  const $ = readPublicXml("sitemap-0.xml")
+  $("url xhtml\\:link").each((_, el) => {
+    const href = $(el).attr("href")
+    const hreflang = $(el).attr("hreflang")
+    assert.ok(
+      assetExists(href),
+      `hreflang=${hreflang} alternate points at a non-existent page: ${href}`
+    )
+  })
+})
+
 test("every sitemap url has an x-default hreflang alternate, and every alternate it does advertise resolves to a URL also in the sitemap", () => {
   const $ = readPublicXml("sitemap-0.xml")
   const allLocs = new Set(
