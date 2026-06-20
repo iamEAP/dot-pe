@@ -216,17 +216,14 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
 export default StaticSou20251ResponsePage
 
 export function Head({ data }) {
+  const { siteUrl } = data.site.siteMetadata
   return (
     <Seo
       title="Remissvar över betänkandet SOU 2025:1 Utredningen om skärpta krav för att förvärva svenskt medborgarskap"
-      keywords={[
-        `Sverige`,
-        `Medborgarskap`,
-        `Tech`,
-        `Arbetskraftsinvandring`,
-      ]}
+      keywords={[`Sverige`, `Medborgarskap`, `Tech`, `Arbetskraftsinvandring`]}
       lang="sv-SE"
       img={getSrc(data.svenskaFlaggan)}
+      canonical={`${siteUrl}/sv/writes/a-response-to-sou-2025-1/`}
     />
   )
 }
@@ -236,6 +233,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     svenskaFlaggan: file(

@@ -422,6 +422,7 @@ Promise.all(allPromisesFor('https://api.example.com', [1, 2, 3])
 export default LegacyWdcPromisesPage
 
 export function Head({ data }) {
+  const { siteUrl } = data.site.siteMetadata
   return (
     <Seo
       title="Better WDC Performance with Promises"
@@ -433,6 +434,7 @@ export function Head({ data }) {
         `Promise`,
       ]}
       img={getSrc(data.promises)}
+      canonical={`${siteUrl}/engineers/better-wdc-performance-with-promises/`}
     />
   )
 }
@@ -442,6 +444,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     promises: file(relativePath: { eq: "legacy/promises.jpg" }) {

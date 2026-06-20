@@ -211,11 +211,13 @@ const StaticSou20251ResponsePage = ({ data, location }) => {
 export default StaticSou20251ResponsePage
 
 export function Head({ data }) {
+  const { siteUrl } = data.site.siteMetadata
   return (
     <Seo
       title="Response to the inquiry into stricter requirements for acquiring Swedish citizenship"
       keywords={[`Sweden`, `Citizenship`, `Tech`, `Labor Migration`]}
       img={getSrc(data.svenskaFlaggan)}
+      canonical={`${siteUrl}/writes/a-response-to-sou-2025-1/`}
     />
   )
 }
@@ -225,6 +227,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     svenskaFlaggan: file(

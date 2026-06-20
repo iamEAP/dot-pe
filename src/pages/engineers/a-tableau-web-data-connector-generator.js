@@ -375,17 +375,13 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
 export default LegacyWdcGeneratorPage
 
 export function Head({ data }) {
+  const { siteUrl } = data.site.siteMetadata
   return (
     <Seo
       title="Yo, Tableau Web Data Connector!"
-      keywords={[
-        `Tableau`,
-        `WDC`,
-        `Web Data Connector`,
-        `Generator`,
-        `Yeoman`,
-      ]}
+      keywords={[`Tableau`, `WDC`, `Web Data Connector`, `Generator`, `Yeoman`]}
       img={getSrc(data.yoTableauDataConnector)}
+      canonical={`${siteUrl}/engineers/a-tableau-web-data-connector-generator/`}
     />
   )
 }
@@ -395,6 +391,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     yoTableauDataConnector: file(
