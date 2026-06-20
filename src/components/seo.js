@@ -27,8 +27,13 @@ function Seo({ description, lang, meta, link, keywords, title, img, canonical, t
   `)
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage =
-    img || `${site.siteMetadata.baseUrl}${getSrc(defaultImage)}`
+  // Open Graph requires an absolute image URL. Page-supplied `img` values are
+  // usually root-relative (e.g. getSrc() -> "/terson/static/..."), so prefix
+  // them with the site origin; absolute URLs are passed through untouched.
+  const rawImage = img || getSrc(defaultImage)
+  const ogImage = /^https?:\/\//.test(rawImage)
+    ? rawImage
+    : `${site.siteMetadata.baseUrl}${rawImage}`
   const ogType = type || `website`
   const twitterHandle = site.siteMetadata.social.twitter
 

@@ -8,15 +8,15 @@ import Seo from "../components/seo"
 
 class PreNotFoundPage extends React.Component {
   render() {
-    const { t, i18n } = this.props
+    const { i18n } = this.props
     const { data, location } = this.props
     const siteTitle = data.site.siteMetadata.title
-    let LocalLayout = EnLayout
-
-    if (location.pathname.indexOf("/sv") === 0) {
-      i18n.changeLanguage("sv")
-      LocalLayout = SvLayout
-    }
+    const isSv = location.pathname.indexOf("/sv") === 0
+    const LocalLayout = isSv ? SvLayout : EnLayout
+    // getFixedT resolves the language explicitly per render instead of mutating
+    // the shared i18next singleton, which otherwise leaks language between pages
+    // during the SSR build (English /404.html rendering Swedish copy, etc.).
+    const t = i18n.getFixedT(isSv ? "sv" : "en")
 
     return (
       <LocalLayout location={location} title={siteTitle}>

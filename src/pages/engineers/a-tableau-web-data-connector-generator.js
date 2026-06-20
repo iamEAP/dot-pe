@@ -4,7 +4,7 @@
  */
 
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, withPrefix } from "gatsby"
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 
 import Layout from "../../layouts/en"
@@ -188,7 +188,9 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
           </p>
           <hr />
           <img
-            src="/sites/default/files/field/image/yo-web-data-connector.gif"
+            src={withPrefix(
+              "/sites/default/files/field/image/yo-web-data-connector.gif"
+            )}
             alt="Demonstration of generator CLI."
             className="kg-image"
           />
@@ -239,7 +241,9 @@ const LegacyWdcGeneratorPage = ({ data, location }) => {
           </p>
           <hr />
           <img
-            src="/sites/default/files/field/image/grunt-web-data-connector-dual-screen-open.gif"
+            src={withPrefix(
+              "/sites/default/files/field/image/grunt-web-data-connector-dual-screen-open.gif"
+            )}
             alt="Demonstration of building and opening the generated connector."
             className="kg-image"
           />
