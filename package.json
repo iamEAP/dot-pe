@@ -44,6 +44,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "baseline-browser-mapping": "^2.10.37",
+    "cheerio": "^1.2.0",
     "gh-pages": "^5.0.0",
     "husky": "^9.1.7",
     "postcss-custom-properties": "^13.3.12",
@@ -73,7 +74,10 @@
     "prepare": "husky",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "seo:build": "gatsby clean && gatsby build --prefix-paths",
+    "seo:verify": "npm run seo:build && npm run seo:verify:fast",
+    "seo:verify:fast": "node --test tests/build/*.test.js"
   },
   "browserslist": [
     "last 2 versions"
