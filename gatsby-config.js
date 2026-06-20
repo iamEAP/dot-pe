@@ -2,6 +2,9 @@ const urljoin = require("url-join")
 const siteConfig = require("./siteConfig")
 const getSlugForPost = require("./src/utils/i18n-urls").getSlugForPost
 
+// Shared between the sitemap plugin's resolvePages and serialize hooks below.
+let sitemapPaths
+
 module.exports = {
   pathPrefix: siteConfig.prefix,
   siteMetadata: {
@@ -183,10 +186,24 @@ module.exports = {
           }
         `,
         resolveSiteUrl: () => urljoin(siteConfig.url, siteConfig.prefix),
+        // Populated by resolvePages, read by serialize: the set of built paths
+        // (trailing-slash normalized) that are actually going into the sitemap.
+        // Used so we only advertise an hreflang alternate when that translated
+        // page genuinely exists, instead of pointing crawlers at 404s.
         resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-          return allPages.filter(({ path }) => {
-            return !path.includes(`/404`) && !path.includes(`/dev-404`)
+          const filtered = allPages.filter(({ path }) => {
+            return (
+              !path.includes(`/404`) &&
+              !path.includes(`/dev-404`) &&
+              // /is and /sv/is are legacy client-side redirect stubs, not
+              // content; they shouldn't be advertised for indexing.
+              !/\/is\/?$/.test(path)
+            )
           })
+          sitemapPaths = new Set(
+            filtered.map(({ path }) => (path.endsWith(`/`) ? path : `${path}/`))
+          )
+          return filtered
         },
         serialize: ({ path }) => {
           const siteUrl = urljoin(siteConfig.url, siteConfig.prefix)
@@ -196,6 +213,13 @@ module.exports = {
             ? withTrailing.replace(/^\/sv/, ``) || `/`
             : withTrailing
           const svPath = isSv ? withTrailing : `/sv${withTrailing}`
+          const links = [{ lang: `x-default`, url: `${siteUrl}/` }]
+          if (sitemapPaths.has(enPath)) {
+            links.push({ lang: `en`, url: `${siteUrl}${enPath}` })
+          }
+          if (sitemapPaths.has(svPath)) {
+            links.push({ lang: `sv`, url: `${siteUrl}${svPath}` })
+          }
           return {
             // Relative path; with --prefix-paths the plugin prepends /terson correctly.
             // Local builds without --prefix-paths will have wrong page URLs in the
@@ -204,11 +228,7 @@ module.exports = {
             changefreq: `monthly`,
             priority:
               path === `/` || path === `/sv` || path === `/sv/` ? 1.0 : 0.7,
-            links: [
-              { lang: `x-default`, url: `${siteUrl}/` },
-              { lang: `en`, url: `${siteUrl}${enPath}` },
-              { lang: `sv`, url: `${siteUrl}${svPath}` },
-            ],
+            links,
           }
         },
       },

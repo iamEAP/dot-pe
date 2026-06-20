@@ -5,39 +5,37 @@ const { getSlugForPost } = require("./src/utils/i18n-urls")
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
 
-  // Static redirects
+  // Static redirects. Permanent (301) so search engines consolidate the
+  // legacy URLs into the target rather than parking both as indexable.
   createRedirect({
     fromPath: "/is",
     toPath: "/",
+    isPermanent: true,
   })
   createRedirect({
     fromPath: "/sv/is",
     toPath: "/sv",
+    isPermanent: true,
   })
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { frontmatter: { date: DESC } }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                langKey
-              }
+  return graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              langKey
             }
           }
         }
       }
-    `
-  ).then(result => {
+    }
+  `).then((result) => {
     if (result.errors) {
       throw result.errors
     }
@@ -97,5 +95,7 @@ exports.onPostBuild = async ({ reporter }) => {
     `${siteUrl}/sitemap-`
   )
   fs.writeFileSync(indexPath, content)
-  reporter.info(`[sitemap] Fixed sitemap-index.xml references to use ${siteUrl}`)
+  reporter.info(
+    `[sitemap] Fixed sitemap-index.xml references to use ${siteUrl}`
+  )
 }

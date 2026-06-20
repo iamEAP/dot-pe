@@ -29,23 +29,35 @@ for (const page of pages) {
     )
     assert.equal(meta($, "name", "twitter:site").attr("content"), "@iamEAP")
     assert.equal(meta($, "name", "twitter:creator").attr("content"), "@iamEAP")
-    for (const name of ["twitter:title", "twitter:description", "twitter:image"]) {
+    for (const name of [
+      "twitter:title",
+      "twitter:description",
+      "twitter:image",
+    ]) {
       assert.ok(meta($, "name", name).length, `missing ${name}`)
     }
   })
 
   test(`${sitePath}: html lang is set`, () => {
     const lang = $("html").attr("lang")
-    assert.ok(lang === "en-US" || lang === "sv-SE" || lang === "en", `got "${lang}"`)
+    assert.ok(
+      lang === "en-US" || lang === "sv-SE" || lang === "en",
+      `got "${lang}"`
+    )
   })
 
   const canonical = $('link[rel="canonical"]').attr("href")
-  if (canonical) {
-    test(`${sitePath}: canonical is absolute, under ${SITE_URL}, trailing slash`, () => {
+  const isNotFoundPage = sitePath.includes("/404")
+
+  if (!isNotFoundPage) {
+    test(`${sitePath}: has a canonical link, absolute, under ${SITE_URL}, trailing slash`, () => {
+      assert.ok(canonical, 'missing <link rel="canonical">')
       assert.ok(canonical.startsWith(SITE_URL))
       assert.ok(canonical.endsWith("/"))
     })
+  }
 
+  if (canonical) {
     test(`${sitePath}: og:url matches canonical when present`, () => {
       const ogUrl = meta($, "property", "og:url").attr("content")
       if (ogUrl) assert.equal(ogUrl, canonical)

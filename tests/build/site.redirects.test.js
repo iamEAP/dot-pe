@@ -11,13 +11,18 @@ for (const { from, to } of redirects) {
   test(`client-side redirect page ${from} points to ${to}`, () => {
     const page = getPage(from)
     assert.ok(page, `redirect page not built: ${from}`)
-    assert.match(page.html, new RegExp(`window\\.location\\.href\\s*=\\s*"${to.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`))
+    assert.match(
+      page.html,
+      new RegExp(
+        `window\\.location\\.href\\s*=\\s*"${to.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`
+      )
+    )
   })
 }
 
-test("Netlify _redirects file includes both legacy /is redirects", () => {
+test("Netlify _redirects file includes both legacy /is redirects as permanent (301)", () => {
   const text = readPublicText("_redirects")
   assert.ok(text, "_redirects not found in public/")
-  assert.match(text, /\/terson\/is\s+\/terson\/?\s+302/)
-  assert.match(text, /\/terson\/sv\/is\s+\/terson\/sv\s+302/)
+  assert.match(text, /\/terson\/is\s+\/terson\/?\s+301/)
+  assert.match(text, /\/terson\/sv\/is\s+\/terson\/sv\s+301/)
 })
