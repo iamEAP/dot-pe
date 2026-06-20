@@ -46,22 +46,5 @@ redirects, CSS purge safelist, image pipeline, 404, general hygiene). Each
 assertion is checked against real parsed HTML/XML in `public/`, not against
 source code, so failures point at an actual built-output defect.
 
-As of the last full pass, three pre-existing app bugs are expected to fail
-and are not test bugs:
-
-- `manifest start_url resolves to a real built page under the site prefix`
-  — `gatsby-config.js`'s manifest `start_url` already includes the site
-  prefix, and `gatsby-plugin-manifest` joins it with the path prefix again,
-  producing a doubled `/terson/terson`.
-- `og:image is absolute under the site prefix and the file exists` (a
-  handful of `/engineers/*` and `/writes/*` pages) — `src/components/seo.js`
-  only prepends the site origin to `og:image` in its default-image fallback
-  branch, not when a page passes an explicit `img` prop.
-- `every <img> src resolves to a file that was actually built` on
-  `a-tableau-web-data-connector-generator` — that page hardcodes legacy
-  `/sites/default/files/...` image paths as literal JSX strings, which
-  don't get the `--prefix-paths` prefix applied.
-
-If you fix one of these, the corresponding test will start passing — treat
-that as confirmation. Any *other* failure is a real regression to fix before
-continuing.
+The suite is expected to be fully green — there are no known/accepted
+failures. Any failure is a real regression to fix before continuing.

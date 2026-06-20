@@ -159,7 +159,10 @@ module.exports = {
       options: {
         name: siteConfig.name,
         short_name: siteConfig.shortName,
-        start_url: siteConfig.prefix,
+        // gatsby-plugin-manifest joins pathPrefix with start_url itself, so
+        // this must be root-relative; using siteConfig.prefix double-prefixes
+        // it to /terson/terson under --prefix-paths.
+        start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
