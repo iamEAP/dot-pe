@@ -58,8 +58,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
     throw result.errors
   }
 
+  if (!result.data) {
+    throw new Error("createPages query returned no data")
+  }
+
   // Create blog posts pages.
-  const posts = result.data!.allMarkdownRemark.edges
+  const posts = result.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
