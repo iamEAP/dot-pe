@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# TypeScript build info
+*.tsbuildinfo
+
 # Mac files
 .DS_Store
 
