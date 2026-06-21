@@ -5,6 +5,7 @@ description: Twenty-five, about time.
 hideImage: true
 thumbnail: ./not-here-not-home.jpg
 langKey: en
+category: music
 videos:
   - url: https://player.vimeo.com/video/9035775
 music:

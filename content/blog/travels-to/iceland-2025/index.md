@@ -4,6 +4,7 @@ date: "2025-09-12T11:00:00-00:00"
 description: Another Waterfall
 thumbnail: ./breithamerkursandur.jpg
 langKey: en
+category: photos
 isTranslated: true
 ---
 

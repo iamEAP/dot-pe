@@ -592,6 +592,111 @@ body {
   }
 }
 
+/* Category / index views
+/* ---------------------------------------------------------- */
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 0 2.5rem;
+}
+
+.category-nav-link {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  font-size: 1.4rem;
+  font-weight: var(--font-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.category-nav-link:hover {
+  color: var(--color-base);
+  border-color: var(--color-base);
+}
+
+.category-nav-link.is-active {
+  background: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-bg);
+}
+
+.category-feature {
+  position: relative;
+  margin: 0 0 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1f1f1f 0%, #111 100%);
+}
+
+.category-feature-link {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+.category-feature-image {
+  display: block;
+  width: 100%;
+}
+
+.category-feature-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4vw;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.category-feature-date {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  opacity: 0.85;
+}
+
+.category-feature-title {
+  margin: 0.3em 0 0.25em;
+  font-size: 4rem;
+  line-height: 1.1em;
+}
+
+.category-feature-teaser {
+  margin: 0;
+  max-width: 40em;
+  font-size: 1.8rem;
+  line-height: 1.4em;
+  opacity: 0.95;
+}
+
+.category-feature-link:hover .category-feature-title {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .category-feature-title {
+    font-size: 2.6rem;
+  }
+  .category-feature-teaser {
+    font-size: 1.5rem;
+  }
+}
+
 /* Homepage Recent Posts
 /* ---------------------------------------------------------- */
 

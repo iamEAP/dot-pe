@@ -4,6 +4,7 @@ date: "2017-02-25T14:10:04-07:00"
 description: Gå in i bilen.
 thumbnail: ./golden-idols-west-coast-2017.jpg
 langKey: sv
+category: photos
 isTranslated: true
 ---
 

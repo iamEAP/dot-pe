@@ -10,6 +10,14 @@ import Link from "../components/link"
 import Seo from "../components/seo"
 import i18n from "../i18n"
 import { imageOf, srcOf } from "../utils/image"
+import {
+  HOME_LABEL,
+  VIEW_META,
+  VIEW_SLUG,
+  feedPathForCategory,
+  isCategoryKey,
+  viewPath,
+} from "../utils/categories"
 
 type BlogPostContext = {
   slug: string
@@ -35,6 +43,8 @@ const BlogPostTemplate = ({
     key: string,
     options?: Record<string, unknown>
   ) => string
+  const category = post?.frontmatter?.category
+  const categoryView = isCategoryKey(category) ? category : null
 
   return (
     <LocalLayout
@@ -98,6 +108,18 @@ const BlogPostTemplate = ({
                 </button>
               )}
             </li>
+            {categoryView && (
+              <li>
+                <Link
+                  to={VIEW_SLUG[categoryView]}
+                  className="button primary fit"
+                >
+                  {t("More {{category}}", {
+                    category: VIEW_META[langKey][categoryView].label,
+                  })}
+                </Link>
+              </li>
+            )}
             <li>
               {(prevNext?.previous && (
                 <Link
@@ -147,6 +169,11 @@ export const Head = ({
     (video): video is NonNullable<typeof video> => video != null
   )
   const personId = `${siteUrl}/#person`
+  const category = post?.frontmatter?.category
+  const categoryView = isCategoryKey(category) ? category : null
+  const categoryUrl = categoryView
+    ? `${siteUrl}${viewPath(categoryView, langKey)}`
+    : null
 
   const jsonLdGraph: Record<string, unknown>[] = [
     {
@@ -166,6 +193,35 @@ export const Head = ({
       url: `${siteUrl}/`,
     },
   ]
+
+  // Home > Category > Post breadcrumb trail. Only emitted when the post has a
+  // recognized category (it always should — the build enforces it).
+  if (categoryView && categoryUrl) {
+    jsonLdGraph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: HOME_LABEL[langKey],
+          item: `${siteUrl}${langKey === "sv" ? "/sv/" : "/"}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: VIEW_META[langKey][categoryView].title,
+          item: categoryUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: post?.frontmatter?.title,
+          item: canonical,
+        },
+      ],
+    })
+  }
 
   const music = post?.frontmatter?.music
   if (music) {
@@ -235,6 +291,16 @@ export const Head = ({
             type: "application/rss+xml",
             href: `${siteUrl}/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
           },
+          // Also surface the post's category feed so it's discoverable.
+          ...(categoryView
+            ? [
+                {
+                  rel: "alternate",
+                  type: "application/rss+xml",
+                  href: `${siteUrl}${feedPathForCategory(categoryView, langKey)}`,
+                },
+              ]
+            : []),
         ]}
       />
       <script
@@ -274,6 +340,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         dateISO: date(formatString: "YYYY-MM-DD")
         description
+        category
         hideImage
         langKey
         isTranslated

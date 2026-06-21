@@ -4,6 +4,7 @@ date: "2025-09-12T11:00:00-00:00"
 description: Ännu ett vattenfall
 thumbnail: ./breithamerkursandur.jpg
 langKey: sv
+category: photos
 isTranslated: true
 ---
 

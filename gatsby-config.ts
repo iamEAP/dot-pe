@@ -5,6 +5,12 @@ import postcssCustomProperties from "postcss-custom-properties"
 import autoprefixer from "autoprefixer"
 import siteConfig from "./siteConfig"
 import { getSlugForPost } from "./src/utils/i18n-urls"
+import {
+  CATEGORY_KEYS,
+  VIEW_META,
+  feedPathForCategory,
+  type CategoryKey,
+} from "./src/utils/categories"
 
 // Shape of a single node as returned by the feed plugin's per-feed query.
 type FeedNode = {
@@ -126,35 +132,44 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        feeds: ["en", "sv"].map((langKey) => {
-          return {
-            serialize: ({
-              query: { site, allMarkdownRemark },
-            }: {
-              query: {
-                site: { siteMetadata: { siteUrl: string } }
-                allMarkdownRemark: { edges: ReadonlyArray<{ node: FeedNode }> }
-              }
-            }) => {
-              return allMarkdownRemark.edges.map((edge) => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url:
-                    site.siteMetadata.siteUrl +
-                    getSlugForPost(langKey, edge.node.fields.slug),
-                  guid:
-                    site.siteMetadata.siteUrl +
-                    getSlugForPost(langKey, edge.node.fields.slug),
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+        // One site-wide feed per language (the historical /rss.xml, /rss.sv.xml)
+        // plus a dedicated feed per category (e.g. /music.rss.xml). The feed
+        // plugin places files manually, so `match` is a deliberate non-match.
+        feeds: (["en", "sv"] as const).flatMap((langKey) => {
+          const buildFeed = (category: CategoryKey | null) => {
+            const categoryFilter = category
+              ? `, category: { eq: "${category}" }`
+              : ``
+            return {
+              serialize: ({
+                query: { site, allMarkdownRemark },
+              }: {
+                query: {
+                  site: { siteMetadata: { siteUrl: string } }
+                  allMarkdownRemark: {
+                    edges: ReadonlyArray<{ node: FeedNode }>
+                  }
+                }
+              }) => {
+                return allMarkdownRemark.edges.map((edge) => {
+                  return Object.assign({}, edge.node.frontmatter, {
+                    description: edge.node.excerpt,
+                    date: edge.node.frontmatter.date,
+                    url:
+                      site.siteMetadata.siteUrl +
+                      getSlugForPost(langKey, edge.node.fields.slug),
+                    guid:
+                      site.siteMetadata.siteUrl +
+                      getSlugForPost(langKey, edge.node.fields.slug),
+                    custom_elements: [{ "content:encoded": edge.node.html }],
+                  })
                 })
-              })
-            },
-            query: `
+              },
+              query: `
                 {
                   allMarkdownRemark(
                     sort: { frontmatter: { date: DESC } },
-                    filter: { frontmatter: { langKey: { eq: "${langKey}" } } }
+                    filter: { frontmatter: { langKey: { eq: "${langKey}" }${categoryFilter} } }
                   ) {
                     edges {
                       node {
@@ -170,10 +185,17 @@ const config: GatsbyConfig = {
                   }
                 }
               `,
-            output: `/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
-            title: "Eric Peterson",
-            match: `^/do-no-match-manually-placed/`,
+              output: category
+                ? feedPathForCategory(category, langKey)
+                : `/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
+              title: category
+                ? `${siteConfig.name} — ${VIEW_META[langKey][category].label}`
+                : siteConfig.name,
+              match: `^/do-no-match-manually-placed/`,
+            }
           }
+
+          return [buildFeed(null), ...CATEGORY_KEYS.map(buildFeed)]
         }),
       },
     },

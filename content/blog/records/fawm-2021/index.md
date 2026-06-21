@@ -4,6 +4,7 @@ date: "2021-03-01T00:00:00+01:00"
 description: 14 Songs in 28 Days
 thumbnail: ./illuminate-the-room.jpg
 langKey: en
+category: music
 isTranslated: true
 music:
   type: MusicAlbum

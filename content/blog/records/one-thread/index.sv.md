@@ -4,6 +4,7 @@ date: "2025-02-21T00:00:00+01:00"
 description: Jag vill dra isär våra trådar
 thumbnail: ./one-thread.jpg
 langKey: sv
+category: music
 isTranslated: true
 music:
   type: MusicAlbum

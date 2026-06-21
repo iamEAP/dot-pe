@@ -4,6 +4,7 @@ date: "2018-02-12T17:10:04-07:00"
 description: Sweet As
 thumbnail: ./auckland.jpg
 langKey: sv
+category: photos
 isTranslated: true
 ---
 

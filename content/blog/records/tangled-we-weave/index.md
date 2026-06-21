@@ -4,6 +4,7 @@ date: "2009-09-02T17:10:26-07:00"
 description: An experiment in blind collaboration as well as creative and personal synchronicity.
 thumbnail: ./tww.jpg
 langKey: en
+category: music
 videos:
   - url: https://player.vimeo.com/video/6921096
     name: "tangled; we weave - Week Three"

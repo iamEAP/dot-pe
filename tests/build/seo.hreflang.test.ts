@@ -18,6 +18,12 @@ const pairs = [
     enAlternateHref: `${SITE_URL}/sv/posts/`,
     svAlternateHref: `${SITE_URL}/posts/`,
   },
+  {
+    en: `${PREFIX}/music/`,
+    sv: `${PREFIX}/sv/music/`,
+    enAlternateHref: `${SITE_URL}/sv/music/`,
+    svAlternateHref: `${SITE_URL}/music/`,
+  },
 ]
 
 for (const { en, sv, enAlternateHref, svAlternateHref } of pairs) {

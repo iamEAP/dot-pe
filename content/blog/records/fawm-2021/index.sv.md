@@ -4,6 +4,7 @@ date: "2021-03-01T00:00:00+01:00"
 description: 14 Låtar på 28 Dagar
 thumbnail: ./illuminate-the-room.jpg
 langKey: sv
+category: music
 isTranslated: true
 music:
   type: MusicAlbum

@@ -4,6 +4,7 @@ date: "2015-11-29T15:21:25-08:00"
 description: A Bitter, Tragic Joke
 thumbnail: ./seattle-monorail-62.jpg
 langKey: en
+category: music
 videos:
   - url: https://player.vimeo.com/video/147229341
 music:

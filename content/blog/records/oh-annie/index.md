@@ -4,6 +4,7 @@ date: "2015-07-19T20:58:54.000Z"
 description: I taught you everything you know.
 thumbnail: ./oh-annie.jpg
 langKey: en
+category: music
 music:
   type: MusicRecording
   artist: Eric Peterson
