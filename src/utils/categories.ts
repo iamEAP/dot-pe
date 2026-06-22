@@ -42,12 +42,17 @@ export const VIEW_SLUG: Record<ViewKey, string> = {
 }
 
 type ViewMeta = {
-  // Short label used in the filter nav and the "More {{category}}" button.
+  // Short label used in the filter nav.
   label: string
   // Page <title> and <h1>.
   title: string
   // Tagline shown under the heading and used as the meta/OG description.
   description: string
+  // Call-to-action used by the cross-link button on individual posts. Stored
+  // per category rather than interpolated because the wording isn't uniform —
+  // Swedish "more" is "mer" for mass nouns (musik) but "fler" for countable
+  // plurals (texter, foton).
+  cta: string
 }
 
 type Lang = "en" | "sv"
@@ -59,21 +64,25 @@ export const VIEW_META: Record<Lang, Record<ViewKey, ViewMeta>> = {
       label: "All",
       title: "All posts",
       description: "Everything, chronologically.",
+      cta: "See all posts",
     },
     music: {
       label: "Music",
       title: "Music",
       description: "Recordings, releases, and live performances.",
+      cta: "See more music",
     },
     writing: {
       label: "Writing",
       title: "Writing",
       description: "Essays and thoughts on software, society, and life.",
+      cta: "See more writing",
     },
     photos: {
       label: "Photos",
       title: "Photos",
       description: "Travel and photography from around the world.",
+      cta: "See more photos",
     },
   },
   sv: {
@@ -81,21 +90,25 @@ export const VIEW_META: Record<Lang, Record<ViewKey, ViewMeta>> = {
       label: "Alla",
       title: "Alla inlägg",
       description: "Allt, kronologiskt.",
+      cta: "Se alla inlägg",
     },
     music: {
       label: "Musik",
       title: "Musik",
       description: "Inspelningar, släpp och liveframträdanden.",
+      cta: "Se mer musik",
     },
     writing: {
       label: "Texter",
       title: "Texter",
       description: "Essäer och tankar om mjukvara, samhälle och livet.",
+      cta: "Se fler texter",
     },
     photos: {
       label: "Foton",
       title: "Foton",
       description: "Resor och fotografi från hela världen.",
+      cta: "Se fler foton",
     },
   },
 }

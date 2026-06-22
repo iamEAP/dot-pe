@@ -175,9 +175,7 @@ const BlogPostTemplate = ({
             {categoryView && (
               <li className="post-nav-category">
                 <Link to={VIEW_SLUG[categoryView]} className="button fit">
-                  {t("More {{category}}", {
-                    category: VIEW_META[langKey][categoryView].label,
-                  })}
+                  {VIEW_META[langKey][categoryView].cta}
                 </Link>
               </li>
             )}

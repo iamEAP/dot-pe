@@ -8,7 +8,6 @@ const resources = {
       "Rewind to {{date}}": "Rewind to {{date}}",
       "There will be more": "There will be more",
       "There was more": "There was more",
-      "More {{category}}": "More {{category}}",
       "Browse by category": "Browse by category",
       "Not Found": "Not Found",
       "You just hit a page that doesn't exist":
@@ -21,7 +20,6 @@ const resources = {
       "Rewind to {{date}}": "Spola tillbaka till {{date}}",
       "There will be more": "Det kommer mer",
       "There was more": "Det fanns mer",
-      "More {{category}}": "Mer {{category}}",
       "Browse by category": "Bläddra efter kategori",
       "Not Found": "Ej Hittad",
       "You just hit a page that doesn't exist":
