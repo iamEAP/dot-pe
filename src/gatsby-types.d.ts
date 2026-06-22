@@ -2871,16 +2871,6 @@ type SeoDefaultsQueryVariables = Exact<{ [key: string]: never; }>;
 
 type SeoDefaultsQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly author: string | null, readonly baseUrl: string | null, readonly siteUrl: string | null, readonly social: { readonly twitter: string | null } | null } | null } | null, readonly defaultImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
-type SouResponseEnQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SouResponseEnQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly siteUrl: string | null } | null } | null, readonly svenskaFlaggan: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
-
-type SouResponseSvQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SouResponseSvQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly siteUrl: string | null } | null } | null, readonly svenskaFlaggan: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
-
 type WdcGeneratorQueryVariables = Exact<{ [key: string]: never; }>;
 
 

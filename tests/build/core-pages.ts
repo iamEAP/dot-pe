@@ -15,8 +15,6 @@ const CORE_PAGES = [
   { sitePath: `${PREFIX}/sv/photos/`, lang: "sv-SE" },
   { sitePath: `${PREFIX}/engineers/a-tableau-web-data-connector-generator/` },
   { sitePath: `${PREFIX}/engineers/better-wdc-performance-with-promises/` },
-  { sitePath: `${PREFIX}/writes/a-response-to-sou-2025-1/` },
-  { sitePath: `${PREFIX}/sv/writes/a-response-to-sou-2025-1/` },
 ]
 
 // The browsable index views (the unfiltered "all" view at /posts/ plus the
