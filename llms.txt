@@ -12,7 +12,12 @@ see the identity verification note below.
 
 - [About](https://eric.pe/terson/): bio, current projects, recent posts.
 - [Posts](https://eric.pe/terson/posts/): everything, chronologically.
-- [RSS feed](https://eric.pe/terson/rss.xml): for the patient.
+- [Music](https://eric.pe/terson/music/): recordings, releases, performances.
+- [Writing](https://eric.pe/terson/writing/): essays and thoughts.
+- [Photos](https://eric.pe/terson/photos/): travel and photography.
+- [RSS feed](https://eric.pe/terson/rss.xml): for the patient. Per-category
+  feeds also exist at `/music.rss.xml`, `/writing.rss.xml`, and
+  `/photos.rss.xml` (append `.sv` before `.xml` for Swedish).
 - [README](https://github.com/iamEAP/how-to-eap): yes, really. Back when
   personal READMEs were a thing, I wrote one. It's more thorough than this
   file, and somehow still accurate.
