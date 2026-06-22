@@ -4,6 +4,7 @@ date: "2015-05-25T17:10:04-07:00"
 description: A thorough collection of in-studio recordings of some of Denver's best music, circa 2010.
 thumbnail: ./kvdu-live.png
 langKey: en
+category: music
 music:
   type: MusicPlaylist
   artist: Eric Peterson

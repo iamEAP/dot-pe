@@ -6,8 +6,9 @@ const resources = {
     translation: {
       "Fast-forward to {{date}}": "Fast-forward to {{date}}",
       "Rewind to {{date}}": "Rewind to {{date}}",
-      "There will probably be more": "There will probably be more",
-      "There was probably more": "There was probably more",
+      "There will be more": "There will be more",
+      "There was more": "There was more",
+      "Browse by category": "Browse by category",
       "Not Found": "Not Found",
       "You just hit a page that doesn't exist":
         "You just hit a page that doesn't exist",
@@ -16,9 +17,10 @@ const resources = {
   sv: {
     translation: {
       "Fast-forward to {{date}}": "Spola framåt till {{date}}",
-      "Rewind to {{date}}": "Spola tillbaka till  {{date}}",
-      "There will probably be more": "Det kommer nog att finnas fler",
-      "There was probably more": "Det fanns nog fler",
+      "Rewind to {{date}}": "Spola tillbaka till {{date}}",
+      "There will be more": "Det kommer mer",
+      "There was more": "Det fanns mer",
+      "Browse by category": "Bläddra efter kategori",
       "Not Found": "Ej Hittad",
       "You just hit a page that doesn't exist":
         "Du hittade precis en sida som inte finns",

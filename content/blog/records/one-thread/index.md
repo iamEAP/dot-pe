@@ -4,6 +4,7 @@ date: "2025-02-21T00:00:00+01:00"
 description: I wanna pull these threads of ours apart
 thumbnail: ./one-thread.jpg
 langKey: en
+category: music
 isTranslated: true
 music:
   type: MusicAlbum

@@ -5,6 +5,7 @@ description: Don't Know What it is To Feel
 hideImage: true
 thumbnail: ./asleep-at-the-wheel.jpg
 langKey: en
+category: music
 videos:
   - url: https://player.vimeo.com/video/9932047
 music:

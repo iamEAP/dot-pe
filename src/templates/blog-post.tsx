@@ -10,10 +10,59 @@ import Link from "../components/link"
 import Seo from "../components/seo"
 import i18n from "../i18n"
 import { imageOf, srcOf } from "../utils/image"
+import {
+  HOME_LABEL,
+  VIEW_META,
+  VIEW_SLUG,
+  feedPathForCategory,
+  isCategoryKey,
+  viewPath,
+} from "../utils/categories"
 
 type BlogPostContext = {
   slug: string
 }
+
+// Double-triangle transport glyphs for the prev/next button group. Filled,
+// with a matching-color stroke + round joins so the points are gently
+// rounded rather than razor-sharp.
+const RewindIcon = () => (
+  <svg
+    className="btn-icon"
+    viewBox="0 0 24 24"
+    width="13"
+    height="13"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+      d="M11 5v14l-9-7 9-7zM22 5v14l-9-7 9-7z"
+    />
+  </svg>
+)
+
+const FastForwardIcon = () => (
+  <svg
+    className="btn-icon"
+    viewBox="0 0 24 24"
+    width="13"
+    height="13"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+      d="M13 5v14l9-7-9-7zM2 5v14l9-7-9-7z"
+    />
+  </svg>
+)
 
 const BlogPostTemplate = ({
   data,
@@ -35,6 +84,8 @@ const BlogPostTemplate = ({
     key: string,
     options?: Record<string, unknown>
   ) => string
+  const category = post?.frontmatter?.category
+  const categoryView = isCategoryKey(category) ? category : null
 
   return (
     <LocalLayout
@@ -78,47 +129,70 @@ const BlogPostTemplate = ({
         <hr style={{ borderTop: "1px solid #cfcfcf" }} />
 
         <footer className="post-content-footer">
-          <ul className="actions fit" style={{ paddingRight: 0 }}>
-            <li>
-              {(prevNext?.next && (
-                <Link
-                  rel="previous"
-                  to={prevNext.next.fields?.slug ?? "#"}
-                  className="button fit"
-                >
-                  {t("Fast-forward to {{date}}", {
-                    date: dayjs(prevNext.next.frontmatter?.date ?? undefined)
-                      .locale(langKey)
-                      .format("MMMM YYYY"),
-                  })}
-                </Link>
-              )) || (
-                <button disabled className="fit">
-                  {`${t("There will probably be more")}...`}
-                </button>
-              )}
+          <ul
+            className="actions fit post-nav-actions"
+            style={{ paddingRight: 0 }}
+          >
+            {/* Temporal navigation, presented as one segmented control: older
+                on the left (rewind), newer on the right (fast-forward), like a
+                media transport bar. */}
+            <li className="post-nav-temporal">
+              <div className="button-group">
+                {(prevNext?.previous && (
+                  <Link
+                    rel="next"
+                    to={prevNext.previous.fields?.slug ?? "#"}
+                    className="button"
+                  >
+                    <RewindIcon />
+                    <span className="btn-label">
+                      {t("Rewind to {{date}}", {
+                        date: dayjs(
+                          prevNext.previous.frontmatter?.date ?? undefined
+                        )
+                          .locale(langKey)
+                          .format("MMMM YYYY"),
+                      })}
+                    </span>
+                  </Link>
+                )) || (
+                  <button disabled className="button">
+                    <RewindIcon />
+                    <span className="btn-label">{`${t("There was more")}...`}</span>
+                  </button>
+                )}
+                {(prevNext?.next && (
+                  <Link
+                    rel="previous"
+                    to={prevNext.next.fields?.slug ?? "#"}
+                    className="button"
+                  >
+                    <span className="btn-label">
+                      {t("Fast-forward to {{date}}", {
+                        date: dayjs(
+                          prevNext.next.frontmatter?.date ?? undefined
+                        )
+                          .locale(langKey)
+                          .format("MMMM YYYY"),
+                      })}
+                    </span>
+                    <FastForwardIcon />
+                  </Link>
+                )) || (
+                  <button disabled className="button">
+                    <span className="btn-label">{`${t("There will be more")}...`}</span>
+                    <FastForwardIcon />
+                  </button>
+                )}
+              </div>
             </li>
-            <li>
-              {(prevNext?.previous && (
-                <Link
-                  rel="next"
-                  to={prevNext.previous.fields?.slug ?? "#"}
-                  className="button fit"
-                >
-                  {t("Rewind to {{date}}", {
-                    date: dayjs(
-                      prevNext.previous.frontmatter?.date ?? undefined
-                    )
-                      .locale(langKey)
-                      .format("MMMM YYYY"),
-                  })}
+            {categoryView && (
+              <li className="post-nav-category">
+                <Link to={VIEW_SLUG[categoryView]} className="button fit">
+                  {VIEW_META[langKey][categoryView].cta}
                 </Link>
-              )) || (
-                <button disabled className="fit">
-                  {`${t("There was probably more")}...`}
-                </button>
-              )}
-            </li>
+              </li>
+            )}
           </ul>
         </footer>
       </article>
@@ -147,6 +221,11 @@ export const Head = ({
     (video): video is NonNullable<typeof video> => video != null
   )
   const personId = `${siteUrl}/#person`
+  const category = post?.frontmatter?.category
+  const categoryView = isCategoryKey(category) ? category : null
+  const categoryUrl = categoryView
+    ? `${siteUrl}${viewPath(categoryView, langKey)}`
+    : null
 
   const jsonLdGraph: Record<string, unknown>[] = [
     {
@@ -166,6 +245,35 @@ export const Head = ({
       url: `${siteUrl}/`,
     },
   ]
+
+  // Home > Category > Post breadcrumb trail. Only emitted when the post has a
+  // recognized category (it always should — the build enforces it).
+  if (categoryView && categoryUrl) {
+    jsonLdGraph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: HOME_LABEL[langKey],
+          item: `${siteUrl}${langKey === "sv" ? "/sv/" : "/"}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: VIEW_META[langKey][categoryView].title,
+          item: categoryUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: post?.frontmatter?.title,
+          item: canonical,
+        },
+      ],
+    })
+  }
 
   const music = post?.frontmatter?.music
   if (music) {
@@ -235,6 +343,16 @@ export const Head = ({
             type: "application/rss+xml",
             href: `${siteUrl}/rss${langKey === "en" ? "" : `.${langKey}`}.xml`,
           },
+          // Also surface the post's category feed so it's discoverable.
+          ...(categoryView
+            ? [
+                {
+                  rel: "alternate",
+                  type: "application/rss+xml",
+                  href: `${siteUrl}${feedPathForCategory(categoryView, langKey)}`,
+                },
+              ]
+            : []),
         ]}
       />
       <script
@@ -274,6 +392,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         dateISO: date(formatString: "YYYY-MM-DD")
         description
+        category
         hideImage
         langKey
         isTranslated

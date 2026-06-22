@@ -1437,6 +1437,7 @@ type MarkdownRemarkFilterListInput = {
 };
 
 type MarkdownRemarkFrontmatter = {
+  readonly category: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
   readonly hideImage: Maybe<Scalars['Boolean']>;
@@ -1457,6 +1458,7 @@ type MarkdownRemarkFrontmatter_dateArgs = {
 };
 
 type MarkdownRemarkFrontmatterFieldSelector = {
+  readonly category: InputMaybe<FieldSelectorEnum>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly hideImage: InputMaybe<FieldSelectorEnum>;
@@ -1469,6 +1471,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 };
 
 type MarkdownRemarkFrontmatterFilterInput = {
+  readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly hideImage: InputMaybe<BooleanQueryOperatorInput>;
@@ -1509,6 +1512,7 @@ type MarkdownRemarkFrontmatterMusicSortInput = {
 };
 
 type MarkdownRemarkFrontmatterSortInput = {
+  readonly category: InputMaybe<SortOrderEnum>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
   readonly hideImage: InputMaybe<SortOrderEnum>;
@@ -2811,7 +2815,15 @@ type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: string | null, readonly baseUrl: string | null, readonly siteUrl: string | null, readonly social: { readonly twitter: string | null } | null } | null } | null, readonly markdownRemark: { readonly id: string, readonly excerpt: string | null, readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly description: string | null, readonly hideImage: boolean | null, readonly langKey: string | null, readonly isTranslated: boolean | null, readonly dateISO: string | null, readonly videos: ReadonlyArray<{ readonly url: string | null, readonly name: string | null } | null> | null, readonly music: { readonly type: string | null, readonly artist: string | null, readonly url: string | null, readonly numTracks: number | null } | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null }, readonly previous: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null } | null, readonly next: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null } | null }> } };
+type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: string | null, readonly baseUrl: string | null, readonly siteUrl: string | null, readonly social: { readonly twitter: string | null } | null } | null } | null, readonly markdownRemark: { readonly id: string, readonly excerpt: string | null, readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly description: string | null, readonly category: string | null, readonly hideImage: boolean | null, readonly langKey: string | null, readonly isTranslated: boolean | null, readonly dateISO: string | null, readonly videos: ReadonlyArray<{ readonly url: string | null, readonly name: string | null } | null> | null, readonly music: { readonly type: string | null, readonly artist: string | null, readonly url: string | null, readonly numTracks: number | null } | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null }, readonly previous: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null } | null, readonly next: { readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly fields: { readonly slug: string | null } | null } | null }> } };
+
+type CategoryPageQueryVariables = Exact<{
+  langKey: Scalars['String'];
+  categories: ReadonlyArray<Scalars['String']> | Scalars['String'];
+}>;
+
+
+type CategoryPageQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: string | null, readonly baseUrl: string | null, readonly siteUrl: string | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly excerpt: string | null, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly date: string | null, readonly title: string | null, readonly description: string | null, readonly category: string | null, readonly langKey: string | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> } };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -2854,16 +2866,6 @@ type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 type NotFoundPageQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
-type PostsPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PostsPageQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly siteUrl: string | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly excerpt: string | null, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly date: string | null, readonly title: string | null, readonly description: string | null, readonly langKey: string | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> } };
-
-type PostsPageSvQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PostsPageSvQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly siteUrl: string | null } | null } | null, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly excerpt: string | null, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly date: string | null, readonly title: string | null, readonly description: string | null, readonly langKey: string | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> } };
-
 type SeoDefaultsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2892,7 +2894,7 @@ type WdcPromisesQuery = { readonly site: { readonly siteMetadata: { readonly tit
 type CreatePagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type CreatePagesQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly title: string | null, readonly langKey: string | null } | null } }> } };
+type CreatePagesQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly title: string | null, readonly langKey: string | null, readonly category: string | null } | null } }> } };
 
 
 }

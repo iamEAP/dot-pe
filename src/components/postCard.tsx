@@ -3,7 +3,7 @@ import Link from "./link"
 import { srcOf } from "../utils/image"
 
 type PostNode =
-  Queries.PostsPageQuery["allMarkdownRemark"]["edges"][number]["node"]
+  Queries.CategoryPageQuery["allMarkdownRemark"]["edges"][number]["node"]
 
 type PostCardProps = {
   count: number

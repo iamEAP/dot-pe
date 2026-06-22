@@ -5,6 +5,7 @@ description: Our edges are beaten driftwood, whittled down.
 hideImage: true
 thumbnail: ./excuses-live.jpg
 langKey: en
+category: music
 videos:
   - url: https://player.vimeo.com/video/167592699
 music:

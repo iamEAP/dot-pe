@@ -48,6 +48,36 @@ changed test files, you can skip the rebuild:
 npm run verify:fast
 ```
 
+## ⚠️ Never run `verify:fast` against a `public/` touched by `gatsby develop`
+
+`verify:fast` asserts against whatever is in `public/`. `gatsby develop`
+(including the `run` skill and any screenshotting flow) writes to `public/`
+**without** `--prefix-paths`, so it overwrites prefixed assets — most visibly
+`manifest.webmanifest` — with root-relative paths (`start_url: "/"`,
+`icons/...` instead of `/terson/...`). Running the suite against that polluted
+output produces **spurious manifest failures** that look like real regressions
+but vanish on a clean prefixed rebuild.
+
+Rules of thumb:
+
+- The build-output suite (`verify:fast`) must run against a fresh
+  `gatsby build --prefix-paths`. Prefer the full `npm run verify`, which
+  rebuilds first.
+- If you ran `develop` / the `run` skill / took screenshots after building,
+  the `public/` is dirty — re-run `npm run verify:build` (or `npm run verify`)
+  before trusting test results.
+- Sequence work so that any `develop`-based step (e.g. screenshots) happens
+  **after** verification, never between the build and the tests.
+
+### GraphQL typegen caveat
+
+In this environment a plain `gatsby build` does not always refresh
+`src/gatsby-types.d.ts`, so after adding/changing a `graphql` query you may
+need a `gatsby develop` bootstrap to regenerate the committed types. That
+`develop` run pollutes `public/` (see above) — so the safe order is:
+regenerate types via `develop`, **commit** the updated `gatsby-types.d.ts`,
+then finish with a clean `npm run verify` so the suite runs on prefixed output.
+
 ## Reading results
 
 Tests live in `tests/build/*.test.ts`, one file per concern (head metadata,
@@ -55,6 +85,26 @@ JSON-LD, hreflang, sitemap, RSS, manifest, OG images, internal links, i18n,
 redirects, CSS purge safelist, image pipeline, 404, general hygiene). Each
 assertion is checked against real parsed HTML/XML in `public/`, not against
 source code, so failures point at an actual built-output defect.
+
+### Category hubs and the unified index views
+
+The browsable index pages are generated from `src/templates/category.tsx`
+(see `gatsby-node.ts`), one per language for each view in
+`src/utils/categories.ts`: the unfiltered `all` view at `/posts/` plus the
+`music` / `writing` / `photos` category hubs. Each post declares its bucket
+via a required `category` frontmatter field (the build fails if one is missing
+or unknown). Relevant coverage:
+
+- `tests/build/seo.categories.test.ts` — per-hub CollectionPage /
+  BreadcrumbList / ItemList JSON-LD, canonical, reciprocal hreflang, the RSS
+  alternate link, and the filter-nav active state.
+- `tests/build/seo.rss.test.ts` — the per-category feeds
+  (`<category>.rss.xml`, plus `.sv` variants) and the invariant that the
+  category feeds partition the site-wide feed exactly.
+- `tests/build/seo.article.test.ts` — each post's Home › Category › Post
+  breadcrumb and its "More {category}" cross-link button.
+- `tests/build/core-pages.ts` — all hubs are listed in `CORE_PAGES` (and in
+  `VIEWS`); add new views/categories here when the taxonomy changes.
 
 The suite is expected to be fully green — there are no known/accepted
 failures. Any failure is a real regression to fix before continuing.

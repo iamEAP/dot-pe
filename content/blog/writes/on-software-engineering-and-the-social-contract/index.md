@@ -4,6 +4,7 @@ date: "2024-07-12T00:06:00+02:00"
 description: Do you agree to the terms and conditions of your society?
 thumbnail: ./force-diagram.png
 langKey: en
+category: writing
 isTranslated: true
 ---
 

@@ -1,8 +1,29 @@
 import test from "node:test"
 import assert from "node:assert/strict"
-import { pages, SITE_URL } from "./load.ts"
+import type { CheerioAPI } from "cheerio"
+import { pages, assetExists, SITE_URL, PREFIX } from "./load.ts"
 
 const articles = pages.filter((p) => p.isArticle)
+
+function ldNodes($: CheerioAPI): Record<string, any>[] {
+  const nodes: Record<string, any>[] = []
+  $('script[type="application/ld+json"]').each((_, el) => {
+    const block = JSON.parse($(el).contents().text())
+    if (Array.isArray(block["@graph"])) nodes.push(...block["@graph"])
+    else nodes.push(block)
+  })
+  return nodes
+}
+
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+// Absolute hub URL (used in JSON-LD), e.g. https://eric.pe/terson/sv/music/
+const CATEGORY_HUB = new RegExp(
+  `^${esc(SITE_URL)}/(sv/)?(music|writing|photos)/$`
+)
+// Root-relative hub href (used in rendered <a>), e.g. /terson/sv/music/
+const CATEGORY_HUB_REL = new RegExp(
+  `^${esc(PREFIX)}/(sv/)?(music|writing|photos)/$`
+)
 
 test("at least one article page was found to test", () => {
   assert.ok(articles.length > 0)
@@ -33,8 +54,65 @@ for (const page of articles) {
   test(`${sitePath}: links to the correct language RSS feed`, () => {
     const isSv = sitePath.includes("/sv/")
     const expected = `${SITE_URL}/rss${isSv ? ".sv" : ""}.xml`
-    const rssLink = $('link[type="application/rss+xml"]').attr("href")
+    // The site-wide feed link is emitted first; the category feed follows it.
+    const rssLink = $('link[type="application/rss+xml"]').first().attr("href")
     assert.equal(rssLink, expected)
+  })
+
+  test(`${sitePath}: also advertises a resolvable per-category RSS feed`, () => {
+    const isSv = sitePath.includes("/sv/")
+    const categoryFeed = $('link[type="application/rss+xml"]')
+      .map((_, el) => $(el).attr("href"))
+      .get()
+      .find((href) =>
+        new RegExp(
+          `/(music|writing|photos)\\.rss${isSv ? "\\.sv" : ""}\\.xml$`
+        ).test(href ?? "")
+      )
+    assert.ok(categoryFeed, "no per-category RSS alternate link")
+    assert.ok(assetExists(categoryFeed), `feed not built: ${categoryFeed}`)
+  })
+
+  test(`${sitePath}: has a "More <category>" link to a built category hub`, () => {
+    const link = $("footer.post-content-footer li.post-nav-category a.button")
+    assert.equal(link.length, 1, "expected one category link")
+    const href = link.attr("href")
+    assert.ok(href, "category link missing href")
+    assert.match(href, CATEGORY_HUB_REL, `not a category hub: ${href}`)
+    assert.ok(assetExists(href), `category hub not built: ${href}`)
+    // The hub language must match the post's language.
+    const isSv = sitePath.includes("/sv/")
+    assert.equal(href.includes("/sv/"), isSv)
+    assert.ok(link.text().trim().length > 0, "category link has no label")
+  })
+
+  test(`${sitePath}: prev/next segmented group has the right links`, () => {
+    const group = $(
+      "footer.post-content-footer .post-nav-temporal .button-group"
+    )
+    assert.equal(group.length, 1, "expected one prev/next button group")
+    // Two halves, each either a link to another built post or a disabled button.
+    const halves = group.children()
+    assert.equal(halves.length, 2, "expected two halves in the group")
+    group.find("a.button").each((_, el) => {
+      const href = $(el).attr("href")
+      assert.ok(href && assetExists(href), `prev/next link not built: ${href}`)
+    })
+  })
+
+  test(`${sitePath}: has a Home > Category > Post BreadcrumbList`, () => {
+    const canonical = $('link[rel="canonical"]').attr("href")
+    const bc = ldNodes($).find((n) => n["@type"] === "BreadcrumbList")
+    assert.ok(bc, "no BreadcrumbList node")
+    const items = bc.itemListElement
+    assert.equal(items.length, 3, "expected 3 breadcrumb crumbs")
+    assert.deepEqual(
+      items.map((i: Record<string, any>) => i.position),
+      [1, 2, 3]
+    )
+    assert.match(items[1].item, CATEGORY_HUB, "middle crumb isn't a hub")
+    assert.equal(items[2].item, canonical, "last crumb isn't the post")
+    assert.ok(assetExists(items[1].item), "hub crumb not built")
   })
 
   const ogVideo = $('meta[property="og:video"]')

@@ -4,6 +4,7 @@ date: "2020-12-31T15:00:00+01:00"
 description: Hello Stockholm
 thumbnail: ./sunset-on-seattle.jpg
 langKey: en
+category: writing
 isTranslated: true
 ---
 

@@ -4,6 +4,7 @@ date: "2025-08-05T17:30:00+02:00"
 description: Parlaying high-level language comprehension into production
 thumbnail: civic-voice-with-llms.jpg
 langKey: en
+category: writing
 isTranslated: true
 ---
 

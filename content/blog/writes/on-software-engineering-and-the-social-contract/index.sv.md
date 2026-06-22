@@ -4,6 +4,7 @@ date: "2024-07-12T00:06:00+02:00"
 description: Godkänner du villkoren för ditt samhälle?
 thumbnail: ./force-diagram.sv.png
 langKey: sv
+category: writing
 isTranslated: true
 ---
 

@@ -4,6 +4,7 @@ date: "2025-08-05T17:30:00+02:00"
 description: Från språkförståelse till språkbruk
 thumbnail: civic-voice-with-llms.jpg
 langKey: sv
+category: writing
 isTranslated: true
 ---
 

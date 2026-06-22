@@ -91,6 +91,16 @@ install it: `npm install --save-dev playwright` then `npx playwright install chr
 ## Key URLs
 
 - Home: `http://localhost:8000/`
-- Posts: `http://localhost:8000/posts/`
+- Posts (unfiltered "all" view): `http://localhost:8000/posts/`
+- Category hubs: `http://localhost:8000/music/`, `/writing/`, `/photos/`
 - Individual post: `http://localhost:8000/writes/on-gaining-a-civic-voice-with-llms/`
-- Swedish version: `http://localhost:8000/sv/`
+- Swedish version: `http://localhost:8000/sv/` (hubs: `/sv/music/`, `/sv/writing/`, `/sv/photos/`)
+
+## ⚠️ Running this skill pollutes `public/`
+
+`gatsby develop` writes to `public/` **without** `--prefix-paths`, clobbering
+prefixed build artifacts (e.g. `manifest.webmanifest` gets root-relative paths).
+After using this skill, `public/` no longer reflects a real prefixed build, so
+the `verify` skill's `verify:fast` will report spurious failures. Always run a
+fresh `npm run verify` (or `verify:build`) **after** any develop/screenshot work
+— never trust `verify:fast` against a `public/` this skill has touched.

@@ -3,6 +3,12 @@ import * as fs from "fs"
 import type { GatsbyNode } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
 import { getSlugForPost } from "./src/utils/i18n-urls"
+import {
+  categoriesForView,
+  isCategoryKey,
+  VIEW_KEYS,
+  viewPath,
+} from "./src/utils/categories"
 import siteConfig from "./siteConfig"
 
 type CreatePagesQueryData = {
@@ -10,7 +16,11 @@ type CreatePagesQueryData = {
     edges: ReadonlyArray<{
       node: {
         fields: { slug: string | null } | null
-        frontmatter: { title: string | null; langKey: string | null } | null
+        frontmatter: {
+          title: string | null
+          langKey: string | null
+          category: string | null
+        } | null
       }
     }>
   }
@@ -36,6 +46,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   })
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const categoryTemplate = path.resolve(`./src/templates/category.tsx`)
   const result = await graphql<CreatePagesQueryData>(`
     query CreatePages {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
@@ -47,6 +58,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             frontmatter {
               title
               langKey
+              category
             }
           }
         }
@@ -64,6 +76,42 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
+
+  // Every post must declare a known category in its frontmatter; the category
+  // hubs, "all" view, breadcrumbs, and per-category feeds all rely on it. Fail
+  // the build loudly rather than silently dropping a post from its category.
+  const miscategorized = posts.filter(
+    (post) => !isCategoryKey(post.node.frontmatter?.category)
+  )
+  if (miscategorized.length > 0) {
+    const offenders = miscategorized
+      .map(
+        (p) =>
+          `${p.node.fields?.slug ?? "(unknown slug)"} -> ${
+            p.node.frontmatter?.category ?? "(missing)"
+          }`
+      )
+      .join(", ")
+    throw new Error(
+      `Posts missing a valid \`category\` frontmatter field: ${offenders}`
+    )
+  }
+
+  // Create the category hub pages plus the unfiltered "all" view (/posts/),
+  // one per language, from the shared category template.
+  for (const langKey of ["en", "sv"] as const) {
+    for (const view of VIEW_KEYS) {
+      createPage({
+        path: viewPath(view, langKey),
+        component: categoryTemplate,
+        context: {
+          langKey,
+          view,
+          categories: [...categoriesForView(view)],
+        },
+      })
+    }
+  }
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node

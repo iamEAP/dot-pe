@@ -4,6 +4,7 @@ date: "2015-10-05T04:46:05.000Z"
 description: I was all alone.
 thumbnail: ./curse-us-all.jpg
 langKey: en
+category: music
 music:
   type: MusicRecording
   artist: Eric Peterson

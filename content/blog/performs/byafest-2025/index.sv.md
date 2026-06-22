@@ -4,6 +4,7 @@ date: "2025-09-20T13:30:00-02:00"
 description: Roger, Roll uppträder på Dals Långeds Byafest, 2025
 thumbnail: ./cover.jpg
 langKey: sv
+category: music
 isTranslated: true
 ---
 

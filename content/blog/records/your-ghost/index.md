@@ -5,6 +5,7 @@ description: Makes Me Shiver
 hideImage: true
 thumbnail: ./your-ghost.jpg
 langKey: en
+category: music
 music:
   type: MusicRecording
   artist: Houses
