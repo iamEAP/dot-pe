@@ -656,6 +656,11 @@ body {
   .button-group {
     flex-direction: column;
   }
+  /* In a column the `flex: 1 1 0` basis collapses each half to content
+     height; restore their natural full button height. */
+  .button-group > * {
+    flex: 0 0 auto;
+  }
   .button-group > *:first-child,
   .button-group > *:last-child {
     border-radius: var(--radius);
@@ -718,27 +723,27 @@ body {
   text-decoration: none;
 }
 
+/* Match the zoom-on-hover the PostCard grid uses, so the featured item
+   doesn't read as the odd one out. We scale the gatsby-image wrapper rather
+   than the inner <img>: gatsby-plugin-image puts its own `transition` on
+   [data-main-image] at a higher specificity, which would otherwise clobber
+   ours and make the zoom snap instantly. */
 .category-feature-image {
   display: block;
   width: 100%;
-}
-
-/* Match the zoom-on-hover the PostCard grid uses, so the featured item
-   doesn't read as the odd one out. */
-.category-feature-image img {
   transition: transform 0.9s cubic-bezier(0.33, 0, 0.2, 1);
   will-change: transform;
 }
 
-.category-feature-link:hover .category-feature-image img {
+.category-feature-link:hover .category-feature-image {
   transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .category-feature-image img {
+  .category-feature-image {
     transition: none;
   }
-  .category-feature-link:hover .category-feature-image img {
+  .category-feature-link:hover .category-feature-image {
     transform: none;
   }
 }
