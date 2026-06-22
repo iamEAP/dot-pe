@@ -23,17 +23,25 @@ type BlogPostContext = {
   slug: string
 }
 
-// Double-triangle transport glyphs for the prev/next button group.
+// Double-triangle transport glyphs for the prev/next button group. Filled,
+// with a matching-color stroke + round joins so the points are gently
+// rounded rather than razor-sharp.
 const RewindIcon = () => (
   <svg
     className="btn-icon"
     viewBox="0 0 24 24"
-    width="13"
-    height="13"
+    width="16"
+    height="16"
     aria-hidden="true"
     focusable="false"
   >
-    <path fill="currentColor" d="M11 5v14l-9-7 9-7zM22 5v14l-9-7 9-7z" />
+    <path
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      d="M11 5v14l-9-7 9-7zM22 5v14l-9-7 9-7z"
+    />
   </svg>
 )
 
@@ -41,12 +49,18 @@ const FastForwardIcon = () => (
   <svg
     className="btn-icon"
     viewBox="0 0 24 24"
-    width="13"
-    height="13"
+    width="16"
+    height="16"
     aria-hidden="true"
     focusable="false"
   >
-    <path fill="currentColor" d="M13 5v14l9-7-9-7zM2 5v14l9-7-9-7z" />
+    <path
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      d="M13 5v14l9-7-9-7zM2 5v14l9-7-9-7z"
+    />
   </svg>
 )
 
