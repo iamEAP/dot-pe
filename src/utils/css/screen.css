@@ -69,6 +69,14 @@ body {
   text-align: center;
 }
 
+/* 13vw reads fine on mobile but balloons on wide desktops, pushing the
+   featured item below the fold. Cap it once there's room to spare. */
+@media (min-width: 800px) {
+  .page-head {
+    padding: 5rem 0 2.5rem;
+  }
+}
+
 .error-head {
   height: 75vh;
 }
@@ -592,6 +600,72 @@ body {
   }
 }
 
+/* Post navigation (prev/next group + category link)
+/* ---------------------------------------------------------- */
+
+.post-nav-actions .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  line-height: 1.2;
+}
+
+/* Keep the segmented seam crisp: suppress the per-button lift on hover so a
+   single half doesn't detach from its neighbor. */
+.post-nav-actions .button:hover {
+  transform: none;
+}
+
+.post-nav-actions .btn-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-nav-actions .btn-icon {
+  flex: none;
+  opacity: 0.7;
+}
+
+/* Two halves fused into one MUI-style segmented control. */
+.button-group {
+  display: flex;
+  width: 100%;
+}
+
+.button-group > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.button-group > *:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button-group > *:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /* Overlap the 2px inset borders so the divider reads as a single line. */
+  margin-left: -2px;
+}
+
+@media (max-width: 700px) {
+  /* Stack into full-width buttons matching the surrounding rhythm. */
+  .button-group {
+    flex-direction: column;
+  }
+  .button-group > *:first-child,
+  .button-group > *:last-child {
+    border-radius: var(--radius);
+  }
+  .button-group > *:last-child {
+    margin-left: 0;
+    margin-top: calc(var(--margin) * 0.5);
+  }
+}
+
 /* Category / index views
 /* ---------------------------------------------------------- */
 
@@ -647,6 +721,26 @@ body {
 .category-feature-image {
   display: block;
   width: 100%;
+}
+
+/* Match the zoom-on-hover the PostCard grid uses, so the featured item
+   doesn't read as the odd one out. */
+.category-feature-image img {
+  transition: transform 0.9s cubic-bezier(0.33, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.category-feature-link:hover .category-feature-image img {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-feature-image img {
+    transition: none;
+  }
+  .category-feature-link:hover .category-feature-image img {
+    transform: none;
+  }
 }
 
 .category-feature-content {

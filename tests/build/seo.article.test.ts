@@ -74,8 +74,8 @@ for (const page of articles) {
   })
 
   test(`${sitePath}: has a "More <category>" link to a built category hub`, () => {
-    const link = $("footer.post-content-footer a.button.primary")
-    assert.equal(link.length, 1, "expected one primary category link")
+    const link = $("footer.post-content-footer li.post-nav-category a.button")
+    assert.equal(link.length, 1, "expected one category link")
     const href = link.attr("href")
     assert.ok(href, "category link missing href")
     assert.match(href, CATEGORY_HUB_REL, `not a category hub: ${href}`)
@@ -84,6 +84,20 @@ for (const page of articles) {
     const isSv = sitePath.includes("/sv/")
     assert.equal(href.includes("/sv/"), isSv)
     assert.ok(link.text().trim().length > 0, "category link has no label")
+  })
+
+  test(`${sitePath}: prev/next segmented group has the right links`, () => {
+    const group = $(
+      "footer.post-content-footer .post-nav-temporal .button-group"
+    )
+    assert.equal(group.length, 1, "expected one prev/next button group")
+    // Two halves, each either a link to another built post or a disabled button.
+    const halves = group.children()
+    assert.equal(halves.length, 2, "expected two halves in the group")
+    group.find("a.button").each((_, el) => {
+      const href = $(el).attr("href")
+      assert.ok(href && assetExists(href), `prev/next link not built: ${href}`)
+    })
   })
 
   test(`${sitePath}: has a Home > Category > Post BreadcrumbList`, () => {

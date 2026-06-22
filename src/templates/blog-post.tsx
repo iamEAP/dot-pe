@@ -23,6 +23,33 @@ type BlogPostContext = {
   slug: string
 }
 
+// Double-triangle transport glyphs for the prev/next button group.
+const RewindIcon = () => (
+  <svg
+    className="btn-icon"
+    viewBox="0 0 24 24"
+    width="13"
+    height="13"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path fill="currentColor" d="M11 5v14l-9-7 9-7zM22 5v14l-9-7 9-7z" />
+  </svg>
+)
+
+const FastForwardIcon = () => (
+  <svg
+    className="btn-icon"
+    viewBox="0 0 24 24"
+    width="13"
+    height="13"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path fill="currentColor" d="M13 5v14l9-7-9-7zM2 5v14l9-7-9-7z" />
+  </svg>
+)
+
 const BlogPostTemplate = ({
   data,
   pageContext,
@@ -88,59 +115,72 @@ const BlogPostTemplate = ({
         <hr style={{ borderTop: "1px solid #cfcfcf" }} />
 
         <footer className="post-content-footer">
-          <ul className="actions fit" style={{ paddingRight: 0 }}>
-            <li>
-              {(prevNext?.next && (
-                <Link
-                  rel="previous"
-                  to={prevNext.next.fields?.slug ?? "#"}
-                  className="button fit"
-                >
-                  {t("Fast-forward to {{date}}", {
-                    date: dayjs(prevNext.next.frontmatter?.date ?? undefined)
-                      .locale(langKey)
-                      .format("MMMM YYYY"),
-                  })}
-                </Link>
-              )) || (
-                <button disabled className="fit">
-                  {`${t("There will probably be more")}...`}
-                </button>
-              )}
+          <ul
+            className="actions fit post-nav-actions"
+            style={{ paddingRight: 0 }}
+          >
+            {/* Temporal navigation, presented as one segmented control: older
+                on the left (rewind), newer on the right (fast-forward), like a
+                media transport bar. */}
+            <li className="post-nav-temporal">
+              <div className="button-group">
+                {(prevNext?.previous && (
+                  <Link
+                    rel="next"
+                    to={prevNext.previous.fields?.slug ?? "#"}
+                    className="button"
+                  >
+                    <RewindIcon />
+                    <span className="btn-label">
+                      {t("Rewind to {{date}}", {
+                        date: dayjs(
+                          prevNext.previous.frontmatter?.date ?? undefined
+                        )
+                          .locale(langKey)
+                          .format("MMMM YYYY"),
+                      })}
+                    </span>
+                  </Link>
+                )) || (
+                  <button disabled className="button">
+                    <RewindIcon />
+                    <span className="btn-label">{`${t("There was more")}...`}</span>
+                  </button>
+                )}
+                {(prevNext?.next && (
+                  <Link
+                    rel="previous"
+                    to={prevNext.next.fields?.slug ?? "#"}
+                    className="button"
+                  >
+                    <span className="btn-label">
+                      {t("Fast-forward to {{date}}", {
+                        date: dayjs(
+                          prevNext.next.frontmatter?.date ?? undefined
+                        )
+                          .locale(langKey)
+                          .format("MMMM YYYY"),
+                      })}
+                    </span>
+                    <FastForwardIcon />
+                  </Link>
+                )) || (
+                  <button disabled className="button">
+                    <span className="btn-label">{`${t("There will be more")}...`}</span>
+                    <FastForwardIcon />
+                  </button>
+                )}
+              </div>
             </li>
             {categoryView && (
-              <li>
-                <Link
-                  to={VIEW_SLUG[categoryView]}
-                  className="button primary fit"
-                >
+              <li className="post-nav-category">
+                <Link to={VIEW_SLUG[categoryView]} className="button fit">
                   {t("More {{category}}", {
                     category: VIEW_META[langKey][categoryView].label,
                   })}
                 </Link>
               </li>
             )}
-            <li>
-              {(prevNext?.previous && (
-                <Link
-                  rel="next"
-                  to={prevNext.previous.fields?.slug ?? "#"}
-                  className="button fit"
-                >
-                  {t("Rewind to {{date}}", {
-                    date: dayjs(
-                      prevNext.previous.frontmatter?.date ?? undefined
-                    )
-                      .locale(langKey)
-                      .format("MMMM YYYY"),
-                  })}
-                </Link>
-              )) || (
-                <button disabled className="fit">
-                  {`${t("There was probably more")}...`}
-                </button>
-              )}
-            </li>
           </ul>
         </footer>
       </article>
