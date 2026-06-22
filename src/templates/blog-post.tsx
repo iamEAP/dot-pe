@@ -30,15 +30,15 @@ const RewindIcon = () => (
   <svg
     className="btn-icon"
     viewBox="0 0 24 24"
-    width="16"
-    height="16"
+    width="13"
+    height="13"
     aria-hidden="true"
     focusable="false"
   >
     <path
       fill="currentColor"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.2"
       strokeLinejoin="round"
       d="M11 5v14l-9-7 9-7zM22 5v14l-9-7 9-7z"
     />
@@ -49,15 +49,15 @@ const FastForwardIcon = () => (
   <svg
     className="btn-icon"
     viewBox="0 0 24 24"
-    width="16"
-    height="16"
+    width="13"
+    height="13"
     aria-hidden="true"
     focusable="false"
   >
     <path
       fill="currentColor"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.2"
       strokeLinejoin="round"
       d="M13 5v14l9-7-9-7zM2 5v14l9-7-9-7z"
     />

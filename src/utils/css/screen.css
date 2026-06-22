@@ -625,6 +625,8 @@ body {
 
 .post-nav-actions .btn-icon {
   flex: none;
+  /* Let the label lead; the glyph supports rather than competes. */
+  opacity: 0.85;
 }
 
 /* Two halves fused into one MUI-style segmented control. */
