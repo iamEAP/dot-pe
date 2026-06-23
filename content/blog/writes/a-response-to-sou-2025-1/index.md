@@ -2,6 +2,7 @@
 title: Response to the inquiry into stricter requirements for acquiring Swedish citizenship
 date: "2025-04-01T09:00:00+02:00"
 description: A referral response, co-signed by 379 tech-sector labor migrants, opposing tightened requirements for Swedish citizenship.
+hideImage: true
 thumbnail: ./svenska-flaggan.jpg
 langKey: en
 category: writing
@@ -9,6 +10,14 @@ isTranslated: true
 ---
 
 The following is a copy of a formal response to a government consultation regarding [tightened requirements for acquiring Swedish citizenship](https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/01/sou-20251/). I authored this around March 24th, then solicited signatures from foreign-born members of the tech community in Sweden (as well as their native allies), before officially submitting the response to the government the following week.
+
+<figure class="kg-card kg-image-card kg-width-full">
+
+![Svenska flaggan](./svenska-flaggan.jpg)
+
+<figcaption>Image courtesy <a href="https://www.flickr.com/photos/dahlstroms/18556825375/" target="_blank" rel="noopener noreferrer">Håkan Dahlström</a></figcaption>
+
+</figure>
 
 ## Summary
 
@@ -59,5 +68,3 @@ An even higher degree of trust would be maintained if citizenship applications w
 Thank you for the opportunity to provide feedback on this proposal. This referral response is hereby signed by the following labor migrants employed within the tech sector in Sweden. In cases where an individual did not wish for their name to be made public, the name of a concurring Swedish resident has been added in their place.
 
 (Signatures omitted on this reproduction of the document)
-
-_Flag image courtesy [Håkan Dahlström](https://www.flickr.com/photos/dahlstroms/18556825375/)._

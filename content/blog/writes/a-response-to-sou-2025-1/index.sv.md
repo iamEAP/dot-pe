@@ -2,6 +2,7 @@
 title: Remissvar över betänkandet SOU 2025:1 om skärpta krav för svenskt medborgarskap
 date: "2025-04-01T09:00:00+02:00"
 description: Ett remissvar, undertecknat av 379 arbetskraftsinvandrare inom techbranschen, som avstyrker de skärpta kraven för svenskt medborgarskap.
+hideImage: true
 thumbnail: ./svenska-flaggan.jpg
 langKey: sv
 category: writing
@@ -9,6 +10,14 @@ isTranslated: true
 ---
 
 Detta är en kopia av mitt formella svar på regeringens remiss om [skärpta krav för att få svenskt medborgarskap](https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2025/01/sou-20251/). Jag skrev texten omkring den 24 mars och bad därefter utlandsfödda inom den svenska tech-sektorn, liksom deras svenska allierade, att skriva under. Svaren skickades sedan in till regeringen veckan därpå.
+
+<figure class="kg-card kg-image-card kg-width-full">
+
+![Svenska flaggan](./svenska-flaggan.jpg)
+
+<figcaption>Bild av <a href="https://www.flickr.com/photos/dahlstroms/18556825375/" target="_blank" rel="noopener noreferrer">Håkan Dahlström</a></figcaption>
+
+</figure>
 
 ## Sammanfattning
 
@@ -59,5 +68,3 @@ Ett ännu högre förtroende skulle upprätthållas om medborgarskapsansökninga
 Vi tackar för möjligheten att inkomma med synpunkter. Detta remissvar undertecknas härmed av följande arbetskraftsinvandrare verksamma inom techbranschen i Sverige. I de fall där en arbetskraftsinvandrare inte önskat att deras namn offentliggörs, har underskriften istället lämnats av en svensk medborgare verksam inom tech, åtföljd av den anonyma migrantens roll och arbetsgivare.
 
 (Namnteckningar utelämnade i denna återgivning av dokumentet)
-
-_Flaggbild av [Håkan Dahlström](https://www.flickr.com/photos/dahlstroms/18556825375/)._
