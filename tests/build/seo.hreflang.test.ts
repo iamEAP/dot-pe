@@ -2,15 +2,16 @@ import test from "node:test"
 import assert from "node:assert/strict"
 import { getPage, SITE_URL, PREFIX } from "./load.ts"
 
-// The about pages intentionally point hreflang alternates at the legacy
-// "/is" redirect slugs rather than "/" and "/sv/" directly; that's existing,
-// deliberate behavior (see gatsby-node.js createRedirect), not a bug.
+// Home pages point hreflang alternates (and their own canonical) at the real
+// "/" and "/sv/" URLs, not the legacy "/is" redirect stubs. Pointing crawlers
+// at a redirect stub (which has no canonical content, H1, or meta description)
+// made Bing flag /sv/is/ as broken, so the alternates resolve to live pages.
 const pairs = [
   {
     en: `${PREFIX}/`,
     sv: `${PREFIX}/sv/`,
-    enAlternateHref: `${SITE_URL}/sv/is/`,
-    svAlternateHref: `${SITE_URL}/is/`,
+    enAlternateHref: `${SITE_URL}/sv/`,
+    svAlternateHref: `${SITE_URL}/`,
   },
   {
     en: `${PREFIX}/posts/`,

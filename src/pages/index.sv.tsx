@@ -199,7 +199,7 @@ export default AboutPage
 
 export const Head = ({ data }: HeadProps<Queries.HomePageSvQuery>) => {
   const siteUrl = data.site?.siteMetadata?.siteUrl ?? ""
-  const canonical = `${siteUrl}/sv/is/`
+  const canonical = `${siteUrl}/sv/`
   const sameAs = [
     "https://twitter.com/iamEAP",
     "https://github.com/iamEAP",
@@ -227,7 +227,7 @@ export const Head = ({ data }: HeadProps<Queries.HomePageSvQuery>) => {
         link={[
           {
             rel: "alternate",
-            href: `${siteUrl}/is/`,
+            href: `${siteUrl}/`,
             hrefLang: "en",
           },
           ...sameAs.map((href) => ({ rel: "me", href })),

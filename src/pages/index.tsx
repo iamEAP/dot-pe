@@ -225,7 +225,7 @@ export const Head = ({ data }: HeadProps<Queries.HomePageQuery>) => {
         link={[
           {
             rel: "alternate",
-            href: `${siteUrl}/sv/is/`,
+            href: `${siteUrl}/sv/`,
             hrefLang: "sv",
           },
           ...sameAs.map((href) => ({ rel: "me", href })),

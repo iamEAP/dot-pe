@@ -212,8 +212,14 @@ export const Head = ({
   const baseUrl = siteMeta?.baseUrl ?? ""
   const author = siteMeta?.author ?? ""
   const langKey = post?.frontmatter?.langKey === "sv" ? "sv" : "en"
-  // slug from Gatsby already has a trailing slash, strip it before we re-add one
-  const slugWithoutLeadingSlash = pageContext.slug.replace(/^\/|\/$/g, "")
+  // slug from Gatsby already has a trailing slash, strip it before we re-add one.
+  // Swedish posts come from `index.sv.md`, so their generated slug carries an
+  // `index.sv` segment (e.g. /foo/index.sv/). Strip it the same way page
+  // creation does (see getSlugForPost) so the canonical, og:url, and hreflang
+  // alternates resolve to the real page path (/sv/foo/) instead of a 404.
+  const slugWithoutLeadingSlash = pageContext.slug
+    .replace(`index.${langKey}/`, "")
+    .replace(/^\/|\/$/g, "")
   const canonical = `${siteUrl}/${langKey === "sv" ? `sv/${slugWithoutLeadingSlash}` : slugWithoutLeadingSlash}/`
   const thumbnail = post?.frontmatter?.thumbnail
   const ogImage = thumbnail ? `${baseUrl}${srcOf(thumbnail)}` : undefined
