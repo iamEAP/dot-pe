@@ -3,6 +3,7 @@ import urljoin from "url-join"
 import postcssEasyImport from "postcss-easy-import"
 import postcssCustomProperties from "postcss-custom-properties"
 import autoprefixer from "autoprefixer"
+import purgecss from "@fullhuman/postcss-purgecss"
 import siteConfig from "./siteConfig"
 import { getSlugForPost } from "./src/utils/i18n-urls"
 import {
@@ -92,23 +93,24 @@ const config: GatsbyConfig = {
           postcssEasyImport(),
           postcssCustomProperties({ preserve: true }),
           autoprefixer(),
+          // Strip unused selectors from production CSS only, so `gatsby
+          // develop` always has the full stylesheet.
+          ...(process.env.NODE_ENV === `production`
+            ? [
+                purgecss({
+                  content: [`${__dirname}/src/**/!(*.d).{js,jsx,ts,tsx}`],
+                  // Content only scans src/, so it never sees classes that
+                  // exist only in markdown/Ghost content (kg-*,
+                  // gatsby-resp-image-*). Protect them here so rules
+                  // targeting them aren't stripped from the production bundle.
+                  safelist: {
+                    standard: [`html`, `body`],
+                    greedy: [/^kg-/, /^gatsby-resp-image/],
+                  },
+                }),
+              ]
+            : []),
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: false,
-        whitelistPatternsChildren: ["/post-content-body/"],
-        // PurgeCSS only scans src/**/*.{js,jsx,ts,tsx} by default, so it never
-        // sees classes that exist only in markdown/Ghost content (kg-*,
-        // gatsby-resp-image-*). Protect them here so rules targeting them
-        // aren't stripped from the production bundle.
-        purgeCSSOptions: {
-          safelist: {
-            greedy: [/^kg-/, /^gatsby-resp-image/],
-          },
-        },
       },
     },
     {
