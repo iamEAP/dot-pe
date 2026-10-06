@@ -77,10 +77,10 @@
     "prepare": "husky",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "node --test tests/unit/*.test.ts",
     "typecheck": "tsc --noEmit",
     "verify:build": "gatsby clean && gatsby build --prefix-paths",
-    "verify": "npm run typecheck && npm run verify:build && npm run verify:fast",
+    "verify": "npm run typecheck && npm test && npm run verify:build && npm run verify:fast",
     "verify:fast": "node --test tests/build/*.test.ts"
   },
   "browserslist": [
@@ -102,5 +102,55 @@
     "uuid@<11.1.1": "^11.1.1",
     "webpack": "^5.111.1",
     "webpack-dev-middleware": "^7.4.6"
+  },
+  "overridesNotes": {
+    "@graphql-tools/utils@<12.0.1": {
+      "why": "GHSA-7mx3-vvmw-hjmv (high): prototype pollution in mergeDeep, fixed in 12.0.1. Gatsby's @graphql-codegen/* and @graphql-tools/* deps pin ^8/^9.",
+      "dropWhen": "Gatsby's GraphQL codegen/tools deps accept @graphql-tools/utils >=12.0.1."
+    },
+    "gatsby > cookie": {
+      "why": "GHSA-pxg6-pf52-xh8x (low): out-of-bounds characters accepted in cookie name/path/domain, fixed in 0.7.0. gatsby itself pins ^0.5.0 (scoped under gatsby because a top-level range override does not catch it).",
+      "dropWhen": "gatsby depends on cookie >=0.7.0."
+    },
+    "immutable@<3.8.4": {
+      "why": "GHSA-wf6x-7x77-mvgw, GHSA-xvcm-6775-5m9r, GHSA-v56q-mh7h-f735 (high): prototype pollution / hash-collision DoS, fixed in 3.8.4. @ardatan/relay-compiler (via Gatsby's GraphQL codegen) pins ~3.7.6.",
+      "dropWhen": "@ardatan/relay-compiler (or whatever Gatsby uses instead) accepts immutable >=3.8.4."
+    },
+    "lodash": {
+      "why": "GHSA-r5fr-rjxr-66jc (high), GHSA-f23m-r3pf-42rh (moderate): code injection via _.template imports and related issues, fixed after 4.17.23. @graphql-codegen/plugin-helpers pins ~4.17.0, which can never reach 4.18.",
+      "dropWhen": "Nothing in the tree pins lodash to ~4.17 (check `npm ls lodash` without the override)."
+    },
+    "path-to-regexp@<0.1.13": {
+      "why": "GHSA-37ch-88jc-xwx2 (high): ReDoS with multiple route params, fixed in 0.1.13. gatsby pins exactly 0.1.12.",
+      "dropWhen": "gatsby depends on path-to-regexp >=0.1.13."
+    },
+    "postcss-selector-parser": {
+      "why": "GHSA-rj75-hqrm-r3gf (moderate): quadratic-time selector parsing, fixed in 7.1.6. cssnano 6 plugins, postcss-modules-* and postcss-calc (via Gatsby's CSS pipeline) still declare ^6.",
+      "dropWhen": "Gatsby's cssnano / css-loader chain accepts postcss-selector-parser >=7.1.6."
+    },
+    "serialize-javascript": {
+      "why": "GHSA-5c6j-r48x-rmvq (high, RCE), GHSA-qj8w-gfj5-8c6v (moderate), fixed in 7.0.5. css-minimizer-webpack-plugin@2 (pinned by gatsby) declares ^5.0.1.",
+      "dropWhen": "Gatsby's css-minimizer-webpack-plugin accepts serialize-javascript >=7.0.5."
+    },
+    "sharp": {
+      "why": "GHSA-f88m-g3jw-g9cj, GHSA-rgj7-g3m4-5g8c, GHSA-wq5f-xc86-pv6w (high): bundled libvips CVEs, fixed in 0.35.5. gatsby-plugin-sharp, gatsby-sharp, gatsby-transformer-sharp and gatsby-plugin-manifest pin ^0.32.6.",
+      "dropWhen": "The gatsby sharp plugins depend on sharp >=0.35.5."
+    },
+    "tmp": {
+      "why": "GHSA-ph9p-34f9-6g65 (high), GHSA-52f5-9888-hmc6 (low): symlink-based arbitrary file write, fixed in 0.2.6. external-editor (via gatsby-cli > yurnalist > inquirer@7) pins ^0.0.33.",
+      "dropWhen": "gatsby-cli no longer pulls in external-editor with tmp <0.2.6."
+    },
+    "uuid@<11.1.1": {
+      "why": "GHSA-w5hq-g745-h8pq (moderate): missing buffer bounds check in v3/v5/v6, fixed in 11.1.1. gatsby pins ^8.3.2. uuid 11 still ships CommonJS; 12+ is ESM-only, so do not widen this.",
+      "dropWhen": "gatsby depends on uuid >=11.1.1."
+    },
+    "webpack": {
+      "why": "GHSA-8fgc-7cc6-rx7x, GHSA-38r7-794h-5758 (low): buildHttp allowedUris bypass, fixed after 5.104.0. gatsby pins ~5.98.0.",
+      "dropWhen": "gatsby depends on webpack >5.104.0."
+    },
+    "webpack-dev-middleware": {
+      "why": "GHSA-g84c-rxfj-3j2c (high): path traversal via non-slash-terminated publicPath, fixed in 7.4.5. gatsby pins ^5.3.4. Only used by `gatsby develop`.",
+      "dropWhen": "gatsby depends on webpack-dev-middleware >=7.4.5."
+    }
   }
 }

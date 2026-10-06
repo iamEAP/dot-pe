@@ -58,7 +58,7 @@ _First time with Gatsby? Take a look on the [official and community-created star
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    _Note: You'll also see a second link: *`http://localhost:8000/___graphql`*. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
     Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
@@ -105,3 +105,21 @@ verification tests.
   ```sh
   node --test tests/build/*.test.ts
   ```
+
+## Dependency overrides
+
+Gatsby pins some transitive dependencies to versions with known
+vulnerabilities, so `package.json` uses npm
+[`overrides`](https://docs.npmjs.com/cli/configuring-npm/package-json#overrides)
+to force patched releases. Every override must have a matching entry in the
+`overridesNotes` map right below it, recording:
+
+- **`why`**: the advisory (GHSA ID and severity), the fixed version, and which
+  package pins the vulnerable range.
+- **`dropWhen`**: the upstream change that makes the override unnecessary.
+
+Nested overrides are keyed by their path, so `"gatsby": { "cookie": … }` is
+documented as `"gatsby > cookie"`. `npm test` (also part of `npm run verify`)
+fails if the two maps drift apart. When you upgrade Gatsby, check each
+`dropWhen` and remove overrides that are no longer needed, along with their
+notes.
