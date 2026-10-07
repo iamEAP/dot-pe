@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql, type HeadProps, type PageProps } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import dayjs from "dayjs"
-import "dayjs/locale/sv"
+import { formatMonthYear } from "../utils/dates"
 
 import EnLayout from "../layouts/en"
 import SvLayout from "../layouts/sv"
@@ -77,13 +76,7 @@ const BlogPostTemplate = ({
   })[0]
   const langKey = post?.frontmatter?.langKey === "sv" ? "sv" : "en"
   const LocalLayout = langKey === "sv" ? SvLayout : EnLayout
-  // Resolve the translation function for this page's language explicitly
-  // instead of mutating the shared i18next singleton (which otherwise leaks
-  // language between pages during the SSR build).
-  const t = i18n.getFixedT(langKey) as (
-    key: string,
-    options?: Record<string, unknown>
-  ) => string
+  const t = i18n.getFixedT(langKey)
   const category = post?.frontmatter?.category
   const categoryView = isCategoryKey(category) ? category : null
 
@@ -147,11 +140,10 @@ const BlogPostTemplate = ({
                     <RewindIcon />
                     <span className="btn-label">
                       {t("Rewind to {{date}}", {
-                        date: dayjs(
-                          prevNext.previous.frontmatter?.date ?? undefined
-                        )
-                          .locale(langKey)
-                          .format("MMMM YYYY"),
+                        date: formatMonthYear(
+                          prevNext.previous.frontmatter?.date,
+                          langKey
+                        ),
                       })}
                     </span>
                   </Link>
@@ -169,11 +161,10 @@ const BlogPostTemplate = ({
                   >
                     <span className="btn-label">
                       {t("Fast-forward to {{date}}", {
-                        date: dayjs(
-                          prevNext.next.frontmatter?.date ?? undefined
-                        )
-                          .locale(langKey)
-                          .format("MMMM YYYY"),
+                        date: formatMonthYear(
+                          prevNext.next.frontmatter?.date,
+                          langKey
+                        ),
                       })}
                     </span>
                     <FastForwardIcon />

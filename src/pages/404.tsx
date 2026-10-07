@@ -13,13 +13,7 @@ const NotFoundPage = ({
   const siteTitle = data.site?.siteMetadata?.title ?? ""
   const isSv = location.pathname.indexOf("/sv") === 0
   const LocalLayout = isSv ? SvLayout : EnLayout
-  // getFixedT resolves the language explicitly per render instead of mutating
-  // the shared i18next singleton, which otherwise leaks language between pages
-  // during the SSR build (English /404.html rendering Swedish copy, etc.).
-  const t = i18n.getFixedT(isSv ? "sv" : "en") as (
-    key: string,
-    options?: Record<string, unknown>
-  ) => string
+  const t = i18n.getFixedT(isSv ? "sv" : "en")
 
   return (
     <LocalLayout location={location} title={siteTitle}>

@@ -9,49 +9,40 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
-    "dayjs": "^1.11.21",
-    "gatsby": "^5.15.0",
-    "gatsby-link": "^5.3.1",
-    "gatsby-plugin-client-side-redirect": "^1.1.0",
-    "gatsby-plugin-feed": "^5.3.1",
-    "gatsby-plugin-google-gtag": "^5.11.0",
-    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-feed": "^5.16.0",
+    "gatsby-plugin-google-gtag": "^5.16.0",
     "gatsby-plugin-image": "^3.16.0",
-    "gatsby-plugin-manifest": "^5.3.1",
-    "gatsby-plugin-netlify": "^5.1.0",
-    "gatsby-plugin-offline": "^6.11.0",
-    "gatsby-plugin-postcss": "^6.11.0",
-    "gatsby-plugin-purgecss": "^6.2.1",
-    "gatsby-plugin-sharp": "^5.8.1",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-netlify": "^5.1.1",
+    "gatsby-plugin-offline": "^6.16.0",
+    "gatsby-plugin-postcss": "^6.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-plugin-sitemap": "^6.16.0",
-    "gatsby-react-router-scroll": "^6.3.0",
-    "gatsby-remark-copy-linked-files": "^6.11.0",
-    "gatsby-remark-images": "^7.3.1",
-    "gatsby-remark-prismjs": "^7.11.0",
-    "gatsby-remark-responsive-iframe": "^6.11.0",
-    "gatsby-remark-smartypants": "^6.11.0",
-    "gatsby-script": "^2.3.0",
-    "gatsby-source-filesystem": "^5.3.1",
-    "gatsby-transformer-remark": "^6.3.2",
-    "gatsby-transformer-sharp": "^5.3.1",
-    "i18next": "^19.8.4",
+    "gatsby-remark-copy-linked-files": "^6.16.0",
+    "gatsby-remark-images": "^7.16.0",
+    "gatsby-remark-prismjs": "^7.16.0",
+    "gatsby-remark-responsive-iframe": "^6.16.0",
+    "gatsby-remark-smartypants": "^6.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
     "prismjs": "^1.30.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^11.8.5",
-    "url-join": "^4.0.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@types/node": "^20.3.1",
     "@types/react": "^18.2.13",
     "@types/react-dom": "^18.2.6",
     "autoprefixer": "^10.4.19",
-    "baseline-browser-mapping": "^2.10.37",
+    "baseline-browser-mapping": "^2.11.27",
     "cheerio": "^1.2.0",
     "gh-pages": "^5.0.0",
     "husky": "^9.1.7",
     "postcss-custom-properties": "^13.3.12",
-    "postcss-easy-import": "^4.0.0",
+    "postcss-import": "^17.0.0",
     "prettier": "^3.0.0",
     "pretty-quick": "^4.0.0",
     "typescript": "^5.1.3"
@@ -77,13 +68,98 @@
     "prepare": "husky",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "node --test tests/unit/*.test.ts",
     "typecheck": "tsc --noEmit",
     "verify:build": "gatsby clean && gatsby build --prefix-paths",
-    "verify": "npm run typecheck && npm run verify:build && npm run verify:fast",
+    "verify": "npm run typecheck && npm test && npm run verify:build && npm run verify:fast",
     "verify:fast": "node --test tests/build/*.test.ts"
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "overrides": {
+    "@graphql-tools/utils@<12.0.1": "^12.0.1",
+    "gatsby": {
+      ".": "$gatsby",
+      "cookie": "^0.7.2",
+      "react-server-dom-webpack": {
+        "react": "$react"
+      }
+    },
+    "immutable@<3.8.4": "^3.8.4",
+    "lodash": "^4.18.1",
+    "path-to-regexp@<0.1.13": "^0.1.13",
+    "postcss-selector-parser": "^7.1.6",
+    "serialize-javascript": "^7.1.2",
+    "sharp": "^0.35.5",
+    "tmp": "^0.2.7",
+    "uuid@<11.1.1": "^11.1.1",
+    "webpack": "^5.111.1",
+    "webpack-dev-middleware": "^7.4.6"
+  },
+  "overridesNotes": {
+    "@graphql-tools/utils@<12.0.1": {
+      "why": "GHSA-7mx3-vvmw-hjmv (high): prototype pollution in mergeDeep, fixed in 12.0.1. Gatsby's @graphql-codegen/* and @graphql-tools/* deps pin ^8/^9.",
+      "dropWhen": "Gatsby's GraphQL codegen/tools deps accept @graphql-tools/utils >=12.0.1."
+    },
+    "gatsby > cookie": {
+      "why": "GHSA-pxg6-pf52-xh8x (low): out-of-bounds characters accepted in cookie name/path/domain, fixed in 0.7.0. gatsby itself pins ^0.5.0 (scoped under gatsby because a top-level range override does not catch it).",
+      "dropWhen": "gatsby depends on cookie >=0.7.0."
+    },
+    "gatsby > react-server-dom-webpack > react": {
+      "why": "Not a security fix: silences the ERESOLVE peer warning on every install. gatsby depends on an experimental 2022 react-server-dom-webpack build that peer-requires an exact experimental React version, which can never match our react@18. It is only loaded by Gatsby's PARTIAL_HYDRATION flag, which we don't enable, so we point its react peer at our own react.",
+      "dropWhen": "gatsby no longer depends on an experimental react-server-dom-webpack, or we enable PARTIAL_HYDRATION (then this needs a real look)."
+    },
+    "immutable@<3.8.4": {
+      "why": "GHSA-wf6x-7x77-mvgw, GHSA-xvcm-6775-5m9r, GHSA-v56q-mh7h-f735 (high): prototype pollution / hash-collision DoS, fixed in 3.8.4. @ardatan/relay-compiler (via Gatsby's GraphQL codegen) pins ~3.7.6.",
+      "dropWhen": "@ardatan/relay-compiler (or whatever Gatsby uses instead) accepts immutable >=3.8.4."
+    },
+    "lodash": {
+      "why": "GHSA-r5fr-rjxr-66jc (high), GHSA-f23m-r3pf-42rh (moderate): code injection via _.template imports and related issues, fixed after 4.17.23. @graphql-codegen/plugin-helpers pins ~4.17.0, which can never reach 4.18.",
+      "dropWhen": "Nothing in the tree pins lodash to ~4.17 (check `npm ls lodash` without the override)."
+    },
+    "path-to-regexp@<0.1.13": {
+      "why": "GHSA-37ch-88jc-xwx2 (high): ReDoS with multiple route params, fixed in 0.1.13. gatsby pins exactly 0.1.12.",
+      "dropWhen": "gatsby depends on path-to-regexp >=0.1.13."
+    },
+    "postcss-selector-parser": {
+      "why": "GHSA-rj75-hqrm-r3gf (moderate): quadratic-time selector parsing, fixed in 7.1.6. cssnano 6 plugins, postcss-modules-* and postcss-calc (via Gatsby's CSS pipeline) still declare ^6.",
+      "dropWhen": "Gatsby's cssnano / css-loader chain accepts postcss-selector-parser >=7.1.6."
+    },
+    "serialize-javascript": {
+      "why": "GHSA-5c6j-r48x-rmvq (high, RCE), GHSA-qj8w-gfj5-8c6v (moderate), fixed in 7.0.5. css-minimizer-webpack-plugin@2 (pinned by gatsby) declares ^5.0.1.",
+      "dropWhen": "Gatsby's css-minimizer-webpack-plugin accepts serialize-javascript >=7.0.5."
+    },
+    "sharp": {
+      "why": "GHSA-f88m-g3jw-g9cj, GHSA-rgj7-g3m4-5g8c, GHSA-wq5f-xc86-pv6w (high): bundled libvips CVEs, fixed in 0.35.5. gatsby-plugin-sharp, gatsby-sharp, gatsby-transformer-sharp and gatsby-plugin-manifest pin ^0.32.6.",
+      "dropWhen": "The gatsby sharp plugins depend on sharp >=0.35.5."
+    },
+    "tmp": {
+      "why": "GHSA-ph9p-34f9-6g65 (high), GHSA-52f5-9888-hmc6 (low): symlink-based arbitrary file write, fixed in 0.2.6. external-editor (via gatsby-cli > yurnalist > inquirer@7) pins ^0.0.33.",
+      "dropWhen": "gatsby-cli no longer pulls in external-editor with tmp <0.2.6."
+    },
+    "uuid@<11.1.1": {
+      "why": "GHSA-w5hq-g745-h8pq (moderate): missing buffer bounds check in v3/v5/v6, fixed in 11.1.1. gatsby pins ^8.3.2. uuid 11 still ships CommonJS; 12+ is ESM-only, so do not widen this.",
+      "dropWhen": "gatsby depends on uuid >=11.1.1."
+    },
+    "webpack": {
+      "why": "GHSA-8fgc-7cc6-rx7x, GHSA-38r7-794h-5758 (low): buildHttp allowedUris bypass, fixed after 5.104.0. gatsby pins ~5.98.0.",
+      "dropWhen": "gatsby depends on webpack >5.104.0."
+    },
+    "webpack-dev-middleware": {
+      "why": "GHSA-g84c-rxfj-3j2c (high): path traversal via non-slash-terminated publicPath, fixed in 7.4.5. gatsby pins ^5.3.4. Only used by `gatsby develop`.",
+      "dropWhen": "gatsby depends on webpack-dev-middleware >=7.4.5."
+    }
+  },
+  "allowScripts": {
+    "@parcel/watcher": false,
+    "core-js": false,
+    "core-js-pure": false,
+    "es5-ext": false,
+    "fsevents": false,
+    "gatsby": false,
+    "gatsby-cli": false,
+    "lmdb": false,
+    "msgpackr-extract": false
+  }
 }

@@ -13,7 +13,8 @@ such a change as done.
 
 Note: this is the slower, build-against-real-output verification, intentionally
 kept out of `npm test`. `npm test` is reserved for fast, idempotent unit tests
-(of which there are none yet).
+in `tests/unit/` (currently: every `overrides` entry in `package.json` has a
+matching `overridesNotes` entry).
 
 ## When to run it
 
@@ -30,7 +31,7 @@ kept out of `npm test`. `npm test` is reserved for fast, idempotent unit tests
 npm run verify
 ```
 
-This runs `tsc --noEmit` (strict type check), then a clean
+This runs `tsc --noEmit` (strict type check), the `npm test` unit tests, then a clean
 `gatsby build --prefix-paths` (mirroring the real `deploy` script's prefixed
 build, kept separate so the plain `npm run build` stays untouched) into
 `public/`, then runs the assertions against that real output with Node's

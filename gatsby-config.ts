@@ -1,8 +1,8 @@
 import type { GatsbyConfig } from "gatsby"
-import urljoin from "url-join"
-import postcssEasyImport from "postcss-easy-import"
+import postcssImport from "postcss-import"
 import postcssCustomProperties from "postcss-custom-properties"
 import autoprefixer from "autoprefixer"
+import purgecss from "@fullhuman/postcss-purgecss"
 import siteConfig from "./siteConfig"
 import { getSlugForPost } from "./src/utils/i18n-urls"
 import {
@@ -20,6 +20,10 @@ type FeedNode = {
   frontmatter: { title: string; date: string }
 }
 
+// Absolute URL of the site root, including the path prefix
+// (e.g. https://eric.pe/terson).
+const siteUrl = `${siteConfig.url.replace(/\/+$/, ``)}${siteConfig.prefix}`
+
 // Shared between the sitemap plugin's resolvePages and serialize hooks below.
 let sitemapPaths: Set<string>
 
@@ -30,7 +34,7 @@ const config: GatsbyConfig = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl,
     baseUrl: siteConfig.url,
     social: {
       twitter: siteConfig.twitter,
@@ -89,26 +93,27 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
-          postcssEasyImport(),
+          postcssImport(),
           postcssCustomProperties({ preserve: true }),
           autoprefixer(),
+          // Strip unused selectors from production CSS only, so `gatsby
+          // develop` always has the full stylesheet.
+          ...(process.env.NODE_ENV === `production`
+            ? [
+                purgecss({
+                  content: [`${__dirname}/src/**/!(*.d).{js,jsx,ts,tsx}`],
+                  // Content only scans src/, so it never sees classes that
+                  // exist only in markdown/Ghost content (kg-*,
+                  // gatsby-resp-image-*). Protect them here so rules
+                  // targeting them aren't stripped from the production bundle.
+                  safelist: {
+                    standard: [`html`, `body`],
+                    greedy: [/^kg-/, /^gatsby-resp-image/],
+                  },
+                }),
+              ]
+            : []),
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: false,
-        whitelistPatternsChildren: ["/post-content-body/"],
-        // PurgeCSS only scans src/**/*.{js,jsx,ts,tsx} by default, so it never
-        // sees classes that exist only in markdown/Ghost content (kg-*,
-        // gatsby-resp-image-*). Protect them here so rules targeting them
-        // aren't stripped from the production bundle.
-        purgeCSSOptions: {
-          safelist: {
-            greedy: [/^kg-/, /^gatsby-resp-image/],
-          },
-        },
       },
     },
     {
@@ -227,7 +232,7 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        resolveSiteUrl: () => urljoin(siteConfig.url, siteConfig.prefix),
+        resolveSiteUrl: () => siteUrl,
         // Populated by resolvePages, read by serialize: the set of built paths
         // (trailing-slash normalized) that are actually going into the sitemap.
         // Used so we only advertise an hreflang alternate when that translated
@@ -252,7 +257,6 @@ const config: GatsbyConfig = {
           return filtered
         },
         serialize: ({ path }: { path: string }) => {
-          const siteUrl = urljoin(siteConfig.url, siteConfig.prefix)
           const withTrailing = path.endsWith(`/`) ? path : `${path}/`
           const isSv = path.startsWith(`/sv`)
           const enPath = isSv
@@ -281,16 +285,6 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyForNull: "en",
-        langKeyDefault: "en",
-        useLangKeyLayout: true,
-        prefixDefault: false,
-      },
-    },
-    `gatsby-plugin-client-side-redirect`,
   ],
 }
 

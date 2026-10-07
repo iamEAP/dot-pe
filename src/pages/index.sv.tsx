@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql, type HeadProps, type PageProps } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import dayjs from "dayjs"
-import "dayjs/locale/sv"
+import { formatMonthYear } from "../utils/dates"
 
 import Layout from "../layouts/sv"
 import Seo from "../components/seo"
@@ -55,10 +54,7 @@ const AboutPage = ({ data, location }: PageProps<Queries.HomePageSvQuery>) => {
                   className="home-recent-card-link"
                 >
                   <span className="home-recent-card-date">
-                    Från{" "}
-                    {dayjs(node.frontmatter?.date)
-                      .locale("sv")
-                      .format("MMMM YYYY")}
+                    Från {formatMonthYear(node.frontmatter?.date, "sv")}
                   </span>
                   <div className="home-recent-card-content">
                     <h4 className="home-recent-card-title">
@@ -73,10 +69,7 @@ const AboutPage = ({ data, location }: PageProps<Queries.HomePageSvQuery>) => {
             {recentPosts.map(({ node }) => (
               <li key={node.fields?.slug}>
                 <strong>
-                  Från{" "}
-                  {dayjs(node.frontmatter?.date)
-                    .locale("sv")
-                    .format("MMMM YYYY")}
+                  Från {formatMonthYear(node.frontmatter?.date, "sv")}
                 </strong>
                 :{" "}
                 <Link to={node.fields?.slug ?? "#"}>
