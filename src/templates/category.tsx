@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql, type HeadProps, type PageProps } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import dayjs from "dayjs"
-import "dayjs/locale/sv"
+import { formatMonthYear } from "../utils/dates"
 
 import EnLayout from "../layouts/en"
 import SvLayout from "../layouts/sv"
@@ -37,10 +36,7 @@ const CategoryTemplate = ({
   const langKey = pageContext.langKey === "sv" ? "sv" : "en"
   const view = pageContext.view
   const LocalLayout = langKey === "sv" ? SvLayout : EnLayout
-  const t = i18n.getFixedT(langKey) as (
-    key: string,
-    options?: Record<string, unknown>
-  ) => string
+  const t = i18n.getFixedT(langKey)
   const meta = VIEW_META[langKey][view]
 
   const siteTitle = data.site?.siteMetadata?.title ?? ""
@@ -88,9 +84,7 @@ const CategoryTemplate = ({
             <div className="category-feature-content">
               {featured.frontmatter?.date && (
                 <span className="category-feature-date">
-                  {dayjs(featured.frontmatter.date)
-                    .locale(langKey)
-                    .format("MMMM YYYY")}
+                  {formatMonthYear(featured.frontmatter.date, langKey)}
                 </span>
               )}
               <h2 className="category-feature-title">

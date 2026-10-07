@@ -1,46 +1,37 @@
-import i18n from "i18next"
-import { initReactI18next } from "react-i18next"
-
 const resources = {
   en: {
-    translation: {
-      "Fast-forward to {{date}}": "Fast-forward to {{date}}",
-      "Rewind to {{date}}": "Rewind to {{date}}",
-      "There will be more": "There will be more",
-      "There was more": "There was more",
-      "Browse by category": "Browse by category",
-      "Not Found": "Not Found",
-      "You just hit a page that doesn't exist":
-        "You just hit a page that doesn't exist",
-    },
+    "Fast-forward to {{date}}": "Fast-forward to {{date}}",
+    "Rewind to {{date}}": "Rewind to {{date}}",
+    "There will be more": "There will be more",
+    "There was more": "There was more",
+    "Browse by category": "Browse by category",
+    "Not Found": "Not Found",
+    "You just hit a page that doesn't exist":
+      "You just hit a page that doesn't exist",
   },
   sv: {
-    translation: {
-      "Fast-forward to {{date}}": "Spola framåt till {{date}}",
-      "Rewind to {{date}}": "Spola tillbaka till {{date}}",
-      "There will be more": "Det kommer mer",
-      "There was more": "Det fanns mer",
-      "Browse by category": "Bläddra efter kategori",
-      "Not Found": "Ej Hittad",
-      "You just hit a page that doesn't exist":
-        "Du hittade precis en sida som inte finns",
-    },
+    "Fast-forward to {{date}}": "Spola framåt till {{date}}",
+    "Rewind to {{date}}": "Spola tillbaka till {{date}}",
+    "There will be more": "Det kommer mer",
+    "There was more": "Det fanns mer",
+    "Browse by category": "Bläddra efter kategori",
+    "Not Found": "Ej Hittad",
+    "You just hit a page that doesn't exist":
+      "Du hittade precis en sida som inte finns",
   },
+} as const
+
+export type Lang = keyof typeof resources
+export type TranslationKey = keyof (typeof resources)["en"]
+
+// Returns a translator bound to one language. `{{name}}` placeholders are
+// filled from `values`; React escapes the result when rendering.
+function getFixedT(lang: Lang) {
+  return (key: TranslationKey, values: Record<string, string> = {}): string =>
+    resources[lang][key].replace(
+      /\{\{(\w+)\}\}/g,
+      (match, name: string) => values[name] ?? match
+    )
 }
 
-i18n
-  // pass the i18n instance to react-i18next.
-  .use(initReactI18next)
-  // init i18next
-  // for all options read: https://www.i18next.com/overview/configuration-options
-  .init({
-    resources,
-    lng: "en",
-    fallbackLng: "en",
-    debug: false,
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-  })
-
-export default i18n
+export default { getFixedT }

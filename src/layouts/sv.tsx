@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "../components/link"
 import { LanguageContext, type LanguageState } from "../contexts/language"
-import "../i18n"
 
 type LayoutProps = {
   title: string

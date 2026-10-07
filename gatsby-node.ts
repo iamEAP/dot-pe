@@ -26,24 +26,24 @@ type CreatePagesQueryData = {
   }
 }
 
+// Legacy URLs. Permanent (301) so search engines consolidate them into the
+// target rather than parking both as indexable. createRedirect feeds the
+// _redirects file; onPostBuild also writes a client-side redirect page for
+// each, for hosts that ignore _redirects.
+const REDIRECTS = [
+  { fromPath: `/is`, toPath: `/` },
+  { fromPath: `/sv/is`, toPath: `/sv` },
+]
+
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   actions,
 }) => {
   const { createPage, createRedirect } = actions
 
-  // Static redirects. Permanent (301) so search engines consolidate the
-  // legacy URLs into the target rather than parking both as indexable.
-  createRedirect({
-    fromPath: "/is",
-    toPath: "/",
-    isPermanent: true,
-  })
-  createRedirect({
-    fromPath: "/sv/is",
-    toPath: "/sv",
-    isPermanent: true,
-  })
+  for (const redirect of REDIRECTS) {
+    createRedirect({ ...redirect, isPermanent: true })
+  }
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
   const categoryTemplate = path.resolve(`./src/templates/category.tsx`)
@@ -133,6 +133,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
   })
 }
 
+// src/pages/index.sv.tsx is the Swedish home page. Gatsby would serve it at
+// /index.sv/, so move it to /sv/.
+export const onCreatePage: GatsbyNode["onCreatePage"] = ({ page, actions }) => {
+  if (page.path !== `/index.sv/`) return
+  actions.deletePage(page)
+  actions.createPage({ ...page, path: `/sv/` })
+}
+
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
@@ -150,7 +158,19 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 }
 
-export const onPostBuild: GatsbyNode["onPostBuild"] = async ({ reporter }) => {
+export const onPostBuild: GatsbyNode["onPostBuild"] = async ({
+  reporter,
+  pathPrefix,
+}) => {
+  for (const { fromPath, toPath } of REDIRECTS) {
+    // pathPrefix is "" unless building with --prefix-paths. Drop the trailing
+    // slash so "/" under the /terson prefix becomes "/terson".
+    const target = `${pathPrefix}${toPath}`.replace(/(.)\/$/, `$1`)
+    const file = path.join(`public`, fromPath, `index.html`)
+    fs.mkdirSync(path.dirname(file), { recursive: true })
+    fs.writeFileSync(file, `<script>window.location.href="${target}"</script>`)
+  }
+
   const indexPath = `public/sitemap-index.xml`
   if (!fs.existsSync(indexPath)) return
   let content = fs.readFileSync(indexPath, `utf8`)

@@ -1,6 +1,5 @@
 import type { GatsbyConfig } from "gatsby"
-import urljoin from "url-join"
-import postcssEasyImport from "postcss-easy-import"
+import postcssImport from "postcss-import"
 import postcssCustomProperties from "postcss-custom-properties"
 import autoprefixer from "autoprefixer"
 import purgecss from "@fullhuman/postcss-purgecss"
@@ -21,6 +20,10 @@ type FeedNode = {
   frontmatter: { title: string; date: string }
 }
 
+// Absolute URL of the site root, including the path prefix
+// (e.g. https://eric.pe/terson).
+const siteUrl = `${siteConfig.url.replace(/\/+$/, ``)}${siteConfig.prefix}`
+
 // Shared between the sitemap plugin's resolvePages and serialize hooks below.
 let sitemapPaths: Set<string>
 
@@ -31,7 +34,7 @@ const config: GatsbyConfig = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl,
     baseUrl: siteConfig.url,
     social: {
       twitter: siteConfig.twitter,
@@ -90,7 +93,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
-          postcssEasyImport(),
+          postcssImport(),
           postcssCustomProperties({ preserve: true }),
           autoprefixer(),
           // Strip unused selectors from production CSS only, so `gatsby
@@ -229,7 +232,7 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        resolveSiteUrl: () => urljoin(siteConfig.url, siteConfig.prefix),
+        resolveSiteUrl: () => siteUrl,
         // Populated by resolvePages, read by serialize: the set of built paths
         // (trailing-slash normalized) that are actually going into the sitemap.
         // Used so we only advertise an hreflang alternate when that translated
@@ -254,7 +257,6 @@ const config: GatsbyConfig = {
           return filtered
         },
         serialize: ({ path }: { path: string }) => {
-          const siteUrl = urljoin(siteConfig.url, siteConfig.prefix)
           const withTrailing = path.endsWith(`/`) ? path : `${path}/`
           const isSv = path.startsWith(`/sv`)
           const enPath = isSv
@@ -283,16 +285,6 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyForNull: "en",
-        langKeyDefault: "en",
-        useLangKeyLayout: true,
-        prefixDefault: false,
-      },
-    },
-    `gatsby-plugin-client-side-redirect`,
   ],
 }
 
