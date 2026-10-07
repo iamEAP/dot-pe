@@ -123,3 +123,22 @@ documented as `"gatsby > cookie"`. `npm test` (also part of `npm run verify`)
 fails if the two maps drift apart. When you upgrade Gatsby, check each
 `dropWhen` and remove overrides that are no longer needed, along with their
 notes.
+
+## Dependency install scripts
+
+npm 12+ blocks dependency install scripts unless `package.json`'s
+`allowScripts` field allows them. Every package listed there is set to
+`false` on purpose, because none of their scripts are needed:
+
+- `lmdb`, `msgpackr-extract`, `@parcel/watcher`, `fsevents`: native modules
+  that ship prebuilt binaries; their scripts only compile from source when
+  no binary exists for the platform.
+- `gatsby`: fetches an optional, up-to-date list of plugin APIs and falls
+  back to a bundled copy.
+- `gatsby-cli`, `core-js`, `core-js-pure`, `es5-ext`: print banners.
+
+The full build and test suite pass with all of them skipped. If npm warns
+about a new package's scripts, check what the script does, then run
+`npm install-scripts deny <pkg>` (or `approve` if it's really needed).
+`fsevents` is only installed on macOS, so don't run `npm install-scripts
+prune` on Linux; it would drop that entry.
