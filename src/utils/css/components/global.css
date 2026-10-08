@@ -416,3 +416,57 @@ h6 {
   margin: 1.5em 0 1em 0;
   font-size: 2.2rem;
 }
+
+/* GitHub-style hover anchors on post-body headings, added by
+   gatsby-remark-autolink-headers. Absolutely positioned in the left gutter
+   (the heading itself gets position:relative inline from the plugin) rather
+   than sat inline after the heading text: an inline icon could get pushed
+   onto its own line on a long heading, silently making the whole heading box
+   two lines tall. Fixed (non-em) size so it doesn't scale with each heading
+   level's own font-size. `.post-content` has no horizontal padding and only
+   becomes narrower than its 720px max-width below that viewport width, so
+   the gutter this sits in only exists above ~780px — hidden below that. */
+.post-content-body .anchor {
+  position: absolute;
+  top: 0;
+  left: -2.2rem;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-border);
+  opacity: 0;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+}
+
+.post-content-body .anchor svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+@media (max-width: 780px) {
+  .post-content-body .anchor {
+    display: none;
+  }
+}
+
+.post-content-body .anchor:hover {
+  color: var(--color-base);
+}
+
+@media (hover: hover) {
+  .post-content-body h1:hover .anchor,
+  .post-content-body h2:hover .anchor,
+  .post-content-body h3:hover .anchor,
+  .post-content-body h4:hover .anchor,
+  .post-content-body h5:hover .anchor,
+  .post-content-body h6:hover .anchor {
+    opacity: 1;
+  }
+}
+
+.post-content-body .anchor:focus-visible {
+  opacity: 1;
+}
