@@ -112,11 +112,20 @@ const config: GatsbyConfig = {
                   content: [`${__dirname}/src/**/!(*.d).{js,jsx,ts,tsx}`],
                   // Content only scans src/, so it never sees classes that
                   // exist only in markdown/Ghost content (kg-*,
-                  // gatsby-resp-image-*). Protect them here so rules
-                  // targeting them aren't stripped from the production bundle.
+                  // gatsby-resp-image-*, anchor from
+                  // gatsby-remark-autolink-headers), or bare element
+                  // selectors only used by markdown-rendered HTML, like the
+                  // table tags (tables.css) that no .tsx file ever spells
+                  // out literally. Protect them here so rules targeting
+                  // them aren't stripped from the production bundle.
                   safelist: {
                     standard: [`html`, `body`],
-                    greedy: [/^kg-/, /^gatsby-resp-image/],
+                    greedy: [
+                      /^kg-/,
+                      /^gatsby-resp-image/,
+                      /^(table|thead|tbody|tfoot|tr|th|td)$/,
+                      /^anchor$/,
+                    ],
                   },
                 }),
               ]
