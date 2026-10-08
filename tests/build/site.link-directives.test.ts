@@ -1,6 +1,6 @@
 import test from "node:test"
 import assert from "node:assert/strict"
-import { contentPages } from "./load.ts"
+import { contentPages, getPage, assetExists, PREFIX } from "./load.ts"
 
 // Guards the one failure mode specific to plugins/remark-link-directives: if
 // a link's title was meant to carry a JSON attrs object but failed to parse
@@ -25,5 +25,45 @@ for (const page of contentPages) {
       [],
       `looked like a failed attrs directive: ${titles.join(", ")}`
     )
+  })
+}
+
+// Focused check on the one post that actually uses the directive today: its
+// four self-hosted source PDFs should force a download, and nothing else on
+// the page should pick up a `download` attribute by accident.
+const sitePath = `${PREFIX}/writes/a-postmortem-on-swedens-citizenship-law/`
+const page = getPage(sitePath)
+
+test(`${sitePath}: postmortem page built successfully`, () => {
+  assert.ok(page, `expected a built page at ${sitePath}`)
+})
+
+if (page) {
+  const { $ } = page
+  const downloadLinks = $("a[download]")
+    .map((_, el) => $(el).attr("href") ?? "")
+    .get()
+
+  test(`${sitePath}: exactly the four self-hosted source PDFs force a download`, () => {
+    const uniqueHrefs = new Set(downloadLinks)
+    assert.equal(
+      uniqueHrefs.size,
+      4,
+      `expected 4 distinct downloadable PDFs, got: ${[...uniqueHrefs].join(", ")}`
+    )
+    for (const href of uniqueHrefs) {
+      assert.match(href, /\.pdf$/, `download link isn't a PDF: ${href}`)
+      assert.ok(
+        assetExists(href),
+        `downloadable PDF missing from the build: ${href}`
+      )
+    }
+  })
+
+  test(`${sitePath}: external citation links did not also pick up "download"`, () => {
+    const externalDownloadLinks = $("a[download][href^='http']")
+      .map((_, el) => $(el).attr("href"))
+      .get()
+    assert.deepEqual(externalDownloadLinks, [])
   })
 }
