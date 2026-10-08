@@ -83,6 +83,7 @@ const config: GatsbyConfig = {
             },
           },
           `gatsby-remark-prismjs`,
+          `${__dirname}/plugins/remark-link-directives`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

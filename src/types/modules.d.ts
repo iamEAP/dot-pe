@@ -4,6 +4,7 @@
 declare module "postcss-import"
 declare module "postcss-custom-properties"
 declare module "prismjs"
+declare module "remark"
 
 // Asset imports handled by Gatsby's webpack loaders.
 declare module "*.css"

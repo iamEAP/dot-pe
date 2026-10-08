@@ -1,0 +1,8 @@
+{
+  "name": "remark-link-directives",
+  "version": "1.0.0",
+  "description": "Local gatsby-transformer-remark sub-plugin: lets a link carry arbitrary HTML attributes via a JSON object in its markdown title.",
+  "main": "index.ts",
+  "license": "UNLICENSED",
+  "private": true
+}
