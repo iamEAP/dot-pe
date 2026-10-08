@@ -10,6 +10,28 @@ isTranslated: false
 
 <a id="top"></a>
 
+<style>
+/* Fixes short columns wrapping 2-3 lines next to this post's long prose column. */
+.postmortem-table table {
+  table-layout: fixed;
+}
+.postmortem-table th:not(:last-child),
+.postmortem-table td:not(:last-child) {
+  width: 10.5em;
+}
+@media (max-width: 600px) {
+  .postmortem-table table {
+    table-layout: auto;
+  }
+  .postmortem-table th:not(:last-child),
+  .postmortem-table td:not(:last-child) {
+    width: auto;
+  }
+}
+</style>
+
+<div class="postmortem-table">
+
 <!-- prettier-ignore -->
 |  |  |
 | :---- | :---- |
@@ -19,6 +41,8 @@ isTranslated: false
 | **Impact** | Over 100,000 pending citizenship applicants assessed under requirements introduced after they were filed. Processing times of nearly 5 years[^1]. Denials ongoing. |
 | **Duration** | In force since June 6th, 2026; ongoing |
 | **If you're affected** | [Fair Transition][fair-transition] is coordinating legal and political efforts |
+
+</div>
 
 **Jump to:** [Summary](#summary) · [Impact](#impact) · [Incident overview](#incident-overview) · [Mitigations](#mitigations) · [Root cause analysis](#root-cause-analysis) · [What went well, poorly, and lucky](#what-went-well-what-went-poorly-and-where-we-got-lucky) · [Remediation and next steps](#remediation-and-next-steps) · [Lessons](#lessons) · [Appendix](#appendix) · [Key documents](#key-documents)
 
@@ -61,6 +85,8 @@ For the more than 100,000 people impacted, the new law means:
 
 Impact unfolded in five phases.
 
+<div class="postmortem-table">
+
 <!-- prettier-ignore -->
 | Phase | When | What happened |
 | :---- | :---- | :---- |
@@ -69,6 +95,8 @@ Impact unfolded in five phases.
 | Change approved | Apr 29th, 2026 | Parliament passes the bill 258–33; the opposition's transitional-rules proposal fails 147–146 |
 | Deployment | Jun 6th, 2026 | The law takes effect without transitional rules |
 | Ongoing impact | Jun 2026 onward | Pending applications are assessed and denied under the new requirements |
+
+</div>
 
 <small>[↑ Back to top](#top)</small>
 
@@ -86,7 +114,7 @@ The inquiry's proposal ([SOU 2025:1][sou-2025-1]) went out for remiss in January
 
 Meanwhile, the government had ordered enhanced security checks on citizenship applications. Forssell [assured The Local][minister-reassures-labor-migrants], an English-language news site in Sweden, that the checks would not slow applications down or affect labor migrants. In the end, they slowed processing for everyone.
 
-Concerned that the stability that initially attracted me to Sweden was evaporating, and that no one seemed to be doing anything about it, I felt compelled to act. On about March 24th, I began circulating a draft letter among immigrant friends and colleagues, and a week later I submitted [this response][my-remiss-response] to the Justice Ministry with 379 signatures from migrants in Swedish tech, ranging from individual contributors to founders, executives, and investors.
+Concerned that the stability that initially attracted me to Sweden was evaporating, and that no one seemed to be doing anything about it, I felt compelled to act. Around March 24th, I began circulating a draft letter among immigrant friends and colleagues, and a week later I submitted [this response][my-remiss-response] to the Justice Ministry with 379 signatures from migrants in Swedish tech, ranging from individual contributors to founders, executives, and investors.
 
 My response argued that the longer residence requirement, new language requirements and self-sufficiency rules would erase Sweden's advantage in competing for skilled labor. To someone directly affected, the line from cause to effect was self-evident: when a country worsens the terms, fewer people will choose it, and when it retrospectively applies those terms to people already part-way through the process, some of them will choose to leave. The response closed with a call for transitional rules. I made an economic case because it was the one I could make credibly, and it was one the governing parties said they cared about. Of course, the law itself doesn't distinguish: everyone in the queue, whatever route they took to Sweden, is assessed under the new rules.
 
@@ -104,7 +132,7 @@ The second approach made its case in terms of fundamental rights and asked for m
 
 Fair Transition operated like most decentralized grassroots campaigns: social media, press releases and interviews, and direct outreach to members of parliament across bloc lines. At its core was a chaotic group chat that eventually grew to more than a thousand members, where volunteers proposed and executed on ideas in between political commentary and requests for assistance.
 
-By early April, Annika Hirvonen (Green Party) and Niels Paarup-Petersen (Center Party), spurred in part by Fair Transition's efforts, got the four rarely united opposition parties aligned behind transitional rules. That left the seemingly impossible task of winning two more votes in a parliament where strict party discipline is the norm.
+By early April, Annika Hirvonen (Green Party) and Niels Paarup-Petersen (Center Party), spurred in part by Fair Transition's efforts, got the four rarely united opposition parties aligned[^7] behind transitional rules. That left the seemingly impossible task of winning two more votes in a parliament where strict party discipline is the norm.
 
 Meanwhile, the Liberals, a governing party founded on rule-of-law principles and polling badly in an election year, [had reversed their platform][liberals-accept-sd-ministers] and agreed to accept Sweden Democrat ministers after the election. The internal revolt that followed suggested that some MPs from the Liberal party might break rank. Most Fair Transition volunteers focused there. A smaller group emailed nine independent politicians: members who had left or been forced out of their parties but kept their seats.
 
@@ -134,7 +162,7 @@ On paper, labor migrants—tech workers in particular—have powerful potential 
 
 All of these groups have strong, ongoing relationships with the parties that write this kind of legislation. The migration minister's own [nine-point talent agenda][talent-agenda], co-signed by executives from major Swedish employers, never mentioned citizenship. In practice, institutional engagement on citizenship rarely went beyond private support or referrals. When it did, it came too late: the white-collar union confederation TCO [backed transitional rules][unions-back-transitional-rules] only weeks before the vote.
 
-These potential allies had more pressing priorities: companies avoided immigration as too touchy a subject, employer associations were busy fighting damaging work-permit legislation, and investors were focused on equity reforms and founder visas. Unions, with some exceptions, have traditionally focused more on protecting local labor than on the concerns of their migrant members[^7].
+These potential allies had more pressing priorities: companies avoided immigration as too touchy a subject, employer associations were busy fighting damaging work-permit legislation, and investors were focused on equity reforms and founder visas. Unions, with some exceptions, have traditionally focused more on protecting local labor than on the concerns of their migrant members[^8].
 
 Without institutional allies, support and political awareness had to be built from scratch, far too late in the process. An established association representing labor migrants would at least have made it harder for politicians to overlook what this legislation would cost.
 
@@ -143,7 +171,7 @@ This isn't new. During the ["talent deportation" cases][talent-deportation-2021]
 ### Contributing factors
 
 - **Administrative slowdowns widened the impact**. Enhanced security checks, ordered shortly after the governing parties agreed to award fewer citizenships "to the extent possible" until the new law applied, pushed the queue past 100,000. Every month of added processing time put more people inside the window the law would reach.
-- **Rule-of-law safeguards eroded at every legislative step**. With no constitutional court and a [tradition of judicial restraint][courts-rule-of-law], Sweden's remaining safeguards against overreach are process and norms. The government [dictated the outcome][dir-2023-129] to its own inquiry, set aside critical remiss responses, and overrode the Council on Legislation. When the Sweden Democrats [broke a century-old pairing norm][pairing-break-unprecedented] to win the vote, their coalition partners wouldn't even acknowledge wrongdoing[^8] in private talks[^9], and blocked a new vote.
+- **Rule-of-law safeguards eroded at every legislative step**. The government [dictated the outcome][dir-2023-129] to its own inquiry, set aside critical remiss responses, and overrode the Council on Legislation. When the Sweden Democrats [broke a century-old pairing norm][pairing-break-unprecedented] to win the vote, their coalition partners wouldn't even acknowledge wrongdoing[^9] in private talks[^10], and blocked a new vote. With no constitutional court and a [tradition of judicial restraint][courts-rule-of-law], Sweden leans heavily on those processes and norms to check overreach.
 - **The economic argument was just a forecast**. The evidence for it is a lagging indicator: work permit applications and renewals, GDP growth, etc. It was challenging to argue objectively when negative trends didn't materialize until the damage was done, and they could be plausibly attributed to macroeconomic trends instead.
 - **The cost was invisible to employers**. Swedish AI startup [Lovable's head of people told SvD][svd-hard-to-recommend-sweden] (in an article that also quoted me) that once someone has decided to move, immigration rules are rarely what keeps them up at night. That's exactly the blind spot: employers only see candidates who already chose Sweden, never the ones who ruled it out.
 - **Technical asks struggle for attention**. Transitional rules for citizenship applications got some press coverage, but with difficulty. In the same months, stories of teenagers being deported dominated migration coverage.
@@ -219,7 +247,7 @@ The best time to organize is before the coalition agreement gets written. The se
 If any of this resonates with you, I'd love to hear from you. If you're in Sweden and directly affected, Fair Transition is a good resource.
 
 <div class="button-group" style="margin-bottom: var(--margin);">
-  <a class="button primary" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#73;&#46;&#97;&#109;&#64;&#101;&#114;&#105;&#99;&#46;&#112;&#101;&#63;&#115;&#117;&#98;&#106;&#101;&#99;&#116;&#61;&#84;&#104;&#101;&#37;&#50;&#48;&#105;&#109;&#109;&#105;&#103;&#114;&#97;&#110;&#116;&#37;&#50;&#48;&#101;&#120;&#112;&#101;&#114;&#105;&#101;&#110;&#99;&#101;&#37;&#50;&#48;&#105;&#110;&#37;&#50;&#48;&#83;&#119;&#101;&#100;&#101;&#110;">Let's talk</a>
+  <a class="button primary" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#46;&#97;&#109;&#64;&#101;&#114;&#105;&#99;&#46;&#112;&#101;&#63;&#115;&#117;&#98;&#106;&#101;&#99;&#116;&#61;&#84;&#104;&#101;&#37;&#50;&#48;&#105;&#109;&#109;&#105;&#103;&#114;&#97;&#110;&#116;&#37;&#50;&#48;&#101;&#120;&#112;&#101;&#114;&#105;&#101;&#110;&#99;&#101;&#37;&#50;&#48;&#105;&#110;&#37;&#50;&#48;&#83;&#119;&#101;&#100;&#101;&#110;">Let's talk</a>
   <a class="button" href="https://www.fairtransitionsweden.com/" target="_blank" rel="noopener noreferrer">Check out Fair Transition</a>
 </div>
 
@@ -231,6 +259,8 @@ If any of this resonates with you, I'd love to hear from you. If you're in Swede
 
 Events are grouped into four types: decisions by government and parliament, warning signs that indicated where the reform was heading, responses that tried to change the outcome, and political shifts that changed the conditions around it.
 
+<div class="postmortem-table">
+
 <!-- prettier-ignore -->
 | Date | Type | Event |
 | :---- | :---- | :---- |
@@ -241,7 +271,7 @@ Events are grouped into four types: decisions by government and parliament, warn
 | Nov 16th, 2024 | Warning sign | Deputy prime minister [Ebba Busch suggests the Migration Agency should intentionally slow down the processing of citizenship applications][busch-slow-processing] in an interview with Aftonbladet |
 | Nov 19th, 2024 | Response | Ebba Busch is [reported to parliament's constitutional committee][busch-reported-to-committee] for ministerial rule (influencing independent government agencies outside formal governmental instruments) |
 | Nov 21st, 2024 | Warning sign | Sweden Democrat leader Jimmie Åkesson goes further than Busch, [calling for a complete freeze on new citizenships][akesson-freeze-call] |
-| Nov 29th, 2024 | Warning sign | [All four Tidö party leaders][tido-leaders-compromise] compromise, agreeing that fewer citizenships "to the extent possible[^10]" should be awarded until new rules apply |
+| Nov 29th, 2024 | Warning sign | [All four Tidö party leaders][tido-leaders-compromise] compromise, agreeing that fewer citizenships "to the extent possible[^11]" should be awarded until new rules apply |
 | Jan 9–10, 2025 | Warning sign | [Enhanced security checks ordered][security-checks-ordered]; the migration minister [tells labor migrants not to worry][minister-reassures-labor-migrants] |
 | Jan 14th, 2025 | Decision | Inquiry report [SOU 2025:1][sou-2025-1] published and sent out for comment |
 | Jan 25th, 2025 | Warning sign | Migration minister calls the proposed income requirement [too low][forssell-income-too-low] |
@@ -261,7 +291,7 @@ Events are grouped into four types: decisions by government and parliament, warn
 | Feb 2026 | Response | [Fair Transition][fair-transition] forms to campaign for transitional rules |
 | Feb 20th, 2026 | Warning sign | Council on Legislation [criticizes the lack of transitional rules][lagradet-opinion] |
 | Feb–Jun 2026 | Political shift | [Teen deportation cases][teen-deportation-cases] dominate migration coverage |
-| Mar 13th, 2026 | Political shift | Liberals [agree to accept Sweden Democrat ministers][liberals-accept-sd-ministers] after the election, many critical of the change [signal their resignations][liberal-mp-resignations] |
+| Mar 13th, 2026 | Political shift | Liberals [agree to accept Sweden Democrat ministers][liberals-accept-sd-ministers] after the election; many who are critical of the change [signal their resignations][liberal-mp-resignations] |
 | Mar 13th, 2026 | Decision | [Prop. 2025/26:175][prop-2025-26-175] delivered to parliament |
 | Mar 25th, 2026 | Political shift | [Center Party proposes a fast-track for citizenship][center-party-fast-track] in response to Prop. 2025/26:175, later adopting the idea as part of its core 2026 campaign strategy. |
 | Mar 25th, 2026 | Response | Migration minister [answers a written question][s-written-question] relaying games industry concerns about the lack of transitional rules; his answer points to faster work permits instead |
@@ -274,7 +304,7 @@ Events are grouped into four types: decisions by government and parliament, warn
 | Apr 29th, 2026 | Decision | [Transitional rules fail][transitional-rules-fail] 147–146; bill passes 258–33 |
 | Apr 29th, 2026 | Warning sign | \#JuToo: lawyers [warn that rule-of-law safeguards in lawmaking are being eroded][jutoo-warning] |
 | May 2nd, 2026 | Warning sign | In an opinion piece, migration minister Johan Forssell criticizes Social Democrats for voting with left-leaning parties [against Sweden's national security interests][expressen-political-attack]. |
-| May 11th, 2026 | Political shift | In an op-ed in Dagens Nyheter, former-Sweden Democrat independent MP Katja Nyberg cites [emails and legal certainty][nyberg-op-ed] as to why she voted for transitional rules |
+| May 11th, 2026 | Political shift | In an op-ed in Dagens Nyheter, former-Sweden Democrat MP Katja Nyberg cites [emails and legal certainty][nyberg-op-ed] as to why she voted for transitional rules |
 | May 19th, 2026 | Decision | Committee initiative for a new vote is [rejected by the government majority][revote-rejected] |
 | May 29th, 2026 | Response | [Emergency motion][emergency-motion] for a new vote filed |
 | Jun 3–4, 2026 | Decision | Speaker rejects the motion; the chamber [upholds the ruling][speaker-upholds-ruling] |
@@ -285,6 +315,8 @@ Events are grouped into four types: decisions by government and parliament, warn
 | Sep 13th, 2026 | Political shift | [Election][election-results-2026]: former opposition 176 seats, Tidö parties 173, a bloc-level reversal of 2022 |
 | Sep 30th, 2026 | Warning sign | In a report, UHR [recommends postponing language tests][uhr-postpone-report] from Oct 2027 to autumn 2029 (for comprehension) and 2030 (for writing and speaking) at the earliest. |
 | Sep 30th, 2026 | Response | [Appeal lodged][appeal-lodged] by Fair Transition with the Migration Court of Appeal |
+
+</div>
 
 ### II. Data
 
@@ -324,13 +356,15 @@ All in Swedish unless otherwise noted.
 
 [^6]: Translated from Swedish "talanger," which is a term commonly used in the context of high-skilled labor migration.
 
-[^7]: [SULF][sulf-migration-law], which represents researchers, regularly lobbies on migration rules affecting its members, and at least one local union club publicly backed transitional rules.
+[^7]: I have no insight into how the parties worked internally or with each other, but Annika and Niels were particularly engaged. MPs Tony Haddou (Left Party) and Ida Karkiainen (Social Democrats) were also instrumental in getting unanimous support across the opposition bloc.
 
-[^8]: The Sweden Democrats argued they were taking responsibility for independents elected on their ticket, to preserve the balance of power set by the election. But under the Instrument of Government, MPs hold an individual mandate; the seats were never theirs.
+[^8]: [SULF][sulf-migration-law], which represents researchers, regularly lobbies on migration rules affecting its members, and besides TCO, at least one local union club publicly backed transitional rules.
 
-[^9]: In [an interview with The Local][hirvonen-interview], Annika Hirvonen (Green Party) said that the three government parties "can't – even in a closed room without any audience – say to our face in front of the Sweden Democrats that the Sweden Democrats even broke the agreement."
+[^9]: The Sweden Democrats argued they were taking responsibility for independents elected on their ticket, to preserve the balance of power set by the election. But under the Instrument of Government, MPs hold an individual mandate; the seats were never theirs.
 
-[^10]: From full Swedish quote: "I den mån det är möjligt ska därför åtgärder vidtas för att hindra att fler svenska medborgarskap utfärdas, fram till dess att den nya lagstiftningen träder i kraft."
+[^10]: In [an interview with The Local][hirvonen-interview], Annika Hirvonen (Green Party) said that the three government parties "can't – even in a closed room without any audience – say to our face in front of the Sweden Democrats that the Sweden Democrats even broke the agreement."
+
+[^11]: From full Swedish quote: "I den mån det är möjligt ska därför åtgärder vidtas för att hindra att fler svenska medborgarskap utfärdas, fram till dess att den nya lagstiftningen träder i kraft."
 
 [//]: # "Link reference definitions below"
 [ai-consultant-story]: https://www.svd.se/a/BxM3P0/migrationsverket-tog-hennes-pass-nu-overvager-ai-konsulten-att-lamna-sverige '{"target": "_blank", "rel": "noopener noreferrer"}'
