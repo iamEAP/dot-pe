@@ -5,7 +5,7 @@ description: What went wrong, and what migrants facing similar reforms elsewhere
 thumbnail: ./parliament.jpg
 langKey: en
 category: writing
-isTranslated: false
+isTranslated: true
 ---
 
 <a id="top"></a>
