@@ -1,8 +1,8 @@
 ## Created with gatsby-plugin-netlify
 
-/*
-  X-Frame-Options: DENY
-  Referrer-Policy: same-origin
 /.well-known/matrix/*
   Content-Type: application/json
   Access-Control-Allow-Origin: *
+/*
+  X-Frame-Options: DENY
+  Referrer-Policy: same-origin
