@@ -63,7 +63,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -b master && gh-pages -d public -b pages -o codeberg",
+    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -s '{**/*,.well-known/**/*}' -b master && gh-pages -d public -s '{**/*,.well-known/**/*}' -b pages -o codeberg",
     "develop": "gatsby develop",
     "format": "prettier --write \"{src,tests}/**/*.{js,jsx,ts,tsx}\" \"*.{js,ts,tsx}\"",
     "prepare": "husky",

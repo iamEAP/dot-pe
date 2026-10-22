@@ -300,7 +300,25 @@ const config: GatsbyConfig = {
         },
       },
     },
-    `gatsby-plugin-netlify`,
+    {
+      // The host only honors an allowlist of _headers, so skip the plugin's
+      // defaults and emit just what applies. Paths carry no pathPrefix.
+      // Only the first matching rule applies, so list specific paths first.
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        mergeSecurityHeaders: false,
+        mergeCachingHeaders: false,
+        headers: {
+          // Matrix server discovery: extensionless JSON, fetched cross-origin
+          // by web clients.
+          "/.well-known/matrix/*": [
+            `Content-Type: application/json`,
+            `Access-Control-Allow-Origin: *`,
+          ],
+          "/*": [`X-Frame-Options: DENY`, `Referrer-Policy: same-origin`],
+        },
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }
